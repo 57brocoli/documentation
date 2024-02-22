@@ -1,0 +1,248 @@
+{
+    "titre" : "Logique de développement",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "La logique de développement pour ce projet s'adapte fortement au framework Reat. Il faut comprendre par 'logique de développement' l'architecture du projet dans l'agencement des dossiers et fichier, ainsi que les methodes et techniques propre au code.",
+                    "A son intallation un architecture de base nous est proposée. Dans ce projet quelques modifications ont été adoptées pour aporter un structure de développement propre"
+                ]
+            }
+        },
+        {
+            "titre" : "Architecture du projet", 
+            "partieA" : {
+                "titre" : "Racine du projet",
+                "content" : {
+                    "introduction" : [
+                        "Ici il serat question de l'ordre de rangement des dossiers et fichiers du projet."
+                    ],
+                    "img" : "/documentation/NS_VersionDescktop/Logique/racine.png",
+                    "puces" : [
+                        {
+                            "titre" : "index.html",
+                            "img" : "",
+                            "text" : "Dans un premier temps il faut retenir que le fichier 'Index.html' represente ce qu'on pourrait appeller le composant mêre de tous les autres composants de notre projet, car il serat le header de toutes nos pages. Il importe le CDN de bootstrap et le transmet à tous nos composants. Il importe ensuite le fichier 'main.jsx' dans le body."
+                        },
+                        {
+                            "titre" : "public",
+                            "img" : "",
+                            "text" : "Le dossier public contient toute les images du site."
+                        },
+                        {
+                            "titre" : "src",
+                            "img" : "",
+                            "text" : "Le dossier public contient touts les composants du site, les styles css, et quelque donées en .json qui permet de charger des pages en statique si besoin."
+                        },
+                        {
+                            "titre" : "dist",
+                            "img" : "",
+                            "text" : "Il s'agit du dossier optenu apres build du projet qui se fait avec la commande npm built. il sert à mettre le site en production"
+                        }
+                    ]
+                }
+            },
+            "partieB" : {
+                "titre" : "Dossier scr",
+                "content" : {
+                    "introduction" : [
+                        "Stocke toutes les fichiers necessaires au développement. On retrouve les composants, le css, et les données en statiques"
+                    ],
+                    "img" : "/documentation/NS_VersionDescktop/Logique/src.png",
+                    "puces" : [
+                        {
+                            "titre" : "Assets",
+                            "img" : [
+                                "/documentation/NS_VersionDescktop/Logique/Data.png",
+                                "/documentation/NS_VersionDescktop/Logique/Styles.png"
+                            ],
+                            "text" : "Contient deux sous dossiers 'Data' et 'Styles' : l'un stocke les données pour les composants chargées en statique, l'autre le fichier css qui contient tout les styles ainsi que la font 'RaphLanockFuture' enoncer dans le cahier des charges."
+                        },
+                        {
+                            "titre" : "Components",
+                            "img" : "",
+                            "text" : "Qui signifie en francais 'composants', il regroupe tout les composants 'enfants' qui auront pour fonction d'afficher des donées sur les interfaces utilisateurs. Dans la pratique leurs utiliter sont de composés des composant 'mères'. Ce dossier contient plusieurs sous dossiers qui seront plus de detaillés plus bas dans la page."
+                        },
+                        {
+                            "titre" : "Pages",
+                            "img" : "",
+                            "text" : "Contient les composants 'mères'. Comparer au dossier Component, les composant ici representent théoriquement les pages que l'utilisateur verra sur son écran."
+                        },
+                        {
+                            "titre" : "App.jsx",
+                            "img" : "",
+                            "text" : "On pourrait l'appeler le contrôleur, car son rôle ressemble à celui du model 'mvc'. Toutes les routes possibles sont codées et répèrtoriées ici. Pour plus de lisibilité seule la route ‘actualite’ est visible sur l'image."
+                        },
+                        {
+                            "titre" : "main.jsx",
+                            "img" : "",
+                            "text" : "Il s'agit du composant appellé par notre index.html (au niveau du body) cité précédement. Sa fonction est d'appelé le composant App.jsx, qui lui vas définir en fonction de l'url, le composant qui sera appellé et afficher à l'écran."
+                        }
+                    ]
+                }
+            },
+            "partieC" : {
+                "titre" : "Dossier scr",
+                "content" : {
+                    "introduction" : [
+                        "Stocke toutes les fichiers necessaires au développement. On retrouve les composants, le css, et les données en statiques"
+                    ],
+                    "img" : "/documentation/NS_VersionDescktop/Logique/src.png",
+                    "puces" : [
+                        {
+                            "titre" : "Assets",
+                            "img" : "",
+                            "text" : "Contient deux sous dossiers 'Data' et 'Styles' : l'un stocke les données pour les composants chargées en statique, l'autre le fichier css qui contient tout les styles ainsi que la font 'RaphLanockFuture' enoncer dans le cahier des charges."
+                        },
+                        {
+                            "titre" : "Components",
+                            "img" : "",
+                            "text" : "Qui signifie en francais 'composants', il regroupe tout les composants 'enfants' qui auront pour fonction d'afficher des donées sur les interfaces utilisateurs. Dans la pratique leurs utiliter sont de composés des composant 'mères'. Ce dossier contient plusieurs sous dossiers qui seront plus de detaillés plus bas dans la page."
+                        },
+                        {
+                            "titre" : "Pages",
+                            "img" : "",
+                            "text" : "Contient les composants 'mères'. Comparer au dossier Component, les composant ici representent théoriquement les pages que l'utilisateur verra sur son écran."
+                        },
+                        {
+                            "titre" : "App.jsx",
+                            "img" : "",
+                            "text" : "On pourrait l'appeler le contrôleur, car son rôle ressemble à celui du model 'mvc'. Toutes les routes possibles sont codées et répèrtoriées ici. Pour plus de lisibilité seule la route ‘actualite’ est visible sur l'image."
+                        },
+                        {
+                            "titre" : "main.jsx",
+                            "img" : "",
+                            "text" : "Il s'agit du composant appellé par notre index.html (au niveau du body) cité précédement. Sa fonction est d'appelé le composant App.jsx, qui lui vas définir en fonction de l'url, le composant qui sera appellé et afficher à l'écran."
+                        }
+                    ]
+                }
+            }
+        },
+
+
+
+        {
+            "titre" : "Méthodologie", 
+            "partieA" : {
+                "titre" : "Methode channel",
+                "content" : {
+                    "introduction" : [
+                        "Tout comme la logique des couches de navigation, la méthode 'channel' est propre aux développement du projet et non à un langage de programmation. Elle est initialisée pour la première fois dans les composants mère présent dans le dossier 'Pages', puis dans les composants 'enfant' direct. Elle est donc présente dans la première et dans la seconde couche de navigation.Cette méthode va permettre d’appliquer la logique de développement.",
+                        "Pour comprendre comment cette méthode fonctionne, il faut s’imaginer le modèle duquel elle s’est inspirée. Prenons un spectateur devant sa télévision qui appuis sur le bouton «1» de sa télécommande, afin de regarder le programme diffusé sur le canal 1, la télé se «connecte» alors à cette fréquence et affiche l’émission qui passe sur cette longueur d’onde.",
+                        "Entre chaque couche de navigation, sa logique et sa finalité reste la même, mais son initialisation est différent."
+                    ],
+                    "img" : "",
+                    "puces" : [
+                        {
+                            "titre" : "1er couche de navigation",
+                            "img" : "",
+                            "text" : "Pour ilustrer son initialisation, le fichier 'Page1.jsx' serat le support. En pratique la méthode suit une à une ces étapes :",
+                            "etapes" : [
+                                {
+                                    "nom" : "1 - Definition du canal",
+                                    "lieux" : "App.jsx",
+                                    "ilustration" : {
+                                        "img" : "/documentation/NS_VersionDescktop/Logique/canal.png",
+                                        "text" : "Lorsque le composant Page1 est appelé, il prend en paramètre ‘actualite’ qui sera le canal."
+                                    }
+                                },
+                                {
+                                    "nom" : "2 - Récupération du canal",
+                                    "lieux" : "Page1.jsx",
+                                    "ilustration" : {
+                                        "img" : "/documentation/NS_VersionDescktop/Logique/canal2.png",
+                                        "text" : "On récupère le canal dans les paramêtres du composant à son initialisation."
+                                    }
+                                },
+                                {
+                                    "nom" : "3 - Attribution du composant",
+                                    "lieux" : "Page1.jsw",
+                                    "ilustration" : {
+                                        "img" : "/documentation/NS_VersionDescktop/Logique/canal3.png",
+                                        "text" : " Dans le rendu du composant, chaque opérateur ternaire va être parcouru jusqu’à arriver à la première condition qui correspond au canal récupéré, puis charger le composant qui est appelé. Ici notre canal est 'actualite', la 6eme condition qui est validé, c'est donc le composant 'ActualiteComponent' qui sera chargé"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "titre" : "2nd couche de navigation",
+                            "img" : "",
+                            "text" : "La méthode channel est dans sa finalité identique à celle du composant mère, mais elle est initialisée d’une façon différente. Le fichier 'ActualiteComponent.jsx' est le support pour cette exemple. La methode est utilisé de la facon suivante :",
+                            "etapes" : [
+                                {
+                                    "nom" : "1 - Initialisation du canal par default et de la fonction pour le changer",
+                                    "lieux" : "ActualiteComponent.jsx",
+                                    "ilustration" : {
+                                        "img" : "/documentation/NS_VersionDescktop/Logique/channel.png",
+                                        "text" : "Dans le hook 'useState' on initialise le canal par default qui serat la chaine de caractère 'backoffice'. Ce canal par dafault veut dire que les données proviendrons du backoffice wordpress. La fonction 'changeChannel' est exécutée uniquement lorsque l’utilisateur clique sur le bouton qui change de channel. Si le canal est paramétré sur ‘pixelevent’ alors il change et devient ‘backoffice’ et inversement."
+                                    }
+                                },
+                                {
+                                    "nom" : "2 - Rendu",
+                                    "lieux" : "Page1.jsx",
+                                    "ilustration" : {
+                                        "img" : "/documentation/NS_VersionDescktop/Logique/chanelrendu.png",
+                                        "text" : "Dans ce composant la particularité de la méthode channel est qu’elle peut être changée par un simple bouton sur l’interface, le canal ne définira par une redirection vers une autre page, mais changera le composant à charger et donc le contenu qui sera affiché dans la vue. La différence entre les composants ‘ArticlePixeleventComonent’ et ‘ArticleWpComponent’ est que tout deux font appel à une api différente. Par conséquent le parcourt vers les données et leur traitement sont différents. Dans le reste de la documentation nous allons uniquement traiter le cas du composant ‘ArticleWpComponent’."
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "partieB" : {
+                "titre" : "",
+                "content" : {
+                    "introduction" : [
+                        ""
+                    ],
+                    "img" : "",
+                    "puces" : [
+                        
+                    ]
+                }
+            }
+        },
+
+
+        {
+            "titre" : "Couche de navigation", 
+            "partieA" : {
+                "titre" : "Les 3 couches de navigation",
+                "content" : {
+                    "introduction" : [
+                        "Pour répondre aux besoins du projet qui figurent dans le cahier des charges, et afin de simplifier la navigation, la structure du site se décompose en 3 couches de navigation. Chaque couche se compose de plusieurs pages qui ont la même fonction."
+                    ],
+                    "img" : "/documentation/NSDescktop/structureNavigation.png",
+                    "puces" : [
+                        {
+                            "titre" : "1er couche :",
+                            "text" : "Elle correspond à la page d’accueil. C’est le point d’entrée du site. Elle est composée de plusieurs sections qui amènent l’utilisateur vers une page dédiée à sa thématique propre (section programme envoie vers la page programme)."
+                        },
+                        {
+                            "titre" : "2nd couche :",
+                            "text" : "Elle regroupe les pages suivantes : Actualités, Programme, Billetterie, Sponsors, A-propos, Map. La seconde couche de navigation représente une page qui traite une à deux thématiques par section, et donne des informations de façon globale. Exemple : la page programme affiche deux sections, la première étant l’affichage des articles relatifs aux festival, et la seconde, la FAQ qui répond aux questions les plus fréquemment posées sur le festival. L’utilisateur a sur cette page la possibilité de cliquer sur certains éléments comme un événement qui compose le programme ou un article de l’actualité pour être redirigé vers une page de la dernière couche de navigation."
+                        },
+                        {
+                            "titre" : "3ème couche :",
+                            "text" : "Une page ou l’information est précise et centrée sur un sujet. Il peut s’agir de la description d’un événement du programme avec l’heure, le lieux, le nom de l’artiste et une description de l’artiste ou bien d’un article."
+                        }
+                    ]
+                }
+            },
+            "partieB" : {
+                "titre" : "",
+                "content" : {
+                    "introduction" : [
+                        ""
+                    ],
+                    "img" : "",
+                    "puces" : [
+                        
+                    ]
+                }
+            }
+        }
+    ]
+}

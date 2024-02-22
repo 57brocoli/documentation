@@ -1,0 +1,224 @@
+{
+    "titre" : "Technologies",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Avant d'initialiser le project nous aurons besoin d'un certain nombre d'outils. Certain sont des logiciels destinées au réalisation de prototypage de maquettes, d'autres seront destinées au développement et à la création du site. Nous parlerons ici uniquement des technologies utilisées durons la phase de développement du site.",
+                    "Vous trouverez la liste des technologies utilisées ici, classées en fonction de leur utilité."
+                ]
+            }
+        },
+        
+        {
+            "titre" : "Languages ",
+            "section" : [
+                {
+                    "titre" : "JavaScript",
+                    "content" : {
+                        "introduction" : [
+                            "Le but n’étant pas de faire une présentation exhaustive du langage JavaScript, mais seulement une introduction concrète, afin de comprendre la nécessité d’utiliser JavaScript. À ce jour JavaScript est incontournable pour développer des interfaces utilisateur (front-end). Avec HTML et CSS ils forment un trio indispensable pour développer un site web. Sa particularité est qu’il s’agit d’un langage de script, son exécution se fait côté client par le navigateur à partir du code écrit. Concrètement il permet à notre site web d’être interactif et dynamique. Et cela parce que :"
+                        ],
+                        "img" : "/JS.png",
+                        "puces" :[
+                            "- JavaScript est un langage événementiel, à l’écoute de toute action de l’utilisateur, comme un clique sur un bouton, ou son survole pour déclencher un événement. Comme par exemple afficher ou masquer le menu sur smartphone. Ce qui permet à notre site d’être interactif.",
+                            "- JavaScript est un langage orienté objet. C’est a dire que chaque élément de la page est un objet de l’arborescence de l’objet maître window. Chaque objet est une collection de données et/ou fonctionnalités. Il peut être appelé plusieurs fois pour être utilisé à des fin de traitement (fonction) ou d’affichage (composant). Cette notion sera plus détaillée dans la partie destinée à React.",
+                            "- Enfin JS possède de nombreux framework et bibliothèques qui sont dédiés à son utilisation. L’utilisation d’un tel outils améliore la productivité pendant la phase de développement. Effectivement, il permet de mettre en place un cadre de travail. Cela se traduit lors de son installation, par la mise en place d’une architecture logiciel, de modules, bundles, plugins ... qui permettent un bon fonctionnement et aux développeurs d’utiliser des composants pré-construit. De plus c’est garantir de travailler avec un outils utilisé par une communauté de contributeurs active qui œuvre à la rendre robuste dans le temps"
+                        ]
+                    }
+                },
+                {
+                    "titre" : "React",
+                    "content" : {
+                        "introduction" : [
+                            "React est une bibliothèque de JavaScript. Le choix pour cette solution de développement de notre application web/mobile s’est fait sur 2 points essentiels pour garantir un produit efficace qui répond aux exigences du cahier des charges."
+                        ],
+                        "img" : "/react2.png",
+                        "puces" :[
+                            "- React tire avantage de l’orientation objet du langage, et la rend plus concrète. Il faut dire que sa logique repose sur ce principe, en effet avec React tout est objet. En d’autre termes, tout ce qui est affiché sur une page web est un composant que l’on peut réutiliser partout. Cela signifie par exemple qu’un bouton est développé une seule fois, et peut être utilisé plusieurs fois sur d’autres pages. Une page est alors construite de plusieurs composants. Cela permet une facilité d’utilisation et un gain de temps non négligeable.",
+                            "- Des performances renforcées en virtualisation et conservant le DOM en mémoire. React offre des capacités de rendu exceptionnellement rapides, tous les changements de vue étant immédiatement reflétés dans le DOM virtuel. Une application rapide pour réduire le taux de rebond des utilisateurs."
+                        ]
+                    }
+                }
+                
+            ]
+        },
+        {
+            "titre" : "Editeur de text ",
+            "section" : 
+                [
+                    {
+                        "titre" : "Visual Studio Code", 
+                        "content" : {
+                            "introduction" : ["De son acronyme VSC, Visual Studio Code est un éditeur de code open source et multiplate-forme (Windows, Mac et Linux) qui supporte la majorité des langages informatique. Bien qu’il existe plusieurs éditeurs sur le marché, le choix d’adopter VSC pour ce projet découle des ses avantages :"],
+                            "img": "/documentation/NS_VersionDescktop/Technologies/VSC.png",
+                            "puces" : [
+                                "- Son coût : il est gratuit.",
+                                "- IntelliSense : fonction de complétion du code, initialement intégré. Ce qui apporte un gain de temps considérable dans la phase de développement.",
+                                "- Terminal : VSC possède un terminal intégré qui permet de travailler sur une seul interface, de plus à partir de la version 2.0 les commandes git sont nativement intégrées.",
+                                "- Extensions : Il est possible d’installer plusieurs extensions adaptées à son utilisation afin d’être plus efficace (Eslint, Prettier, Mithril Emmet). Celles utilisées dans le projet seront automatiquement installées avec les packages du Framework."
+                            ]
+                        }
+                    }
+                ]
+        },
+        {
+            "titre" : "Packages",
+            "section" : 
+                [
+                    {
+                        "titre" : "Liste des packages utilisés dans ce projet", 
+                        "elements" : [
+                            {   
+                                "nom" : "Axios",
+                                "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/axios.png",
+                                "utilité" : "Configurer les requêtes vers notre api. utile pour récupérer nos données provenant sois de notre backoffice WordPress, sois d'api platform"
+                            },
+                            {
+                                "nom" : "Moment",
+                                "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/moment.png",
+                                "utilité" : "Manipuler et traduire le format des date en JS."
+                            },
+                            {
+                                "nom" : "React-router-dom",
+                                "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/react-routeur-dom.png",
+                                "utilité" : "Configurer les routes de navigation en React. Principalement utilisé dans notre fichier App.jsx"
+                            },
+                            {
+                                "nom" : "React-google-maps",
+                                "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/google-map.png",
+                                "utilité" : "Utiliser l’interface de google maps pour la page carte"
+                            },
+                            {
+                                "nom" : "Bootstrap",
+                                "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/bootstrap.png",
+                                "utilité" : "Nous permet d'avoir des styles css prédéfinit. Dans la pratique cela nous permet d'aller beaucoup plus vite pour l'aspect les interfaces utilisateur."
+                            },
+                            {
+                                "nom" : "Fontawesome",
+                                "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/fontawesome.png",
+                                "utilité" : "Il s'agit d'une librairie d'icones. principalement utilisé pour embélir nos interfaces"
+                            }
+                        ]
+                    }
+                ]
+        },
+
+        {
+            "titre" : "Gestionnaire de version",
+            "section" : [
+                {
+                    "titre" : "GitHub",
+                    "content" : {
+                        "introduction" : [
+                            "A un haut niveau, GitHub est un site web et un service de cloud qui aide les développeurs à stocker et à gérer leur code, ainsi qu’à suivre et contrôler les modifications qui lui sont apportées. On l'apelle aussi 'le controle de version'.",
+                            "En pratique il faut le voir comme un logiciel qui nous permettra d'effectuer des sauvegardes de notre code à un instant T sur le web. Il s'utilise principalement dans le terminal, et dans ce projet nous aurons besoin uniquement des commandes de base."
+                        ],
+                        "img" : "/github2.png",
+                        "commandes" : [
+                            {   
+                                "nom" : "1. Se rendre sur https://github.com/",
+                                "utilité" : "Il nous faut crée un compte si cela n'est pas fait, puis crée un répository. le dépot à pour nom 'NationSoundReact'"
+                            },
+                            {   
+                                "nom" : "2. git init",
+                                "utilité" : "Dans le terminal de Visual Studio Code, entrer la commande git init pour initialiser git."
+                            },
+                            {   
+                                "nom" : "3. git add .",
+                                "utilité" : "Enregistre les modifications apportées au code, puis prépare une sauvegarde."
+                            },
+                            {   
+                                "nom" : "4. git commit -m",
+                                "utilité" : "Donne un titre à la sauvegarde, puis effectue une sauvegarde du code. En fait ce qu'on apelle un commit."
+                            },
+                            {   
+                                "nom" : "5. git commit -M main",
+                                "utilité" : ""
+                            },
+                            {   
+                                "nom" : "6. git remote add origin https://github.com/nomducompte/NationSoundReact.git",
+                                "utilité" : "Git vas lié notre dépot local avec le répository distant."
+                            },
+                            {   
+                                "nom" : "7. git push -u origin main",
+                                "utilité" : "Cette commande envoie le commit sur le repository distant qui est sur le web."
+                            }
+
+                        ],
+                        "commandeCode" : [
+                            {   
+                                "nom" : "1. git add ."
+                            },
+                            {   
+                                "nom" : "2. git commit -m"
+                            },
+                            {   
+                                "nom" : "1. git push -u origin main "
+                            }
+                        ],
+                        "commandeBranche" : [
+                            {   
+                                "nom" : "git branch",
+                                "utilité" : "Voir la liste des branches"
+                            },
+                            {   
+                                "nom" : "git branche nomDeLaBranche",
+                                "utilité" : "Crée une nouvelle branche avec pour nom 'nomDeLaBranche'"
+                            },
+                            {   
+                                "nom" : "git checkout nomDeLaBranche",
+                                "utilité" : "Bascule sur la branche 'nomDeLaBranche'"
+                            },
+                            {   
+                                "nom" : "git merge nomDeLaBranche",
+                                "utilité" : "Fusionne deux branches."
+                            },
+                            {   
+                                "nom" : "git branche -D nomDeLaBranche",
+                                "utilité" : "Supprime la branche qui a pour nom 'nomDeLaBranche'"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "titre" : "Vite",
+            "content" : {
+                "introduction" : [
+                    "Avant d’utiliser Vite, il est obligatoire d’avoir installé Node.js sur le poste de travail. Node.js est un outils incontournable qui permet aux développeurs de créer des applications et outils côté serveur en JavaScript. Dans ce projet il sera d’une grande utilité grâce à son gestionnaire de packages (NPM). Vite est un outil ‘build’ qui nous permettra d’installer l’environnement de travail nécessaire pour commencer à développer notre projet. Il nous permettra :"
+                ],
+                "img" : "/react2.png",
+                "puces" :[
+                    "1. Dans un premier temps d’installer React avec toutes ses dépendances,",
+                    "2. De mettre à disposition un serveur de développement extrêmement rapide en local,",
+                    "3. De disposer d’une commande ‘build’ pour générer des ressources statiques hautement optimisées pour la production."
+                ]
+            }
+        }
+
+        
+    ],
+    
+    "partie3" : {
+        "titre" : "WordPress",
+        "intro" : {
+            "text" : "Le backoffice est assuré par un système de gestion de contenu (CMS), il doit permettre d’alimenter le contenu du site en article via une api. Il est donc nécessaire que la solution choisie offre comme fonctionnalité la rédaction de texte ainsi que le partage de contenu. Le fait de séparer interface utilisateur et backoffice, contribue à différencier style de mise en page et contenu, cela permet :",
+            "puce" : [
+                "- Au client d’avoir la main libre sur la rédaction du contenu du site, grâce à l’interface de WordPress qui intègre un éditeur visuel WYSIWYG. A l’image de Word il s’agit d’une interface de traitement de texte.",
+                "- De rendre nos interfaces utilisateur dynamiques. Le site React est alors une interface qui fait naviguer nos utilisateurs dans le contenu qui est rédigé en backoffice."
+            ],
+            "img" : "../../public/documentation/NSDescktop/wordpress.png"
+        },
+        "contenu" : {
+            "title" : "Pourquoi wordpress ?",
+            "text" : [
+                "Selon W3Techs, Wordpress fait tourner 42% de tous les sites web sur internet. De plus il détient 62% de parts de marché pour les systèmes de gestion de contenu sur les sites web avec un CMS connu. En comparaison, Joomla est à la seconde position avec 4.6% de part de marché. Ces chiffres montrent ne API REST qui permet de communiquer avec d’autres sites et applications. Les articles pourront donc être récupérés par nos interfaces utilisateur.",
+                "Contrairement aux interfaces utilisateur développées avec React, un site Wordpress ne se construit pas avec un éditeur de code, le développement se fait avec un navigateur. Il peut être monté en local avec une solution de serveur local comme XAMPP, mais dans le cadre du projet, le backoffice sera directement créé sur le serveur hébergeur."
+            ]
+        }
+    }
+    
+}

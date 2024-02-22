@@ -1,0 +1,700 @@
+{
+    "titreDuDocument" : "Nation Sound",
+    "sommaire" : {
+        "I" : "Maquette", 
+        "II" : "Initialisation", 
+        "III" : "Developpement", 
+        "IV" : "Déploiement"
+    },
+    "chapitre1" : [
+        {
+            "titre" : "Maquettes",
+            "partie1" : {
+                "titre" : "figma", 
+                "content" : "Dans le cadre du projet les maquettes sont réalisées avec l’application Figma, un outil de prototypage et de design collaboratif. Figma est une plate-forme qui fonctionne sur le Cloud, permet de travailler et partager en temps réel ses avancées sur un projet avec les parties prenantes, développeur, graphiste, designer etc... Il s’agit d’une solution multiplateforme qui fonctionne sur Mac, Windows, Linux et est open source."
+            },
+            "partie2" : {
+                "titre" : "Navigation et structure du projet", 
+                "souspartieA" : {
+                    "titre" : "La navigation",
+                    "content" : {
+                        "introduction" : "La navigation reste un point clef en ce qui concerne l’aspect UX du projet. Elle doit être simple et compréhensible pour les utilisateurs. Afin de traiter au mieux cette problématique, le sujet de cette partie portera sur la barre de navigation. Si l’on reprend le contexte, les périodes de pic d’utilisation se situent aux heures précédent le festival, ce qui correspond au moment ou les utilisateurs se dirigeront en voiture vers le lieu de l’événement et pendant le festival où ils seront potentiellement alcoolisés. Ce qui implique une utilisation sur smartphone. En conséquent, nous avons choisit un design simple, visuellement épuré.",
+                        "puce" : [
+                            {
+                                "titre" : "Sur PC :",
+                                "img" : "../../public/documentation/NSDescktop/NavigationDescktop.png",
+                                "text" : "Texte en noir sur fond blanc. Un logo et le nom du festival qui redirige vers la page d’accueil.Puis le nom des autres pages."
+                            },
+                            {
+                                "titre" : "Sur smatphone :",
+                                "img" : "../../public/documentation/NSDescktop/NavigationSmatphone.png",
+                                "text" : "L’espace entre chaque bouton est suffisant pour éviter les erreurs de touche."
+                            }
+                        ]
+                    }
+                },
+                "souspartieB" : {
+                    "titre" : "Navigation entre les pages",
+                    "content" : {
+                        "introduction" : "Pour répondre aux besoins du projet qui figurent dans le cahier des charges, et afin de simplifier la navigation, la structure du site se décompose en 3 couches de navigation. Chaque couche se compose de plusieurs pages qui ont la même fonction.",
+                        "img" : "../../public/documentation/NSDescktop/structureNavigation.png",
+                        "puce" : [
+                            {
+                                "titre" : "1er couche :",
+                                "text" : "Elle correspond à la page d’accueil. C’est le point d’entrée du site. Elle est composée de plusieurs sections qui amènent l’utilisateur vers une page dédiée à sa thématique propre (section programme envoie vers la page programme)."
+                            },
+                            {
+                                "titre" : "2nd couche :",
+                                "text" : "Elle regroupe les pages suivantes : Actualités, Programme, Billetterie, Sponsors, A-propos, Map. La seconde couche de navigation représente une page qui traite une à deux thématiques par section, et donne des informations de façon globale. Exemple : la page programme affiche composée de deux sections, la première étant l’affichage des articles relatifs aux festival, et la seconde, la FAQ qui répond aux questions les plus fréquemment posées sur le festival. L’utilisateur a sur cette page la possibilité de cliquer sur certains éléments comme un événement qui compose le programme ou un article de l’actualité pour être redirigé vers une page de la dernière couche de navigation."
+                            },
+                            {
+                                "titre" : "3ème couche :",
+                                "text" : "Une page ou l’information est précise et centrée sur un sujet. Il peut s’agir de la description d’un événement du programme avec l’heure, le lieux, le nom de l’artiste et une description de l’artiste ou bien d’un article."
+                            }
+                        ]
+                    }
+                }
+            },
+            "partie3" : {
+                "titre" : "Structure de page",
+                "intro" : "Cette partie documente la structure du contenu des pages. Les choix adoptés sont susceptibles d’évoluer au fil de l’avancement du projet. Elle reste indicative et une base pour le développement initial.",
+                "souspartieA" : {
+                    "titre" : "1er couche :",
+                    "puce1":{
+                        "titre" : "Page d'accueil :",
+                        "text" : "Cette page est composée de différentes sections. Elle possède une section header qui lui est propre, ensuite nous retrouvons les autres sections définies préalablement dans le cahier des charges (Programme, Sponsors, Carte) et en pied de page un footer.",
+                        "img" : "../../public/documentation/NSDescktop/DescktopAccueil.png"
+                    }
+                },
+                "souspartieB" : {
+                    "titre" : "2nd couche :",
+                    "text" : "Pour rappel, elle regroupe les pages Actualités, Programme, Billetterie, A-propos, Maps. À l’image de la première couche elle se compose d’une section header qui lui est propre. Dans le Body une ou deux sections maximum traitent une thématique par section, et donnent des informations de façon globale, comme l’intégralité du programme. Ci-dessous exemple de la page Actualités :",
+                    "img" : "../../public/documentation/NSDescktop/DescktopActualité.png"
+                },
+                "souspartieC" : {
+                    "titre" : "3ème couche :",
+                    "text" : "Page qui a pour objectif d’afficher l’information de façon précise. Dans la continuité de l’exemple précédent, la page qui suis est la page d’un article. Pour faciliter la lecture de la maquette la navigation et le footer sont volontairement cachés.",
+                    "img" : [
+                        "../../public/documentation/NSDescktop/DescktopArticle.png", 
+                        "../../public/documentation/NSDescktop/DescktopEpisode.png"
+                    ]
+                }
+            }
+        }
+    ],
+    "chapitre2" : {
+        "titre" : "Initialisation",
+        "partie1" : {
+            "titre" : "Visual Studio Code", 
+            "contenu" : {
+                "intro" : "De son acronyme VSC, Visual Studio Code est un éditeur de code open source et multiplate-forme (Windows, Mac et Linux) qui supporte la majorité des langages informatique. Bien qu’il existe plusieurs éditeurs sur le marché, le choix d’adopter VSC pour ce projet découle des ses avantages :",
+                "puce1" : "- Son coût : il est gratuit.",
+                "puce2" : "- IntelliSense : fonction de complétion du code, initialement intégré. Ce qui apporte un gain de temps considérable dans la phase de développement.",
+                "puce3" : "- Terminal : VSC possède un terminal intégré qui permet de travailler sur une seul interface, de plus à partir de la version 2.0 les commandes git sont nativement intégrées.",
+                "puce4" : "- Extensions : Il est possible d’installer plusieurs extensions adaptées à son utilisation afin d’être plus efficace (Eslint, Prettier, Mithril Emmet). Celles utilisées dans le projet seront automatiquement installées avec les packages du Framework."
+            }
+            
+        },
+        "partie2" : {
+            "titre" : "React", 
+            "contenu" : {
+                "intro1" : {
+                    "intro" : "Avant d’aborder React il parait essentiel d’introduire le langage duquel il découle, JavaScript. Le but n’étant pas de faire une présentation exhaustive du langage, mais seulement une introduction concrète, afin de comprendre la nécessité d’utiliser JavaScript. À ce jour JavaScript est incontournable pour développer des interfaces utilisateur (front-end). Avec HTML et CSS ils forment un trio indispensable pour développer un site web. Sa particularité est qu’il s’agit d’un langage de script, son exécution se fait côté client par le navigateur à partir du code écrit. Concrètement il permet à notre site web d’être interactif et dynamique. Et cela parce que :",
+                    "puce1" : "- JavaScript est un langage événementiel, à l’écoute de toute action de l’utilisateur, comme un clique sur un bouton, ou son survole pour déclencher un événement. Comme par exemple afficher ou masquer le menu sur smartphone. Ce qui permet à notre site d’être interactif.",
+                    "puce2" : "- JavaScript est un langage orienté objet. C’est a dire que chaque élément de la page est un objet de l’arborescence de l’objet maître window. Chaque objet est une collection de données et/ou fonctionnalités. Il peut être appelé ou rappelé pour être utilisé à des fin de traitement (fonction) ou d’affichage (composant). Cette notion sera plus détaillée dans la partie destinée à React.",
+                    "text" : "Enfin JS possède de nombreux framework et bibliothèques qui sont dédiés à son utilisation. L’utilisation d’un tel outils améliore la productivité pendant la phase de développement. Effectivement, il permet de mettre en place un cadre de travail. Cela se traduit lors de son installation, par la mise en place d’une architecture logiciel, de modules, bundles, plugins ... qui permettent un bon fonctionnement et aux développeurs d’utiliser des composants pré-construit. De plus c’est garantir de travailler avec un outils utilisé par une communauté de contributeurs active qui œuvre à la rendre robuste dans le temps"
+                },
+                "intro2" : {
+                    "intro" : "React est une bibliothèque de JavaScript. Le choix pour cette solution de développement de notre application web/mobile s’est fait sur 2 points essentiels pour garantir un produit efficace qui répond aux exigences du cahier des charges.",
+                    "puce1" : "- React tire avantage de l’orientation objet du langage, et la rend plus concrète. Il faut dire que sa logique repose sur ce principe, en effet avec React tout est objet. En d’autre termes, tout ce qui est affiché sur une page web est un composant que l’on peut réutiliser partout. Cela signifie par exemple qu’un bouton est développé une seule fois, et peut être utilisé plusieurs fois sur d’autres pages. Une page est alors construite de plusieurs composants. Cela permet une facilité d’utilisation et un gain de temps non négligeable.",
+                    "puce2" : "- Des performances renforcées en virtualisation et conservant le DOM en mémoire. React offre des capacités de rendu exceptionnellement rapides, tous les changements de vue étant immédiatement reflétés dans le DOM virtuel. Une application rapide pour réduire le taux de rebond des utilisateurs."
+                },
+                "souspartieA" : {
+                    "titre" : "Installation avec Vite",
+                    "intro" : {
+                        "text" : "Avant d’utiliser Vite, il est obligatoire d’avoir installé Node.js sur le poste de travail. Node.js est un outils incontournable qui permet aux développeurs de créer des applications et outils côté serveur en JavaScript. Dans ce projet il sera d’une grande utilité grâce à son gestionnaire de packages (NPM). Vite est un outil ‘build’ qui nous permettra d’installer l’environnement de travail nécessaire pour commencer à développer notre projet. Il nous permettra :",
+                        "puce1" : "1. Dans un premier temps d’installer React avec toutes ses dépendances,",
+                        "puce2" : "2. De mettre à disposition un serveur de développement extrêmement rapide en local,",
+                        "puce3" : "3. De disposer d’une commande ‘build’ pour générer des ressources statiques hautement optimisées pour la production."
+                    },
+                    "tableau": {
+                        "legend" : "L’installation de React avec Vite se fait suivant ces étapes:",
+                        "header" : ["Etapes", "Illustration"],
+                        "body1" : {
+                            "etape" : "1- Sur le bureau, création du dossier qui a pour nom «NationSound».",
+                            "img" : "../../public/documentation/NSDescktop/tableauInstalation/etape1.png"
+                        },
+                        "body2" : {
+                            "etape" : "2- Avec Visual Studio Code, sur «File» puis «Open Folder», ouverture du dossier «Nation Sound»",
+                            "img" : "../../public/documentation/NSDescktop/tableauInstalation/etape2.png"
+                        },
+                        "body3" : {
+                            "etape" : "3- Ouvrir un terminal -> Barre de menu de VSC -> «Terminal» -> «New Terminal»",
+                            "img" : "../../public/documentation/NSDescktop/tableauInstalation/etape3.png"
+                        },
+                        "body4" : {
+                            "etape" : "4- Entrer dans le terminal : « npm create vite@latest ./»",
+                            "img" : "../../public/documentation/NSDescktop/tableauInstalation/etape4.png"
+                        },
+                        "body5" : {
+                            "etape" : "5- Configuration de l’installation :",
+                            "img" : [
+                                "../../public/documentation/NSDescktop/tableauInstalation/etape5a.png",
+                                "../../public/documentation/NSDescktop/tableauInstalation/etape5b.png",
+                                "../../public/documentation/NSDescktop/tableauInstalation/etape5c.png"
+                            ]
+                        },
+                        "body6" : {
+                            "etape" : "6- «npm install» pour finaliser et installer les dépendances",
+                            "img" : "../../public/documentation/NSDescktop/tableauInstalation/etape6.png"
+                        }
+                    }
+                },
+                "souspartieB" : {
+                    "titre" : "Initialisation de l’environnement de travail.",
+                    "intro" : "Maintenant que React est installé, l’environnement doit être démuni de tous les fichiers et codes inutiles pour commencer sur une base vierge. C’est ce que l’on appellera l’initialisation de l’environnement.",
+                    "tableau": {
+                        "legend" : "L’initiation suit ces étapes :",
+                        "header" : ["Etapes", "Illustration"],
+                        "body1" : {
+                            "etape" : "1. Dans le dossier ‘src’ -> suppression de [ assets ; App.css ; index.css ]",
+                            "img" : [
+                                "../../public/documentation/NSDescktop/tableauInitialisation/etape1a.png",
+                                "../../public/documentation/NSDescktop/tableauInitialisation/etape1b.png"
+                            ]
+                        },
+                        "body2" : {
+                            "etape" : "2. Dans fichier ‘main.jsx’ -> suppression de [ import ‘./index.css’ ]",
+                            "img" : [
+                                "../../public/documentation/NSDescktop/tableauInitialisation/etape2a.png",
+                                "../../public/documentation/NSDescktop/tableauInitialisation/etape2b.png"
+                            ]
+                        },
+                        "body3" : {
+                            "etape" : "3. Dans le fichier App.jsx -> suppression de [ import ‘./App.css’ ] et initialisation du point d’entrée du site. Remplacer le contenu du fichier par :",
+                            "img" : [
+                                "../../public/documentation/NSDescktop/tableauInitialisation/etape3a.png",
+                                "../../public/documentation/NSDescktop/tableauInitialisation/etape3b.png",
+                                "../../public/documentation/NSDescktop/tableauInitialisation/etape3c.png"
+                            ]
+                        },
+                        "body4" : {
+                            "etape" : "4. Verification sur le serveur local : dans le terminal entrer : «npm run dev» puis dans un navigateur, se rendre a l’adresse : « http://localhost:5173 »",
+                            "img" : "../../public/documentation/NSDescktop/tableauInitialisation/etape4.png"
+                        }
+                    }
+                },
+                "souspartieC" : {
+                    "titre" : "Installation des packages",
+                    "intro" : "Comme évoqué plus tôt dans ce chapitre, Node.js nous permet d’utiliser le gestionnaire de packages NPM. Un package est un ‘mini’ logiciel qui répond à un besoin spécifique du code. Il peut par exemple s’agir d’un service qui traduit le format des dates en standard.",
+                    "tableau": {
+                        "legend" : "La liste des packages installés :",
+                        "header" : ["Nom", "Utilité", "Commande npm"],
+                        "body1" : {
+                            "nom" : "Axios",
+                            "utilité" : "Configurer les requêtes vers une api.",
+                            "commande" : "« npm install axios »"
+                        },
+                        "body2" : {
+                            "nom" : "Moment",
+                            "utilité" : "Manipuler et traduire le format des date en JS.",
+                            "commande" : "« npm install moment »"
+                        },
+                        "body3" : {
+                            "nom" : "React-router-dom",
+                            "utilité" : "Configurer les routes de navigation en React.",
+                            "commande" : "« npm install react-router-dom »"
+                        },
+                        "body4" : {
+                            "nom" : "React-google-maps",
+                            "utilité" : "Utiliser l’interface de google maps pour la page carte",
+                            "commande" : "« npm install @react-google- maps/api »"
+                        }
+                    },
+                    "content" : {
+                        "title" : "La liste des packages importés (CDN) :",
+                        "puces" : [
+                            "- Bootstrap : Framework destiné au css. « https://getbootstrap.com/ ». Ligne 8 ; 14 .",
+                            "- Fontawesome : package qui propose une librairie d’icônes pour illustrer nos interfaces. « https://fontawesome.com/ ». Ligne 7."
+                        ],
+                        "img" : "../../public/documentation/NSDescktop/packages.png"
+                    }
+                }
+            }
+        },
+        "partie3" : {
+            "titre" : "WordPress",
+            "intro" : {
+                "text" : "Le backoffice est assuré par un système de gestion de contenu (CMS), il doit permettre d’alimenter le contenu du site en article via une api. Il est donc nécessaire que la solution choisie offre comme fonctionnalité la rédaction de texte ainsi que le partage de contenu. Le fait de séparer interface utilisateur et backoffice, contribue à différencier style de mise en page et contenu, cela permet :",
+                "puce" : [
+                    "- Au client d’avoir la main libre sur la rédaction du contenu du site, grâce à l’interface de WordPress qui intègre un éditeur visuel WYSIWYG. A l’image de Word il s’agit d’une interface de traitement de texte.",
+                    "- De rendre nos interfaces utilisateur dynamiques. Le site React est alors une interface qui fait naviguer nos utilisateurs dans le contenu qui est rédigé en backoffice."
+                ],
+                "img" : "../../public/documentation/NSDescktop/wordpress.png"
+            },
+            "contenu" : {
+                "title" : "Pourquoi wordpress ?",
+                "text" : [
+                    "Selon W3Techs, Wordpress fait tourner 42% de tous les sites web sur internet. De plus il détient 62% de parts de marché pour les systèmes de gestion de contenu sur les sites web avec un CMS connu. En comparaison, Joomla est à la seconde position avec 4.6% de part de marché. Ces chiffres montrent ne API REST qui permet de communiquer avec d’autres sites et applications. Les articles pourront donc être récupérés par nos interfaces utilisateur.",
+                    "Contrairement aux interfaces utilisateur développées avec React, un site Wordpress ne se construit pas avec un éditeur de code, le développement se fait avec un navigateur. Il peut être monté en local avec une solution de serveur local comme XAMPP, mais dans le cadre du projet, le backoffice sera directement créé sur le serveur hébergeur."
+                ]
+            }
+        }
+    },
+    "chapitre3" : {
+        "titre" : "Développement",
+        "partie1" : {
+            "introduction" : [
+                "Basée sur le modèle d’architecture MVC, le fonctionnement de notre navigation consiste à mettre en place des chemins url bien définis. Ces chemins sont mis à disposition des utilisateurs à travers le menu et les boutons de chaque page. Derrière chaque bouton du menu se cache un lien vers une url que l’utilisateur est libre d’utiliser. C’est ce qu’on appel les vues. L’intégralité des chemins url sont codés dans un seul fichier, il s’agit du contrôleur. Son rôle est de transmettre à la vue, en fonction du chemin choisit par l’utilisateur, le contenu des pages à afficher. Le contenu est le modèle.",
+                "Dans notre cas, à chaque fois qu’un chemin url est appelé, le contrôleur fait appel à l’api de wordpress afin de récupérer le modèle, et le transmet à la vue qui procède à la mise en page du contenu."
+            ],
+            "img" : "../../public/documentation/NSDescktop/wordpress.png",
+            "sousPartieA" : {
+                "titre" : "App.jsx",
+                "content" : {
+                    "introduction" : "À la racine du projet, le fichier App.jsx est à la fois notre point d’entrée du site, mais aussi le contrôleur. Toutes les routes possibles sont codées ici. Pour plus de lisibilité seule la route ‘actualite’ sera affichée.",
+                    "img" : "../../public/documentation/NSDescktop/appjsx.png",
+                    "puce" : [
+                        "Ligne 1 - 4 : Importation des packages et des pages",
+                        "Ligne 6 - 16 : Instanciation de la variable qui stocke toutes les routes. C’est le routeur",
+                        "Ligne 18 - 22 : Appel du routeur"
+                    ],
+                    "sousPartie" : [
+                        {
+                            "titre" : "Le routeur",
+                            "introduction": "Son rôle est de charger les composants en fonction de l’url. Il est stocké dans une variable que l’on appelle ‘router’. La méthode ‘createBrowserRouter’ provient de react-router-dom et nous permet de créer dans un tableau les différentes routes. Chaque route est définie grâce à plusieurs propriétés.",
+                            "tableau": {
+                                "header" : [ "Propriété", "Utilité", "Ligne"],
+                                "body1" : {
+                                    "propriété" : "path",
+                                    "utilité" : "Contient le chemin url",
+                                    "ligne" : "8"
+                                },
+                                "body2" : {
+                                    "propriété" : "élément",
+                                    "utilité" : "Composant suivit des propriétés chargés lors de la requête",
+                                    "ligne" : "9"
+                                },
+                                "body3" : {
+                                    "propriété" : "errorElement",
+                                    "utilité" : "Composant chargés si une erreur apparaît",
+                                    "ligne" : "10"
+                                },
+                                "body4" : {
+                                    "propriété" : "loader",
+                                    "utilité" : "Fonction qui procède à une requête à une api. Cette méthode est importante car elle permet de récupérer les données qui constitueront le header de la page.",
+                                    "ligne" : "11 - 14"
+                                }
+                            },
+                            "text": "Le chargement du router se fait dans la fonction App (ligne 18). Cette fonction retourne un‘RouterPrivider’ qui provient aussi de ‘react-router-dom’. Le Privider possède une propriété‘router’ qui contiendra notre router."
+                        },
+                        {
+                            "titre" : "Page et propriétés",
+                            "introduction" : "Dans les import (ligne 3 - 4) certains composants apparaissent : - Page1 : il s’agit de la seconde couche de navigation. Pour savoir de quoi il s’agit, le chapitre I maquette explique la logique des différentes couche de navigation. - PageError : La flexibilité de ‘react-routeur-dom’ nous permet de configurer une page erreur et de l’afficher.",
+                            "text": "Lors de l’appel du composant Page1 (ligne 9) la propriété ‘actualite’ est définit. Il s’agit d’un paramètre qui sera utilisé pour la méthode ‘channel’. Elle est expliquée dans la partie 2 de ce chapitre."
+                        }
+                    ]
+                }
+            },
+            "sousPartieB" : {
+                "titre" : "Navigation.jsx",
+                "content" : [
+                    {
+                        "text" : "Il s’agit du composant qui affiche le menu. Son aspect visuel est détaillé dans le chapitre 1 Maquettes partie navigation. Il se trouve dans src/Components/.",
+                        "img" : "../../public/documentation/NSDescktop/navigationjsx.png" 
+                    },
+                    {
+                        "text" : "L’importance de son illustration dans la documentation se porte sur la balise ‘NavLink’ qui provient de react-router-dom. Son utilisation est identique à la balise <a> en HTML à l’exception qu’il ajoute un attribut ‘aria-current = page’, et la classe ‘active’ qui peut être personnalisée par la suite. À La ligne 20, le ‘NavLink’ est suivit de l’attribut ‘to’ qui prend comme valeur ‘/actualite’. Il s’agit de la route définit dans le fichier App.jsx cité précédemment.",
+                        "img" : "../../public/documentation/NSDescktop/log.png" 
+                    }
+                ]
+            }
+        },
+        "partie2" : {
+            "titre" : "2 nd couche de navigation",
+            "introduction" : "Pour rappel la seconde couche de navigation est un terme propre au projet qui désigne un ensemble de pages ayant une fonction commune. Elle consiste à afficher les informations de façon globale, comme par exemple la liste des articles. Les pages sont les suivantes : « Actualités, Programme, Billeterie, Sponsors, A-propos, Map ».",
+            "souspartieA" : {
+                "titre" : "Logique de développement",
+                "intro" : [
+                    "La Logique utilisée dans ce projet consiste a regrouper toutes les pages de la 2nd couche dans une seule est unique page. Cela est rendu possible grâce à la flexibilité du langage de programmation JavaScript mais aussi au fait que React tire avantage de l’orientation objet.",
+                    "Il est toute fois important de distinguer Page et Composants. On peut voir une page comme un plat, et les composants comme des ingrédients. Chaque page est un plat constitué de plusieurs ingrédients, et c’est le code qui joue le rôle du chef cuisinier. Dans un restaurant les utilisateurs sont les clients qui commencent par l’entrée (la page accueil), ensuite de part le menu avec la liste des plats (les chemins de navigation qui pointent vers une page), ils commandent leur plat de résistance (2nd couche de navigation) que le serveur transmet aux cuisines (requête http au serveur), le serveur leur apporte alors leur plat (page)."
+                ],
+                "content" : {
+                    "partie1" : {
+                        "titre" : "La méthode channel",
+                        "content" : {
+                            "introduction" : [
+                                "Tout comme la logique des pages, la méthode channel est propre aux développement du projet et non à un langage de programmation. Elle a été évoquée pour la première fois dans la partie 1 navigation de ce chapitre dans App.jsx. Cette méthode va permettre d’appliquer la logique de développement.",
+                                "Pour comprendre comment cette méthode fonctionne, il faut s’imaginer le modèle duquel elle s’est inspirée. Prenons un spectateur devant sa télévision qui appuis sur le bouton «1» de sa télécommande, afin de regarder le programme diffusé sur le canal 1, la télé se «connecte» alors à cette fréquence et affiche l’émission qui passe sur cette longueur d’onde. En pratique la méthode suit une à une ces étapes :"
+                            ],
+                            "tableau" : {
+                                "header" : ["Etapes" , "Lieux", "Ilustration et explication"],
+                                "body1" : {
+                                    "etape" : "1 - Definition du canal",
+                                    "lieux" : "App.jsx",
+                                    "ilustration" : {
+                                        "img" : "../../public/documentation/NSDescktop/canal.png",
+                                        "text" : "Lorsque le composant est appelé, il prend en paramètre ‘actualite’ qui est le canal."
+                                    }
+                                },
+                                "body2" : {
+                                    "etape" : "2 - Récupération du canal",
+                                    "lieux" : "Page1.jsx",
+                                    "ilustration" : {
+                                        "img" : "../../public/documentation/NSDescktop/cana2.png",
+                                        "text" : "On récupère les paramètres du composant."
+                                    }
+                                },
+                                "body3" : {
+                                    "etape" : "path",
+                                    "lieux" : "Contient le chemin url",
+                                    "ilustration" : {
+                                        "img" : "../../public/documentation/NSDescktop/canal3.png",
+                                        "text" : "Chaque opérateur ternaire va être parcouru jusqu’à arriver à la première condition qui correspond au paramètre récupéré, puis charger le composant qui est appelé."
+                                    }
+                                }
+                            }
+                        }
+                        
+
+                    }
+                }
+            },
+            "souspartieB" : {
+                "titre" : "Page1.jsx",
+                "content" : {
+                    "introduction" : [
+                        "Pour illustrer la logique de développement, c’est grâce aux opérateurs ternaire de JavaScript qu’il sera possible de charger tels ou tels composants en fonction de la route empruntée par l’utilisateur. React quant à lui, avec sa logique de composant permet un rendu efficace et rapide.",
+                        "La page qui represente la 2 nd couche de navigation se nomme Page1.jsx, dans src/Pages/.",
+                        "Les composants qui constituent la 2nd couche de navigation sont dans src/Component/Page1Components. Voyons maintenant comment le code opère dans Page1.jsx"
+                    ],
+                    "img" : "../../public/documentation/NSDescktop/page1.png",
+                    "puce" : [
+                        "Ligne 1 - 11 : Importation des composants et méthodes.",
+                        "Ligne 14 : paramètre provenant de App.jsx utile pour la méthode channel.",
+                        "Ligne 16 : Les données du loader de App.jsx sont récupérées grâce au hook de react ‘useLoaderData’, et stockées dans la variable view",
+                        "Ligne 18 : La constantestate récupère l’état du routeur",
+                        "Ligne 20 - 36 : fonction qui permet de récupérer les dimensions de l’écran en temps réel.",
+                        "Ligne 38 - 50 : Le rendu"
+                    ],
+                    "text" : {
+                        "titre" : "le rendu",
+                        "text" : "C’est ici que la logique de développement se déploie. Dans un premier temps pour créer la page, le composant ‘Navigation’ est appelé et sera donc chargé en tête de page. Puis en fonction des paramètres récupérés, la méthode channel est appliquée. Dans l’exemple de la page actualités, le paramètre ‘actualite’ déclaré dans App.jsx ligne 9, est récupéré dans Page1.jsx ligne 14, puis valide la condition de l’opérateur ternaire de la ligne 46, qui charge donc le composant ‘ActualiteComponent’. Et pour terminer le Footer est appelé et clôture la page1."
+                    }
+                    
+                }
+            },
+            "sousPartieC" : {
+                "titre" : "ActualiteComponent.jsx",
+                "introduction" : "Il s’agit du composant appelé lorsque le paramètre est ‘actualite’. Il fait partie des composants potentiels de la page 1, il reprend certaines méthodes de développement des composants mères. C’est à dire que nous retrouvons la méthode channel initialisée de façon différente mais toujours avec la même fonctionnalité, ainsi que l’appel à des sous composants. Le composant ActualitéComponent ainsi que tout les autres composants potentiels de la page1 se trouvent dans src/Components/Page1Components. Il a pour fonction d’afficher le contenu de la page. Prenons bout a bout chaque fonctionnalité de ce fichier.",
+                "text1" : {
+                    "titre" : "Les données du loader",
+                    "introduction" : "Pour rappel ces données sont le contenu de la page actualités. Elles serviront à administrer le header de la page. La collecte et le transfère de ces données suivent cette ordre bien précis :",
+                    "puce" : [
+                        {
+                            "texte" : "1- Dans le fichier App.jsx, le loader initialise la requête et récupère les données provenant de l’api.",
+                            "img" : "../../public/documentation/NSDescktop/loader.png"
+                        },
+                        {
+                            "texte" : "2- Dans le fichier Page1.jsx, Les données du loader de App.jsx sont récupérées grâce au hook de React ‘useLoaderData’, et stockées dans la variable view.",
+                            "img" : "../../public/documentation/NSDescktop/useLoaderData.png"
+                        },
+                        {
+                            "texte" : "3- Toujours dans le fichier Page1.jsx, le composant ActualiteComponent.jsx est appelé, et des paramètres lui sont passés. Parmi ces paramètres la variable view est présente.",
+                            "img" : "../../public/documentation/NSDescktop/props.png"
+                        },
+                        {
+                            "texte" : "4- Dans le fichier ActualiteComponent.jsx, les paramètres sont récupérés.",
+                            "img" : "../../public/documentation/NSDescktop/actualitecomponentProps.png"
+                        },
+                        {
+                            "texte" : "5- Enfin les données sont traitées.",
+                            "img" : "../../public/documentation/NSDescktop/actualiteComponentRendu.png"
+                        }
+                    ]
+                },
+                "text2": {
+                    "titre" : "Méthode channel",
+                    "content" : {
+                        "sousPartieA" : {
+                            "titre" : "Initialisation",
+                            "text": "La méthode channel est dans sa finalité identique à celle du composant mère, mais elle est initialisée d’une façon différente.",
+                            "img" : "../../public/documentation/NSDescktop/channel.png",
+                            "puce" : [
+                                "Ligne 9 : Hook ‘useState’",
+                                "Ligne 11 - 18 : Fonction ‘changeChannel"
+                            ],
+                            "content": [
+                                {
+                                    "titre" : "useState :",
+                                    "text" : "Le hook ‘useState’ nous est offert par React, en résumé il nous permet de stocker les données dans ‘channel’ tandis que l’accesseur ‘setChannel’ permet de changer la valeur de la variable. Ce hook nous donne la possibilité d’initialiser notre variable avec une valeur par défaut : ‘backoffice’. Par défaut au chargement du composant, le canal sera définit sur ‘backoffice’."
+                                },
+                                {
+                                    "titre" : "Fonction ‘changeChannel’ :",
+                                    "text" : "Cette fonction est exécutée uniquement lorsque l’utilisateur clique sur le bouton qui change de channel. Si le canal est paramétré sur ‘pixelevent’ alors il change et devient ‘backoffice’ et inversement."
+                                }
+                            ]
+                        },
+                        "sousPartieB" : {
+                            "titre" : "Rendu",
+                            "text": "Dans ce composant la particularité de la méthode channel est qu’elle peut être changée par un simple bouton sur l’interface, le canal ne définira par une redirection vers une autre page, mais changera le composant à charger et donc le contenu qui sera affiché dans la vue.",
+                            "img" : "../../public/documentation/NSDescktop/chanelrendu.png",
+                            "puce" : [
+                                "Ligne 48 : la fonction ‘changeChannel’ ’ est attribuée au bouton.",
+                                "Ligne 52 à 57 : Opérateurs ternaires, permet de charger un composant en fonction du canal."
+                                
+                            ],
+                            "content": [
+                                {
+                                    "text" : "La différence entre les composants ‘ArticlePixeleventComonent’ et ‘ArticleWpComponent’ est que tout deux font appel à une api différente. Par conséquent le parcourt vers les données et leur traitement sont différents. Dans le reste de la documentation nous allons uniquement traiter le cas du composant ‘ArticleWpComponent’."
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "souspartieD" : {
+                "titre" : "ArticleWpComponent.jsx",
+                "content" : {
+                    "intro" : "Composant enfant de ActualiteComponent, il a pour fonction d’afficher la liste des articles, et de les filtrer si l’utilisateur le souhaite. Le fichier se trouve lui aussi dans src/Components/Page1Components.",
+                    "sousPartie1" : {
+                        "titre" : "filtrage",
+                        "text" : [
+                            "Composant enfant de ActualiteComponent, il a pour fonction d’afficher la liste des articles, et de les filtrer si l’utilisateur le souhaite. Le fichier se trouve lui aussi dans src/Components/Page1Components.",
+                            "Le filtrage par le nombre opère de cette façon:"
+                        ],
+                        "puce" : [
+                            {
+                                "text" : "1- Initialisation de la variable ‘nombreArticle’ qui contiendra par défaut le nombre d’articles à afficher, et de la fonction ‘tousAfficher’ pour afficher toute la liste.",
+                                "img" : "../../public/documentation/NSDescktop/filtrage.png"
+                            },
+                            {
+                                "text" : "2- Attribution de la fonction au bouton de filtrage sur l’interface utilisateur. L’attribut ‘onClick’, ligne 31, prend en paramètre la fonction ‘tousAfficher’. A la ligne 35, l’instruction agit directement sur la variable pour lui attribuer un nombre.",
+                                "img" : "../../public/documentation/NSDescktop/filtrage2.png"
+                            },
+                            {
+                                "text" : "3- Filtrage du rendu. La méthode slice, ligne 59, prend en paramètre l’index de départ du filtre et l’index de fin.",
+                                "img" : "../../public/documentation/NSDescktop/filtrage3.png"
+                            }
+                        ]
+                    },
+                    "sousPartie2" : {
+                        "titre" : "filtrage par category",
+                        "text" : [
+                            "Le filtrage par catégorie opère de cette façon:"
+                        ],
+                        "puce" : [
+                            {
+                                "text" : "1- Initialisation des variables, ‘filter’ qui contiendra par défaut la valeur ‘null’ pour rendre tous les articles. La variable ‘allMapCategories’ qui récupère la catégorie de tous les articles. Et de la variable ‘selectCategories’ qui récupère les catégories pour trier et supprimer les doublons.",
+                                "img" : "../../public/documentation/NSDescktop/filtreCategory.png"
+                            },
+                            {
+                                "text" : "2- Mise en place des boutons de filtrage et des fonctions. La méthode map, ligne 45, parcourt le tableau des catégories de la variable ‘selectCategories’ pour les afficher dans la liste déroulante. Chaque catégorie de la liste possédera l’attribut ‘onclick’ qui prend comme fonction l’accesseur ‘setFilter’ pour remplacer la valeur de ‘filter’ par la catégorie sur laquelle l’utilisateur clique. De la ligne 52 à 56, avec l’opérateur ternaire, le bouton «réinitialiser» apparaît si la valeur de ‘filter’ est initialisée, différente de ‘null’. Ce bouton a pour fonction de donner la possibilité de supprimer le filtre en réattribuant la valeur ‘null’ à ‘filter’.",
+                                "img" : "../../public/documentation/NSDescktop/filtreCategory2.png"
+                            },
+                            {
+                                "text" : "3- Filtrage du rendu. L’opérateur ternaire, ligne 57, signifie que si la valeur de ‘filter’ est ‘null’ alors aucun filtre n’est attribué au rendu. Si la valeur est différente de ‘null’ alors la méthode filter, ligne 69, va parcourir chaque article de la variable ‘articles’, et rendre uniquement ceux dont la catégorie est la même que celle attribuée, dans la variable dans l’étape précédente, à ‘filter’.",
+                                "img" : "../../public/documentation/NSDescktop/filtreCategory3.png"
+                            }
+                        ]
+                    },
+                    "sousPartie3" : {
+                        "titre" : "Le rendu",
+                        "text" : [
+                            "Il s’agit de la fonction initiale de ce composant. Dans ce composant une nouvelle requête avec axios est initialisée, cette fois la requête est envoyée au moment ou le composant est chargé, contrairement au composant App.jsx ou la requête est envoyée lorsque la route est chargée. Les données provenant de la requête sont la listes des articles.",
+                            "L’affichage de la liste des articles suit ces étapes :"
+                        ],
+                        "puce" : [
+                            {
+                                "text" : "1- Une requête vers l’api est initialisée, ainsi que la variable ‘articles’, qui sous forme de tableau contiendra la liste des articles retournés par la requête. useEffect : Il s’agit d’un hook de React qui permet d’exécuter des instructions au moment ou le composant est chargé.",
+                                "img" : "../../public/documentation/NSDescktop/rendu.png"
+                            },
+                            {
+                                "text" : "2- Le rendu est possible grâce à la méthode map, qui va parcourir chaque élément du tableau ‘articles’ afin de les afficher les uns après les autres. Il prend en argument le nom d’un élément du tableau que l’on appelle ‘articles’, ainsi que son index ‘index’. Il renvoie un nouveau composant ‘ArticleCards’ qui prend en paramètre ‘index’ pour le classement, l’élément ‘article’ qui contient les données de l’article, et ‘channel’ utile pour la configuration du composant.",
+                                "img" : "../../public/documentation/NSDescktop/rendu2.png"
+                            }
+                        ]
+                    }
+                }
+            },
+            "souspartieE" : {
+                "titre" : "ArticleCards.jsx",
+                "content" : {
+                    "intro" : "Il s’agit du dernier composant enfant qui constitue notre page actualités. Il fait le lien qui amène l’utilisateur dans la 3ème couche de navigation. Le composant ArticleCards est comme son nom l'indique une carte qui présente l' article et fait office de redirection vers une page dédiée à l’article en question. Il se situe dans src/Components/SubComponent.",
+                    "sousPartie1" : {
+                        "titre" : "Les données",
+                        "content" : {
+                            "intro" : "Pour rappel, nous parlons ici des données récupérées avec axios dans le composant parent‘ArticleWpComponent’. Il s’agit des articles. Comme vu dans la partie précédente leur collecte est initialisée dans le composant parent, puis ils sont transférés à notre composant enfant. Leur traitement suit ces étapes une à une :",
+                            "puce" : [
+                                {
+                                    "text" : "1- Récupérer les données avec 'déstructuring'",
+                                    "img" : "../../public/documentation/NSDescktop/donnees.png"
+                                },
+                                {
+                                    "text" : "2- L’opérateur ternaire donne les instructions grâce au paramètre ‘channel’. La balise ‘NavLink’, comme dans la navigation, permet une redirection vers une page. Elle garde comme attribut ‘to’ et en valeur ‘article/wp/${article.id}’ qui est la route vers une nouvelle page. Elle sera détaillée dans le prochain chapitre.",
+                                    "img" : "../../public/documentation/NSDescktop/donnees2.png"
+                                },
+                                {
+                                    "text" : "3- Traitement et affichage des données.",
+                                    "img" : "../../public/documentation/NSDescktop/donnees3.png"
+                                }
+                            ]
+                        }
+
+                    }
+                }
+            }
+        },
+        "partie3" : {
+            "titre" : "3ème couche de navigation",
+            "content":{
+                "introduction" : "Tout comme la seconde couche de navigation, celle ci reprend le même principe. Elle regroupe un ensemble de pages ayant la même fonction. Il s’agit d’afficher les informations de façon détaillée et centrée sur un objet précis, comme un article, ou la description d’un artiste. Les pages qu’elle regroupe sont « Article, Événement, Artiste, Lieu ».",
+                "sousPartieA" : {
+                    "titre" : "Page2.jsx",
+                    "content" : {
+                        "introduction" : [
+                            "Le composant Page2 est pour la 3ème couche de navigation, équivalent de ce qu’est le composant Page1 pour la 2 nd couche de navigation. Une page composée de plusieurs sous-composants. La logique reste la même, elle utilise l’opérateur ternaire pour définir en fonction des paramètres quel sous composant sera chargé.",
+                            "Les composants qui constitue la 3ème couche sont dans src/Components/Page2Components. La page qui represente la 3eme couche se nome Page2.jsx, et se trouve dans src/Pages/.",
+                            "Pour passer de la seconde couche à la troisième, le code source opère de cette façon :"
+                        ],
+                        "puce" : [
+                            {
+                                "text" : "1- Redirection depuis le fichier ArticleCards. Grâce à la balise NavLink et son attribut ‘to’ qui paramètre la route",
+                                "img" : "../../public/documentation/NSDescktop/page2.png"
+                            },
+                            {
+                                "text" : "2- Retour au fichier App.jsx. Il s’agit du fichier ou toutes les routes sont programmées, ainsi que le composant qui doit être chargé. Notre composant prendra en paramètre ‘articlewp’ utile pour la méthode channel. Attention : Le contenu de l’article n’est pas transféré lors de la redirection vers la nouvelle page. Seul son identifiant est conservé, et utilisé pour la nouvelle route.",
+                                "img" : "../../public/documentation/NSDescktop/app.jsx2.png"
+                            },
+                            {
+                                "text" : "3- Chargement du nouveau composant Page2.jsx. Nouveau Composant = nouvelle page.",
+                                "img" : "../../public/documentation/NSDescktop/page2.jsx.png",
+                                "puce" : [
+                                    {
+                                        "text" : "Ligne 1 - 9 : import des composants et méthodes."
+                                    },
+                                    {
+                                        "text" : "Ligne 11 : récupère les paramètres."
+                                    },
+                                    {
+                                        "text" : "Ligne 13 : Le hook ‘useParams’ nous permet de récupérer l’id de l’article dans l’url."
+                                    },
+                                    {
+                                        "text" : "Ligne 15 - 31 : fonction pour les dimensions de l’écran utile au css."
+                                    },
+                                    {
+                                        "text" : "Ligne 33 - 43 : Le rendu"
+                                    }
+                                ]
+                            }
+                        ],
+                        "content" : {
+                            "titre" : "Le rendu :",
+                            "text" : "Tous comme dans le fichier Page1.jsx, la méthode reste la même. La navigation est chargée en tête de page puis l’opérateur ternaire définit en fonction du paramètre le composant à charger. Le paramètre récupéré est ‘articlewp’. Il entre dans la condition de la ligne 38, et c’est donc le composant ‘ArticleWpDetailComponent’ qui sera chargé, de plus il récupère l’id de l’article en paramètre."
+                        }
+                    }
+                },
+                "sousPartieB" : {
+                    "titre" : "ArticleWpDetailComponent.jsx",
+                    "content" : {
+                        "introduction" : [
+                            "Il s’agit du dernier composant enfant de cette page. Il a pour fonction d’afficher l’intégralité d’un article. Pour cela Il se compose d’une requête axios vers l’api qui récupère le contenu de l’article, pour être traité directement dans le rendu. Le code est structuré comme suit :"
+                        ],
+                        "puce" : [
+                            {
+                                "text" : "1- Récupère l’identifiant de l’article",
+                                "img" : "../../public/documentation/NSDescktop/articleWpComponent1.png"
+                            },
+                            {
+                                "text" : "2- Initialisation de la requête et de la variable qui contiendra le contenu de l’article.",
+                                "img" : "../../public/documentation/NSDescktop/articleWpComponent2.png"
+                            },
+                            {
+                                "text" : "3- Le rendu",
+                                "img" : "../../public/documentation/NSDescktop/articleWpComponent3.png"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "chapitre4" : {
+        "titre" : "Déploiement",
+        "content" : {
+            "sousPartie1" : {
+                "titre" : "Hostinger",
+                "content" : {
+                    "introduction" : [
+                        "Hostinger est un hébergeur web mutualisé qui est adapté pour les sites web de petite et moyenne taille. Il offre notamment des solutions optimisées pour les sites wordPress. Parmi ses options il y-a la possibilité d’obtenir la certification SSL, d’administrer nos dossiers grâce à un accès FTP et d’installer nos dépendances en SSH. Notre compte est accessible avec ces coordonnées :"
+                    ],
+                    "puce" : [
+                        {
+                            "text" : "- Adresse mail : ****.fr"
+                        },
+                        {
+                            "text" : "- Mot de passe : ********"
+                        }
+                    ],
+                    "text" : "Le Nom de domaine où sera hébergé nos sites : pixelevent.site. Notre site React ainsi que le backoffice WordPress seront hébergés dans des sous domaines, cela nous permettra d’être regroupé dans un seul et unique domaine et d’éviter la location superflu de nom de domaine.",
+                    "sousPartieA" : {
+                        "titre" : "Front-End React",
+                        "content" : {
+                            "introduction" : [
+                                "Sous domaine : nationsound.pixelevent.site",
+                                "Repertoire : /public_html/nationsound"
+                            ],
+                            "text" : "- Installation manuel",
+                            "puce" : [
+                                {
+                                    "text" : "1) Ouvrir le dossier du code source dans VSC"
+                                },
+                                {
+                                    "text" : "2) Ouvrir un nouveau Terminal"
+                                },
+                                {
+                                    "text" : "3) Taper la commande « npm build » de vite"
+                                },
+                                {
+                                    "text" : "4) Copier le contenu du dossier «dist»"
+                                },
+                                {
+                                    "text" : "5) Coller dans le répertoire du sous domaine"
+                                }
+                            ]
+                        }
+                    },
+                    "sousPartieB" : {
+                        "titre" : "Backoffice WordPress",
+                        "content" : {
+                            "introduction" : [
+                                "Sous domaine : backoffice.pixelevent.site",
+                                "Répertoire : /public_html/backoffice"
+                            ],
+                            "text" : "- Installation automatique",
+                            "puce" : [
+                                {
+                                    "text" : "Titre du site : admin LE"
+                                },
+                                {
+                                    "text" : "Email de l’administrateur : ********"
+                                },
+                                {
+                                    "text" : "Nom d’utilisateur admin : *****"
+                                },
+                                {
+                                    "text" : "Nom d’utilisateur admin : hereperry"
+                                },
+                                {
+                                    "text" : "Avancé -> Chemin d’installation : backoffice.pixelevent.site"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,82 @@
+{
+    "logo":"/logo.jpg",
+    "titre" : "NationSound",
+    "introduction" : "Bienvenu sur la documentation du site responssive web mobile d'édié au festival Nation Sound",
+    "githubLink" : "https://github.com/57brocoli/NationSoundReact",
+    "descktopVersionLink" : "/nationsound/phone",
+    "section" : [
+        {
+            "titre" : "Presentation",
+            "content" : {
+                "introduction":[
+                    "Nation Sound est un projet développer par Heremoana Perry, qui porte sur le festival de music du meme nom oraganiser par Live Event. Il a pour objectif de promouvoir le festival à travers different support. Cette version est dédié au format bureau et responssive mobile, vous pouvez retrouver l'application mobile dans la documentation, ou directement à cette addresse : ",
+                    "Il a été développer pour répondre au besoin promotionnel de l'evenement et ce veut être un canal de communiquation entre les potentiels clients de l'événement et les organisateur, sans oublié une des fonctions de Liven Event qui est de promouvoir ses artistes."
+                ],
+                "img" : [
+                    "/documentation/NS_VersionDescktop/Presentation/presentationDescktop.png",
+                    "/documentation/NS_VersionDescktop/Presentation/presentationPhone.png"
+                ],
+                "text" : [
+                    {
+                        "titre" : "Live Event",
+                        "text" : [
+                            "Société basé à Paris et qui oppère dans l'événementiel Au départ organisateur de concerts, cette société s'est transformée pour élargir son action en Europe à travers de multiples activités :", 
+                            [
+                                "Billetterie (plus de 20 % de ses revenus, en commercialisant aussi les tickets pour d'autres organisateurs et artistes)",
+                                "Gestion ou location de salles.",
+                                "Organisation de tournées (pour le compte des artistes sous contrat mais aussi par la vente de concerts à des salles tierces), mais également promotion de concerts (affiches, produits dérivés, relations médias, réseaux sociaux, etc.), plus des deux-tiers de ses revenus estimés.",
+                                "Management, gestion d'artistes et production (environ 5 % de ses revenus estimés).",
+                                "Partenariats, 900 annonceurs travaillant avec l'entreprise (environ 4 % de ses revenus)."
+                            ],
+                            "La société « Live Events » a un DSI qui gère l’infrastructure réseaux et logiciel de la société. « Live Events » n’ayant pas à disposition de service informatique pouvant gérer le développement de logiciel spécifique, les opérations de développement et de maintenance sont gérées par des prestataires sélectionnés par des appels d’offres."
+                        ]
+                    },
+                    {
+                        "titre" : "NationSound",
+                        "text" : [
+                            "La société Live Event ne possedant pas de pole informatique pouvant gérer le développement de produit informatique de ce genre a donc lancé un appel d'offre. Elle a fournit un cahier des charges définisant les different aspects fonctionnels du produit. vous pouvez retrouver l'intégralité du cahier des charge dans la section dédié. Voici les grande lignes :",
+                            [
+                                "Site web web responssive mobile",
+                                "Canal de communiquation pour informer l’utilisateur lors du festival. Visiteurs et spectateurs doivent pouvoir s’y référer avant et durant tout leur temps de séjour sur les lieux de celle-ci.",
+                                "Promouvoir les artistes qui se produiront pendant le festival"
+                            ],
+                            "Informer les utilisateurs sur les événements et les lieux représente la plus grande partie des fonctions attendues du produit final. Cela fait partie des informations traités dans la section cahier des charges."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "React",
+            "content" : {
+                "introduction":[
+                    "Tout Comme la version mobile, elles ont été développer en React",
+                    "React est une bibliothèque de JavaScript. Le choix pour cette solution de développement de notre application web/mobile s’est fait sur 2 points essentiels pour garantir un produit efficace qui répond aux exigences du cahier des charges."
+                ],
+                "puces" : [
+                    "- React tire avantage de l’orientation objet du langage, et la rend plus concrète. Il faut dire que sa logique repose sur ce principe, en effet avec React tout est objet. En d’autre termes, tout ce qui est affiché sur une page web est un composant que l’on peut réutiliser partout. Cela signifie par exemple qu’un bouton est développé une seule fois, et peut être utilisé plusieurs fois sur d’autres pages. Une page est alors construite de plusieurs composants. Cela permet une facilité d’utilisation et un gain de temps non négligeable.",
+                    "- Des performances renforcées en virtualisation et conservant le DOM en mémoire. React offre des capacités de rendu exceptionnellement rapides, tous les changements de vue étant immédiatement reflétés dans le DOM virtuel. Une application rapide pour réduire le taux de rebond des utilisateurs."
+                ],
+                "img" : [
+                    "/react.png"
+                ]
+            }
+        },
+        {
+            "titre" : "Code Source",
+            "content" : {
+                "introduction":[
+                    "le code source est reserver au développeur en charge du maintient du site, il est accessible sur git-hub à : ",
+                    "Les explications du code sorce sont accessibles dans le reste de la documentation. Le code source est régulièrement mis a jour en fonction des avancé du language et des apports souhaiter du client."
+                ],
+                "puces" : [
+                ],
+                "img" : [
+                    "/documentation/NS_VersionDescktop/Logique/canal3.png"
+                ]
+            }
+        }
+            
+    ]
+
+}

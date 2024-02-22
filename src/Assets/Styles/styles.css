@@ -1,0 +1,60 @@
+:root{
+    --dark: #011023;
+    --orange: #f08e00;
+    --orange-fonce: #ee4700;
+    --rouge: #f02704;
+    --vert-claire: #d1ed20;
+    --vert : #7ac31c;
+    --vert-fonce: #01953d;
+    --bleu-claire: #25cbf2;
+    --bleu : #0066dc;
+    --bleu-fonce : #0038c2;
+    --mauve : #2a107f;
+
+    --roseSymfony : #e492ff;
+    --bleureact : #53c1de;
+    --orangeMysql : #f57f17;
+    --vertApiplatform : #38a9b4;
+}
+.bgPage{
+    background : linear-gradient(var(--dark), var(--bleu-fonce));
+}
+.nav{
+    background-color: var(--dark);
+}
+
+.box-react{
+    border-radius: 65% 35% 72% 28% / 30% 30% 70% 70% ;
+}
+.box-symfony{
+    border-radius: 64% 36% 28% 72% / 56% 37% 63% 44%  ;
+}
+.box-mysql{
+    border-radius: 65% 35% 49% 51% / 69% 70% 30% 31% ;
+}
+.box-apiplatform{
+    border-radius: 62% 38% 53% 47% / 45% 53% 47% 55%  ;
+}
+.box-iconFloat{
+    background-color: white;
+    height: 110px;
+    width: 120px;
+    position: absolute;
+    margin-top: -80px;
+}
+.iconFloat{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.textReact{
+    color: var(--bleureact);
+}
+.textSymphony{
+    color: var(--roseSymfony);
+}
+.textMysql{
+    color: var(--orangeMysql);
+}
+.textApiplatform{
+    color: var(--vertApiplatform);
+}

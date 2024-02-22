@@ -1,0 +1,354 @@
+{
+    "titre" : "Code côté script",
+    "section" : [
+        {
+            "titre" : "UseState",
+            "content" : {
+                "introduction" : [
+                    "UseState est un hook offert par react. Plus souvant appellé ' hook d'etat ', il nous permet entre autre d'instancié nos variables. Son utilisation est indiponssable car il s'implifie la manipulation des données.",
+                    "Il est present dans presque tout nos composants. Il se situe en tête de fonction et avant le rendu. Majoritairement utilisé comme une variable pour stocker les données provenant de l'api, il est aussi utilisé dans les fonctions de filtrage ou dans la methode channel des composants de la secondes couche de navigation. Enfin on le retrouve dans le cas pour ouvrir ou fermer une fenêtre des épisodes sur la page artiste."
+                ],
+                "imgImport": "/documentation/NS_VersionDescktop/Code/useStateImport.png",
+                "utilisation":[
+                    {
+                        "nom": "1 - Comme une variable",
+                        "lieux" : "La majorité des composants",
+                        "img" : ["/documentation/NS_VersionDescktop/Code/useState1.png"],
+                        "explication" : [
+                            "Ici il sagit du fichier 'ArticleWpComponent.jsx'. Ce conposant affiche les articles provenant de notre backoffice WordPress.",
+                            "Sont instanciation est simple :",
+                            "1 - la variable prend comme non significatif ' articles ', car elle contiendra les articles.",
+                            "2 - Ensuit le seteur ' setArticles ' sera utile par la suite pour modifier le contenu de notre variable si besoin.",
+                            "3 - Enfin nous avons le hook 'useState( [ ] )' qui instancie notre variable en lui attribuant le type 'array' grace aux crochers.",
+                            "Pour le moment notre variable est un tableau vide. Par la suite dans le composant un l'autre hook 'useEffect' viendra utilisé le seteur pour remplir notre variable d'articles. C'est ce qui ce passe sur l'image ci dessous :"
+                        ],
+                        "imgSeteur" : [
+                            "/documentation/NS_VersionDescktop/Code/useState1seteur.png"
+                        ],
+                        "explicationSeteur" : [
+                            "Le seteur ' setArticles ' prend en paramêtre le resultat du fetch. A partir de ce moment notre variable ' article ' prend comme valeur le tableau des articles provenant du backoffice."
+                        ]
+                    },
+                    {
+                        "nom": "2 - Pour la fonction channel",
+                        "lieux" : "ActualiteComponent.jsx / SponsorComponent.jsx",
+                        "img" : ["/documentation/NS_VersionDescktop/Code/useState2.png"],
+                        "explication" : [
+                            "Ici il sagit du fichier 'ActualiteComponent.jsx'. Dans ce composant le hook joue un role dans la methode channel.",
+                            "Comparer à sa precedente utilisation, ici la variable 'channel' prend comme valeur par default la chaine de caratères 'backoffice', car en effet par default les articles qui sont affichés sont ceux provenant du backoffice wordpress. Pour plus d'explication sur la methode channel, dans le menu lateral dans 'Logique de développement', une section est dédié à la methode channel.",
+                            "Ensuite pour modifier la valeur de ' channel ' :"
+                        ],
+                        "imgSeteur" : [
+                            "/documentation/NS_VersionDescktop/Code/useState2seteur1.png",
+                            "/documentation/NS_VersionDescktop/Code/useState2seteur2.png"
+                        ],
+                        "explicationSeteur" : [
+                            "Dans le rendu un boutton permet à l'utilisateur de changer la valeur de channel :",
+                            "1 - Sur la 1er image : l'attribut ' onClick ' du boutton vas lancer la fonction ' changeChannel '.",
+                            "2 - Sur la seconde image : la fonction change le channel en fonction de la valeur actuel"
+                        ]
+                    },
+                    {
+                        "nom": "3 - Pour filtrer le contenu",
+                        "lieux" : "ArticleWpComponent.jsx / ArticlePixelComponent.jsx",
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Code/useState3a.png",
+                            "/documentation/NS_VersionDescktop/Code/useState3b.png"
+                        ],
+                        "explication" : [
+                            "Dans les deux fichier les variables sont identiques et joue le exactement le même role.",
+                            "- La variable 'nombreArticle' définit le nombre par default d'aticle à afficher ( 3 ).",
+                            "- La variable 'filtre' définit les articles à afficher par catégorie, la valeur ( null ) signifie que tous les articles categorie confondu apparaissent."
+                        ],
+                        "imgSeteur" : [
+                            "/documentation/NS_VersionDescktop/Code/useState3seteur1.png"
+                        ],
+                        "explicationSeteur" : [
+                            "Sur cette image, nous voyons comment le seteur ' setFilter ' attribut la catégory à la variable ' filter ', par la suite le rendu changera, et apparaitront uniquement les articles qui possèdent la catégorie choisit."
+                        ]
+                    },
+                    {
+                        "nom": "4 - Ouvrir ou fermer une fenêtre",
+                        "lieux" : "ArtisteDetails.jsx",
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Code/useState4.png"
+                        ],
+                        "explication" : [
+                            "La valeur par default est le booléenne ' false '."
+                        ],
+                        "imgSeteur" : [
+                            "/documentation/NS_VersionDescktop/Code/useState4seteur.png"
+                        ],
+                        "explicationSeteur" : [
+                            "Le seteur vas tous simplement inverser la valeur booléenne."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "UseEffect",
+            "content" : {
+                "introduction" : [
+                    "UseEffect est un hook offert par react. Pour s'implifier son fonctionnement, et ne cité uniquement celuit utilisé dans le projet, il s'agit d'une fonction que l'on peut choisir le moment ou il serat executé. Soit au chargement du composant, sois l'orsque l'etat du composant change. Dans la grande majorité du temp, cette fonction est utilisé au chargement du composant,  sois pour lancer un api à une api, sois pour attribuer une valeur à une variable. Le second cas d'utilisation est reservé au rendu pour des effets de style"
+                ],
+                "imgImport": "/documentation/NS_VersionDescktop/Code/useEffectImport.png",
+                "utilisation":[
+                    {
+                        "nom": "1 - Appel à une api",
+                        "lieux" : "La majorité des composants",
+                        "img" : ["/documentation/NS_VersionDescktop/Code/useEffect1.png"],
+                        "explication" : [
+                            "Ici il sagit du fichier 'ArticleWpComponent.jsx'. Ce conposant affiche les articles provenant de notre backoffice WordPress.",
+                            "Sont utilisation est simple :",
+                            "1 - La Fonction est initialisé. Elle lance grace à axios, une apel à l'api. dans les crochets en fin d'instruction ' [ ] ' aucune valeur est donnée, cela aurat pour effet d'executer la fonction au chargement du composant.",
+                            "2 - Les données sont receuillis avec ' .get( ) '.",
+                            "3 - Puis avec ' .ten( ) ' et le seteur ' setArticles ' les donées sont transférés à la variable ' Articles '."
+                        ]
+                    },
+                    {
+                        "nom": "2 - Attribué une valeur",
+                        "lieux" : "ArtisteComponent.jsx / SponsorComponent.jsx",
+                        "img" : ["/documentation/NS_VersionDescktop/Code/useEffect2.png"],
+                        "explication" : [
+                            "Exemple du fichier ArtisteComponent.jsx, c'est la plus simple des utilisation.",
+                            "Au chargement du composant, le seteur ' setArtiste ' attribut à la variable ' artiste ' la valeur de ' data '."
+                        ]
+                    },
+                    {
+                        "nom": "3 - Pour garder en mémoire la taille de l'ecran de l'utilisateur",
+                        "lieux" : "HomeComponent.jsx / Page1Component.jsx / Page2Component.jsx",
+                        "img" : ["/documentation/NS_VersionDescktop/Code/useEffect3.png"],
+                        "explication" : [
+                            "Dans ce cas, le useEffect est lancé à chaque fois que la valeur de ' screenSize ' change. C'est à dire qu'a chaque fois que l'utilisateur agrandit ou réduit la taille de la fenètre de son navigateur, le useEffect est ré-éxecuté, et par conséquent réajuste la valeur de ' screenSize '."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "UseLoaderData",
+            "content" : {
+                "introduction" : [
+                    "UseLoader est un hook offert par react-router-dom. Ce hook permet de récupérer les données qui proviennent de la route. Il s'utilise grace et uniquement avec la configuration du fichier App.jsx, car c'est lui qui initie toute les routes, ainsi que les données qui leur sont attribuées."
+                ],
+                "imgImport": "/documentation/NS_VersionDescktop/Code/useLoaderDataImport.png",
+                "utilisation":[
+                    {
+                        "nom": "Comfiguration des routes et recueil des données",
+                        "lieux" : "App.jsx => Page1.jsx / Home.jsx",
+                        "imgLoader" : [
+                            "/documentation/NS_VersionDescktop/Code/useLoaderData1.png"
+                        ],
+                        "explication" : [
+                            "Dans le fichier App.jsx, pour les routes qui envoient vers la 1er et 2nd couche de navigation, le loader doit être configuré. Dans notre exemple il s'agit de la route vers la page1 (represente la 1er couche de navigation) qui afficherat le composant ' actualite '",
+                            "1 - Le loader procéde à une apel api. Dans notre cas vers l'api du backoffice pixelevent, pour récupérer les données (qui sera le contenu de la page actualite). ",
+                            "2 - Ces données récupérées seront transmit au composant ' Page1 '."
+                        ],
+                        "imgUseLoaderData" : [
+                            "/documentation/NS_VersionDescktop/Code/useLoaderData2.png"
+                        ],
+                        "explicationSeteur" : [
+                            "Dans les fichiers Page1.jsx et Home.jsx, Pour récupérer les données provenant de la route, le hook ' useLoaderData ' doit être instancié. Dans notre exemple la constante ' view ' contiendra les données."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "UseNavigation",
+            "content" : {
+                "introduction" : [
+                    "UseNavigation est un hook offert par react-router-dom. Ce hook permet de récupérer le statut du loader. Dans le projet NationSound, ce hook serat utile pour rendre un peu plus vivant nos pages, en effet pour s'implifier son utilité, il nous permettra d'afficher un spinner sur la page en attendant que les données du loader sont totalement chargées. En temps générale, si le flux d'utilisateur reste bas, le spineur sera quaqiment invisible, mais il sera bien utile lorsque le nombre d'utilisateur augmentera significativement et multiplira les requetes http, ce qui augmentera significativement le temp de chargement des pages, alors il serat interesent de signaler à l'utilisateur que les données sont en chargement.Il s'utilise grace et uniquement avec la configuration du fichier App.jsx car c'est dans ce fichier que le loader est initialisé."
+                ],
+                "imgImport": "/documentation/NS_VersionDescktop/Code/useNavigationImport.png",
+                "utilisation":[
+                    {
+                        "nom": "Initialisation du hook",
+                        "lieux" : "Home.jsx / Page1.jsx et tous ses composants enfant",
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Code/useNavigation.png"
+                        ],
+                        "explication" : [
+                            "Dans le fichier Page1.jsx, l'etat du loader est récupéré grace au hook."
+                        ],
+                        "imgTransfert" : [
+                            "/documentation/NS_VersionDescktop/Code/useNavigationTransfert.png"
+                        ],
+                        "explicationTransfert" : [
+                            "Toujour dans le composant Page1.jsx. L'etat du hook est transferé au composant enfant. Sur l'image il est passer sous forme de propriété au composant ' ActualiteComponent '."
+                        ],
+                        "imgSpinneur" : [
+                            "/documentation/NS_VersionDescktop/Code/useNavigation2.png"
+                        ],
+                        "explicationSpinneur" : [
+                            "Dans le fichier ' ActualiteComponent '. L'etat peut prendre differente forme, ici nous aurons uniquement besoin d'afficher le spinneur lorque l'etat est à ' loading '."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "UseParams",
+            "content" : {
+                "introduction" : [
+                    "UseParams est un hook offert par react-router-dom. Ce hook permet de récupérer les données dans l'url. Il est utilisé uniquement dans les pages de la seconde couche de navigation. Son utilisation dans ce projet est fastidieux mais reste simple et efficace. Fastidieux car il est indiponssable de passer par plusieur composants de la 1er et 2nd couche en passant par le router. Simple car nous aurons besoin que d'une seul donnée dans l'url et il s'agit de l'id. Et Efficace car il nous permettra de passer de la 1er à la seconde couche de navigation, et cela sans utilisé le destructuring de React."
+                ],
+                "imgImport": "/documentation/NS_VersionDescktop/Code/useParamsImport.png",
+                "utilisation":[
+                    {
+                        "nom": "",
+                        "lieux" : "Composant de la 1er chouche => Page2.jx => à ses composants enfant",
+                        "imgLink" : [
+                            "/documentation/NS_VersionDescktop/Code/useParamsLink.png"
+                        ],
+                        "explicationLink" : [
+                            "Dans le fichier ArticleCards.jsx (sous composant de Page1), un navLink envoie vers la route ' /article/ ' suivi du parametre qui est l'id de l'article. L'id de l'article est donc le parametre qui sera transmit à la 2nd couche de navigation."
+                        ],
+                        "imgApp" : [
+                            "/documentation/NS_VersionDescktop/Code/useParamsApp.png"
+                        ],
+                        "explicationApp" : [
+                            "Dans notre routeur, la route configuré comprend bien le parametre ' :id '.",
+                            "Le composant ' Page2 ' serat charger, et il s'agit de la seconde couche de navigation."
+                        ],
+                        "imgPage2" : [
+                            "/documentation/NS_VersionDescktop/Code/useParamsPage2.png",
+                            "/documentation/NS_VersionDescktop/Code/useParamsPage2b.png"
+                        ],
+                        "explicationPage2" : [
+                            "Dans le fichier Page2.jsx. Sur le 1er img, nous utilisont notre hook récupère le parametre de l'url qui est l'identifiant de l'article.",
+                            "Puis sur la 2nd image, le transfert du parametre ' id ' vers les composants enfants se fait sous forme de paramêtre."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "UseRouterError",
+            "content" : {
+                "introduction" : [
+                    "UseRouterError est un hook offert par react-router-dom. Il est utile uniquement pour la page erreur. Il permet de recupérer l'érreur du routeur."
+                ],
+                "imgImport": "/documentation/NS_VersionDescktop/Code/useRouteErrorImport.png",
+                "utilisation":[
+                    {
+                        "nom": "Une erreur est survenut",
+                        "lieux" : "PageError.jsx",
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Code/useRouteError.png"
+                        ],
+                        "explication" : [
+                            "Il est instancié dans la partie script, pour utiliser dans le rendu pour afficher à l'ecran l'erreur en question."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Variable et Fonction",
+            "content" : {
+                "introduction" : [
+                    "Au delat des hooks utilisés dans ce projet, certaines variables et fonctions sont instanciées de facon naturel. Par naturel il faut comprendre identique au base du language de programmation. Ici il s'agit de JavaScript."
+                ],
+                "imgImport": "/documentation/NS_VersionDescktop/Code/useParamsImport.png",
+                "variable":[
+                    {
+                        "nom": "Stocker une hauteur pour dimentionner les éléments",
+                        "lieux" : "Page1.jsx / Page2.jsx / Home.jsx",
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Code/constHeight.png"
+                        ],
+                        "explication" : [
+                            "Il s'agit d'une variable qui contient la hauteur de l'ecran de l'utilisateur auquelle nous retirant la hauteur de la barre de navigation, le header, ainsi que le footer.",
+                            "Cette valeur serat par la suite transmise aux composants enfants."
+                        ]
+                    },
+                    {
+                        "nom": "Stocker le chemin d'acces au dossier photo du site pixelevent",
+                        "lieux" : "Tous les composants qui affichent des images",
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Code/constImage.png"
+                        ],
+                        "explication" : [
+                            "Sur l'image il s'agit du composant SponsorPixelEventComponent qui afficher les sponsors provenant du site pixelevent.",
+                            "Les variables contiennent en réalité un objet, d'en la clef ' uri ' a pour valeur le chemnin d'acces vers le dossier qui stocke les images."
+                        ]
+                    },
+                    {
+                        "nom": "Récupérer un objet pour le rendu",
+                        "lieux" : "EpisodeComponent.jsx / ArtisteDetails.jsx",
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Code/constObject.png"
+                        ],
+                        "explication" : [
+                            "Sur l'image il s'agit du composent EpisodeComponent.jsx. Et il y'a trois variables.",
+                            "- La variable ' episode ' récupère un épisode dans la liste des épisodes, grace à la méthode ' filter( ) ' et le paramêtre ' id '.",
+                            "- La variable ' artisteId ' est initialisé une fois que l'episode est stocker. Elle récupère l'identifiant de l'artiste qui se produit pendant l'épisode.",
+                            "- La variable ' otherArtisteEpisode ' avec la méthode ' filter ' récupére tous les épisodes ou l'artiste se produit."
+                        ]
+                    },
+                    {
+                        "nom": "Récupérer une ou des valeurs pour filtrer le rendu",
+                        "lieux" : "ArticlePixeleventComponent.jsx / ArticleWpComponent.jsx",
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Code/constFiltre.png"
+                        ],
+                        "explication" : [
+                            "Sur l'image il s'agit du composent ArticlePixeleventComponent.jsx. Et il y'a deux variables.",
+                            "- La variable ' allMapCategories ' récupère toutes les categories des articles grace à la méthode .map( ).",
+                            "- La variable ' selectCategories ' récupère les catégories de ' allMapCategories ' pour les filtrées et pour supprimer les doublons. Ainsi nous avons une liste propre des catégories de tous les articles."
+                        ]
+                    }
+                ],
+                "fonction":[
+                    {
+                        "nom": "Obtenir la hauteur de l'écran",
+                        "lieux" : "Page1.jsx / Page2.jsx / Home.jsx",
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Code/getCurrentDimension.png"
+                        ],
+                        "explication" : [
+                            "Notre simple fonction nous retourn deux valeurs, la largeur et la hauteur de l'ecran. Cette fonction est ensuite utilisé dans les hook useState et useEffect."
+                        ]
+                    },
+                    {
+                        "nom": "Slider de gauche à droite",
+                        "lieux" : "HomeComponent.jsx / ArticleComponent.jsx",
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Code/slider.png"
+                        ],
+                        "explication" : [
+                            "Cette fonction est une alternative faculatif car il est tout a fait possible et plus simple de crée un slider horizontal en css.",
+                            "- prev( ) : est attribuer dans le rendu à un bouton qui permet de slider ver la gauche un element qui a pour identifiant ' slider-container ' de 270 pixel.",
+                            "- next( ) : est attribuer dans le rendu à un bouton qui permet de slider ver la droite un element qui a pour identifiant ' slider-container ' de 270 pixel.",
+                            "Cette fonction a volentairement été utilisée pour s'entrainer en JavaScript."
+                        ]
+                    },
+                    {
+                        "nom": "Changer de channel",
+                        "lieux" : "ActualiteComponent.jsx / SponsorComponent.jsx",
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Code/changeChannel.png"
+                        ],
+                        "explication" : [
+                            "Notre fonction est utile dans la mise en place de la methode channel dans la seconde couche de navigation.",
+                            "L'orsque l'utilisateur clicke sur un boutton, la fonction change la valeur de la variable ' channel ' initialisé préalablement. La fonction commence par analyser avec une condition la valeur actuel de ' channel '. Si la condition est rempli, alors avec le seteur ' setChannel ' la fonction vas changer la valeur de ' channel ' par la chaine de caractère en paramètre."
+                        ]
+                    },
+                    {
+                        "nom": "Changer le rendu",
+                        "lieux" : "ArticlePixeleventComponent.jsx / ArticleWpComponent.jsx",
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Code/tousAfficher.png"
+                        ],
+                        "explication" : [
+                            "Notre fonction est utile dans la mise en place des filtres dans la seconde couche de navigation, plus précisément le filtre par nombre.",
+                            "L'orsque l'utilisateur clicke sur un boutton, la fonction change la valeur de la variable ' nombreArticle ' initialisé préalablement. La fonction utilise le seteur ' setNombreArticle ' pour attribuer le nombre total d'article à la variable ' nombreArticle '."
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

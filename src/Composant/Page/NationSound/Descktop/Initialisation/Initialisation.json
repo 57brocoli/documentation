@@ -1,0 +1,202 @@
+{
+    "titre" : "Initialisation",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Afin d'initialiser ce project nous aurons besoin d'un certain nombre d'outils. Certain sont des logiciels destinées au réalisation de prototypage de maquettes, d'autres seront destinées au développement et à la création du site. Nous parlerons ici uniquement des technologies utilisées durons la phase de développement du site, et de leur instalations.",
+                    "Vous trouverez la liste des technologies utilisées ici, classées en fonction de leur utilité."
+                ]
+            }
+        },
+        {
+            "titre" : "Installation avec Vite",
+            "content" : {
+                "introduction" : [
+                    "Avant d’utiliser Vite, il est obligatoire d’avoir installé Node.js sur le poste de travail. Node.js est un outils incontournable qui permet aux développeurs de créer des applications et outils côté serveur en JavaScript. Dans ce projet il sera d’une grande utilité grâce à son gestionnaire de packages (NPM). Vite est un outil ‘build’ qui nous permettra d’installer l’environnement de travail nécessaire pour commencer à développer notre projet. Il nous permettra :"
+                ],
+                "img" : "/react2.png",
+                "puces" :[
+                    "1. Dans un premier temps d’installer React avec toutes ses dépendances,",
+                    "2. De mettre à disposition un serveur de développement extrêmement rapide en local,",
+                    "3. De disposer d’une commande ‘build’ pour générer des ressources statiques hautement optimisées pour la production."
+                ],
+                "text" : "L'initialisation de notre projet avec Vite suis ces étapes bien précises :",
+                "etapes": [
+                    {
+                        "nom" : "1 - Création du dossier.",
+                        "lieux" : "bureau",
+                        "ilustration" : {
+                            "img" : ["/documentation/NS_VersionDescktop/Initialisation/etape1.png"],
+                            "text" : "Le nom du dossier est enfet le nom du projet."
+                        }
+                    },
+                    {
+                        "nom" : "2 - Ouvrir le dossier dans l'editeur de texte.",
+                        "lieux" : "Visual Studio Code",
+                        "ilustration" : {
+                            "img" : ["/documentation/NS_VersionDescktop/Initialisation/etape2.png"],
+                            "text" : "Avec Visual Studio Code, sur «File» puis «Open Folder», ouverture du dossier «Nation Sound». Cela nous permettra de crée des dossiers, d'éditer des fichier directement dans notre dossier projet, plus courament dit : ' à la racine du projet '"
+                        }
+                    },
+                    {
+                        "nom" : "3 - Ouvrir le terminal",
+                        "lieux" : "Visual Studio Code",
+                        "ilustration" : {
+                            "img" : ["/documentation/NS_VersionDescktop/Initialisation/etape3.png"],
+                            "text" : "VSC possède un terminal intégré. Le terminal nous permettra d'entré des lignes de commande pour diverses raisons, notament ici l'instalation de react, mais aussi plus tard les packages utiles au développement"
+                        }
+                    },
+                    {
+                        "nom" : "4 - « npm create vite@latest »",
+                        "lieux" : "Visual Studio Code / Terminal",
+                        "ilustration" : {
+                            "img" : ["/documentation/NS_VersionDescktop/Initialisation/etape4.png"],
+                            "text" : "Entrer dans le terminal : « npm create vite@latest ./». Cette commande vas lancer l'intalation de react"
+                        }
+                    },
+                    {
+                        "nom" : "5 - Configuration de l’installation :",
+                        "lieux" : "Visual Studio Code / Terminal",
+                        "ilustration" : {
+                            "img" : [
+                                "/documentation/NS_VersionDescktop/Initialisation/etape5a.png",
+                                "/documentation/NS_VersionDescktop/Initialisation/etape5b.png",
+                                "/documentation/NS_VersionDescktop/Initialisation/etape5c.png"
+                            ],
+                            "text" : "Lancer la configuration on suivant ces étapes les une apres les autres."
+                        }
+                    },
+                    {
+                        "nom" : "6 - « npm install »",
+                        "lieux" : "Visual Studio Code / Terminal",
+                        "ilustration" : {
+                            "img" : [
+                                "/documentation/NS_VersionDescktop/Initialisation/etape6.png"
+                            ],
+                            "text" : "lancer la commande « npm install » pour finaliser et installer les dépendances."
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Initialisation de l’environnement de travail.",
+            "introduction" : [
+                "Maintenant que React est installé, l’environnement doit être réaménager pour commencer sur une base vierge. C’est ce que l’on appellera l’initialisation de l’environnement.",
+                "En gros nous allons ici nous démunir de tous les fichiers et codes inutiles à la racine du projet",
+                "L’initiation suit ces étapes :"
+            ],
+            "etapes": [
+                {
+                    "nom" : "1 - Suppretion des dossiers et fichier inutile dans src",
+                    "lieux" : "Dossier ' src '",
+                    "ilustration" : {
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Initialisation/tableauInitialisation/etape1b.png"
+                        ],
+                        "text" : "Dans le dossier ‘src’ -> suppression de [ assets ; App.css ; index.css ] pour obtenir le resultat visible sur l'image"
+                    }
+                },
+                {
+                    "nom" : "2 - Supprestion de l'import css",
+                    "lieux" : "main.jsx",
+                    "ilustration" : {
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Initialisation/tableauInitialisation/etape2b.png"
+                        ],
+                        "text" : "Le fichier index.css etant supprimer dans l'étape précedente, il faut maintenant retiré son import pour ne pas causé d'erreur"
+                    }
+                },
+                {
+                    "nom" : "3 - Supprestion de l'import css et initialisation du point d’entrée du site",
+                    "lieux" : "App.jsx",
+                    "ilustration" : {
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Initialisation/tableauInitialisation/etape3b.png",
+                            "/documentation/NS_VersionDescktop/Initialisation/tableauInitialisation/etape3c.png"
+                        ],
+                        "text" : "Tout comme dans l'étape précedente, le fichier App.jsx doit être dépourvut de son import du fichier css. Ensuite dans le rendu, pour commencer, on ajoute un titre. cette manoeuvre est temporaire car en réalité le fichier App.jsx dans sa finalité ne rendra aucun text, ce fichier serat par la suite le router de notre application."
+                    }
+                },
+                {
+                    "nom" : "4 - Verification sur serveur local",
+                    "lieux" : "Navigateur internet",
+                    "ilustration" : {
+                        "img" : [
+                            "/documentation/NS_VersionDescktop/Initialisation/tableauInitialisation/etape4.png"
+                        ],
+                        "text" : "Dans le trerminal entrer la ligne de commande : « npm run dev ». Cette commande vite aura pour effet de lancer un serveur en local, essentiel pour le developpement de notre application car elle vas nous permettre de voir l'effet de notre code. Pour cela, dans un nagivateur, se rendre à l'adresse : « http://localhost:5173 ». Le resultat doit être comme sur l'img suivante. si ce n'est pas le cas, repasser en revut chaques étapes de l'initialisation."
+                    }
+                }
+            ]
+        },
+        {
+            "titre" : "Installation des packages",
+            "introduction" : [
+                "Comme évoqué plus tôt dans ce chapitre, Node.js nous permet d’utiliser le gestionnaire de packages NPM. Un package est un ‘mini’ logiciel qui répond à un besoin spécifique du code. Il peut par exemple s’agir d’un service qui traduit le format des dates en standard."
+            ],
+            "content" : [
+                {
+                    "titre" : "La liste des packages installés :",
+                    "elements" : [
+                        {
+                            "nom" : "Axios",
+                            "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/axios.png",
+                            "utilité" : "Configurer les requêtes vers une api.",
+                            "commande" : "« npm install axios »"
+                        },
+                        {
+                            "nom" : "Moment",
+                            "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/moment.png",
+                            "utilité" : "Manipuler et traduire le format des date en JS.",
+                            "commande" : "« npm install moment »"
+                        },
+                        {
+                            "nom" : "React-router-dom",
+                            "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/react-routeur-dom.png",
+                            "utilité" : "Configurer les routes de navigation en React.",
+                            "commande" : "« npm install react-router-dom »"
+                        },
+                        {
+                            "nom" : "React-google-maps",
+                            "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/google-map.png",
+                            "utilité" : "Utiliser l’interface de google maps pour la page carte",
+                            "commande" : "« npm install @react-google- maps/api »"
+                        }
+                    ]
+                },
+                {
+                    "titre" : "La liste des packages importés (CDN) :",
+                    "puces" : [
+                        "- Bootstrap : Framework destiné au css. « https://getbootstrap.com/ ». Ligne 8 ; 14 .",
+                        "- Fontawesome : package qui propose une librairie d’icônes pour illustrer nos interfaces. « https://fontawesome.com/ ». Ligne 7."
+                    ],
+                    "img" : "../../public/documentation/NSDescktop/packages.png"
+                }
+            ]
+        }
+        
+    ], 
+    
+    "partie3" : {
+        "titre" : "WordPress",
+        "intro" : {
+            "text" : "Le backoffice est assuré par un système de gestion de contenu (CMS), il doit permettre d’alimenter le contenu du site en article via une api. Il est donc nécessaire que la solution choisie offre comme fonctionnalité la rédaction de texte ainsi que le partage de contenu. Le fait de séparer interface utilisateur et backoffice, contribue à différencier style de mise en page et contenu, cela permet :",
+            "puce" : [
+                "- Au client d’avoir la main libre sur la rédaction du contenu du site, grâce à l’interface de WordPress qui intègre un éditeur visuel WYSIWYG. A l’image de Word il s’agit d’une interface de traitement de texte.",
+                "- De rendre nos interfaces utilisateur dynamiques. Le site React est alors une interface qui fait naviguer nos utilisateurs dans le contenu qui est rédigé en backoffice."
+            ],
+            "img" : "../../public/documentation/NSDescktop/wordpress.png"
+        },
+        "contenu" : {
+            "title" : "Pourquoi wordpress ?",
+            "text" : [
+                "Selon W3Techs, Wordpress fait tourner 42% de tous les sites web sur internet. De plus il détient 62% de parts de marché pour les systèmes de gestion de contenu sur les sites web avec un CMS connu. En comparaison, Joomla est à la seconde position avec 4.6% de part de marché. Ces chiffres montrent ne API REST qui permet de communiquer avec d’autres sites et applications. Les articles pourront donc être récupérés par nos interfaces utilisateur.",
+                "Contrairement aux interfaces utilisateur développées avec React, un site Wordpress ne se construit pas avec un éditeur de code, le développement se fait avec un navigateur. Il peut être monté en local avec une solution de serveur local comme XAMPP, mais dans le cadre du projet, le backoffice sera directement créé sur le serveur hébergeur."
+            ]
+        }
+    }
+    
+}

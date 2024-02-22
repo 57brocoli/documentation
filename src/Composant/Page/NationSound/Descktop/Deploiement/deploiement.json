@@ -1,0 +1,67 @@
+{
+    "titre" : "Deploiement",
+    "section" : [
+        {
+            "titre": "introduction",
+            "content" : {
+                "titre" : "Hostinger",
+                "introduction" : [
+                    "Nous avons choisit comme hébergeur : Hostinger.",
+                    "Hostinger est un hébergeur web mutualisé qui est adapté pour les sites web de petite et moyenne taille ce qui correspond tout à fait à notre projet. Il offre notamment des solutions optimisées pour les sites WordPress, parfait pour réalisation de notre backoffice.",
+                    "Cette solution est donc parfaite pour heberger nos sites afin de les réunir dans un seul et unique nom de domaine.",
+                    "Parmi ses options il y-a la possibilité d’obtenir la certification SSL, d’administrer nos dossiers grâce à un accès FTP et d’installer nos dépendances en SSH."
+                ],
+                "img" : "/hostinger.png"
+            }
+        },
+        {
+            "titre": "Compilation",
+            "content" : {
+                "titre" : "npm run build",
+                "introduction" : [
+                    "Avant de déploiyer notre site, il est important et recommander de minifier notre code afin d'optimiser ses performances.",
+                    "Pour cela rien de plus facile, car à l'instaltion avec vite, nous avons automatiquement une commande qui nous permet de minifier notre code. Il s'agit de \" npm run build \". Cette commande doit être utiliser dans le terminal de VSC en verifiant d'être placer à la racine de notre projet.",
+                    "Une fois le code minifié, un dossier au nom de ' dist ' serat crée. notre code minifié est stocké ici, et c'est uniquement ce dossier qui serat exporté sur notre espace web."
+                ],
+                "img" : "/vite.png"
+            }
+        },
+        {
+            "titre": "Front-end",
+            "content" : {
+                "titre" : "Interfaces utilisateur React",
+                "introduction" : [
+                    "Les interfaces utilisateur est en sois le site web avec lequel les utilisateurs interagisent.",
+                    "- Il est hebergé dans un sous domaine qui est : ' nationsound.pixelevent.site '.",
+                    "- Son repertoire : ' /public_html/nationsound '.",
+                    "Son intallation se fait manuellement et suis ces étapes :",
+                    "1) Ouvrir le dossier du code source dans VSC",
+                    "2) Ouvrir un nouveau Terminal",
+                    "3) Taper la commande « npm run build » de vite",
+                    "4) Copier le contenu du dossier «dist»",
+                    "5) Coller dans le répertoire du sous domaine"
+                ],
+                "img" : ""
+            }
+        },
+        {
+            "titre": "Backoffice",
+            "content" : {
+                "titre" : "Backoffice WordPress",
+                "introduction" : [
+                    "Le backoffice WordPress est le site qui permet de rédigé les articles.",
+                    "- Il est hebergé dans un sous domaine qui est : ' backoffice.pixelevent.site '.",
+                    "- Son repertoire : ' /public_html/backoffice '.",
+                    "Son intallation se fait automatiquement :",
+                    "Titre du site : admin LE",
+                    "Email de l’administrateur : he.....",
+                    "Nom d’utilisateur admin : ...",
+                    "Mot de passe : Q...3.",
+                    "Avancé :",
+                    "Chemin d’installation : backoffice.pixelevent.site"
+                ],
+                "img" : "/wordpress.png"
+            }
+        }
+    ]
+}
