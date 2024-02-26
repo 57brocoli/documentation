@@ -1,0 +1,95 @@
+{
+    "titre" : "Les maquettes graphiques",
+    "logo" : "/Figma-1-logo.png",
+    "section" : [
+        {
+            "titre" : "Figma",
+            "content" : {
+                "introduction" : [
+                    "Dans le cadre du projet les maquettes sont réalisées avec l’application Figma, un outil de prototypage et de design collaboratif. Figma est une plate-forme qui fonctionne sur le Cloud, permet de travailler et partager en temps réel ses avancées sur un projet avec les parties prenantes, développeur, graphiste, designer etc... Il s’agit d’une solution multiplateforme qui fonctionne sur Mac, Windows, Linux et est open source.",
+                    "L'integralité des maquettes sont visible "
+                ]
+            }
+        },
+        {
+            "titre" : "Navigation et structure du projet", 
+                "partieA" : {
+                    "titre" : "Barre de navigation",
+                    "content" : {
+                        "introduction" : "La navigation reste un point clef en ce qui concerne l’aspect UX du projet. Elle doit être simple et compréhensible pour les utilisateurs. Afin de traiter au mieux cette problématique, le sujet de cette partie portera sur la barre de navigation. Si l’on reprend le contexte, les périodes de pic d’utilisation se situent aux heures précédent le festival, ce qui correspond au moment ou les utilisateurs se dirigeront en voiture vers le lieu de l’événement et pendant le festival où ils seront potentiellement alcoolisés. Ce qui implique une utilisation sur smartphone. En conséquent, nous avons choisit un design simple, visuellement épuré.",
+                        "puces" : [
+                            {
+                                "titre" : "Top tabs",
+                                "img" : "/documentation/NS_VersionPhone/Maquettes/topTab.png",
+                                "text" : "La barre du haut possède uniquement deux boutton. Le premier avec le logo renvoie l'utilisateur sur la page d'accueil, tandis que le button burgeur ouvre le menu."
+                            },
+                            {
+                                "titre" : "Menu",
+                                "img" : "/documentation/NS_VersionPhone/Maquettes/menu.png",
+                                "text" : "Le menu avec toutes les pages consultables."
+                            },
+                            {
+                                "titre" : "Bottom tabs",
+                                "img" : "/documentation/NS_VersionPhone/Maquettes/bottomTab.png",
+                                "text" : "La barre du bas possède trois boutton. A droite pour ouvrir les notifications, au millieu le logo pour un retour vers la page d'accueil, à droite pour ouvrir la page compte utilisateur."
+                            },
+                            {
+                                "titre" : "Vue d'ensemble",
+                                "img" : "/documentation/NS_VersionPhone/Maquettes/allTabs.png",
+                                "text" : "Une vue d'ensemble sur les barres navigation."
+                            }
+                        ]
+                    }
+                },
+                "partieB" : {
+                    "titre" : "Structure des pages par couches",
+                    "content" : {
+                        "introduction" : "Les pages de chaques couches de navigation possèdent des caractéristiques qui les différencie. Cela est du au fait qu'ils ne diffusent pas l'information de la même facon. Mais avant mêle de parler de couche, l'utilisateur lorsqu'il se connecte pour la permière fois sur l'application doit crée un compte. Les pages de connexion et inscription ne font pas partie des couches de navigation, mais elles ont bien des maquettes.",
+                        "img" : "../../public/documentation/NSDescktop/structureNavigation.png",
+                        "puces" : [
+                            {
+                                "titre" : "Pages connexion et inscription :",
+                                "img": [
+                                    "/documentation/NS_VersionPhone/Maquettes/pageConnexion.png",
+                                    "/documentation/NS_VersionPhone/Maquettes/pageInscription.png"
+                                ],
+                                "text" : [
+                                    "Il s'agit des pages sur lequelles l'utilisateur arrive pour la première fois. L'utilisateur possède la possibilité sois de crée un compte, sois de se connecter avec un compte deja existant."
+                                ]
+                            },
+                            {
+                                "titre" : "1er couche :",
+                                "img": [
+                                    "/documentation/NS_VersionPhone/Maquettes/couche1.png",
+                                    "/documentation/NS_VersionPhone/Maquettes/couche1.2.png"
+                                ],
+                                "text" : [
+                                    "La page d'accueil. C’est le point d’entrée du site. Elle est composée de plusieurs sections qui amènent l’utilisateur vers une page dédiée à sa thématique propre (section programme envoie vers la page programme)."
+                                ]
+                            },
+                            {
+                                "titre" : "2nd couche :",
+                                "img": [
+                                    "/documentation/NS_VersionPhone/Maquettes/couche2.png"
+                                ],
+                                "text" : [
+                                    "Elle regroupe les pages suivantes : Actualités, Programme, Billetterie, Sponsors, A-propos, Map. La seconde couche de navigation représente une page qui traite une à deux thématiques par section, et donne des informations de façon globale.",
+                                    " Exemple : la page programme affiche composée de deux sections, la première étant l’affichage des articles relatifs aux festival, et la seconde, la FAQ qui répond aux questions les plus fréquemment posées sur le festival. L’utilisateur a sur cette page la possibilité de cliquer sur certains éléments comme un événement qui compose le programme ou un article de l’actualité pour être redirigé vers une page de la dernière couche de navigation."
+                                ]
+                            },
+                            {
+                                "titre" : "3ème couche :",
+                                "img": [
+                                    "/documentation/NS_VersionPhone/Maquettes/couche3.png",
+                                    "/documentation/NS_VersionPhone/Maquettes/couche3.2.png"
+                                ],
+                                "text" : [
+                                    "Une page ou l’information est précise et centrée sur un sujet. Il peut s’agir d'un article, ou de la description d’un événement du programme avec l’heure, le lieux, le nom de l’artiste et une description de l’artiste."
+                                ]
+                            }
+                        ]
+                    }
+                }
+        }
+    ]
+}

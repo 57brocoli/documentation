@@ -4,8 +4,9 @@ import {motion} from 'framer-motion'
 import '../../style.css'
 import { Link } from 'react-router-dom'
 import logo from '/logo1.jpg'
-import presentationDescktop from '/documentation/NS_VersionDescktop/Presentation/presentationDescktop.png'
-import presentationPhone from '/documentation/NS_VersionDescktop/Presentation/presentationPhone.png'
+// import presentationDescktop from '/documentation/NS_VersionDescktop/Presentation/presentationDescktop.png'
+// import presentationPhone from '/documentation/NS_VersionDescktop/Presentation/presentationPhone.png'
+import presentation from '/documentation/NS_VersionPhone/Presentation/presentationPhone.png'
 
 function Presentation() {
 
@@ -23,8 +24,7 @@ function Presentation() {
                             <section className='my-10'>
                                 <article className='pt-10 px-10'>
                                     <h2 className='text-4xl text-center font-bold mb-6'>{data.section[0].titre}</h2>
-                                    <img src={presentationDescktop} className='hidden lg:block float-right ' alt="ecran bureau" style={{width:'40%', zIndex:2, marginLeft: -120}}/>
-                                    <img src={presentationPhone} className='hidden lg:block float-right ' alt="ecran phone" style={{width:'10%', marginTop:50, marginLeft:40}}/>
+                                    <img src={presentation} className='hidden lg:block float-right rounded-3xl' style={{width:'23%', marginLeft: 30, marginRight: 40}}alt="presentation sur support phone" />
                                     <p className='indent-10 font-semibold'>{data.section[0].content.introduction[0]} <Link className='text-rose-600 visited:text-purple-600' to={"/nationsound/desktop"}>version bureau</Link></p>
                                     <p className='font-semibold'>{data.section[0].content.introduction[1]} </p>
                                     {data.section[0].content.text.map((section, index)=>{

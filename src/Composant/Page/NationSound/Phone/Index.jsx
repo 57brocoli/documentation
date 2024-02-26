@@ -40,27 +40,27 @@ function Index() {
                         Presentation
                     </NavLink>
                 </div>
-                {/* <div className='my-4 mx-5'>
-                    <NavLink to='/nationsound/desktop/maquettes' className="text-xl text-white font-bold">
+                <div className='my-4 mx-5'>
+                    <NavLink to='/nationsound/phone/maquettes' className="text-xl text-white font-bold">
                         Maquettes graphique
                     </NavLink>
                 </div>
                 <div className='my-4 mx-5'>
-                    <NavLink to='/nationsound/desktop/technologies' className="text-xl text-white font-bold">
+                    <NavLink to='/nationsound/phone/technologies' className="text-xl text-white font-bold">
                         Technologies
                     </NavLink>
                 </div>
                 <div className='my-4 mx-5'>
-                    <NavLink to='/nationsound/desktop/initialisation' className="text-xl text-white font-bold">
+                    <NavLink to='/nationsound/phone/initialisation' className="text-xl text-white font-bold">
                         Initialisation
                     </NavLink>
                 </div>
                 <div className='my-4 mx-5'>
-                    <NavLink to='/nationsound/desktop/logique' className="text-xl text-white font-bold">
+                    <NavLink to='/nationsound/phone/logique' className="text-xl text-white font-bold">
                         Logique de développement
                     </NavLink>
                 </div>
-                <div className="items-center flex-shrink-0 text-white ms-5 my-4">
+                {/* <div className="items-center flex-shrink-0 text-white ms-5 my-4">
                     <h3 className="font-bold text-xl ">Code</h3>
                     <h3 className="font-bold text-lg mt-2 mx-4">Côté script</h3>
                     <ul className='mt-2 mx-5'>
@@ -113,8 +113,8 @@ function Index() {
                             </NavLink>
                         </li>
                     </ul>
-                </div>
-                <div className='my-4 mx-5'>
+                </div> */}
+                {/* <div className='my-4 mx-5'>
                     <NavLink to='/nationsound/desktop/deploiement' className="text-xl text-white font-bold">
                         Deploiement
                     </NavLink>

@@ -5,7 +5,7 @@ import Home from "./Composant/Page/Home/Home"
 import NSPresentation from "./Composant/Page/NationSound/NSPresentation"
 import './Assets/Styles/styles.css'
 import IndexDescktop from "./Composant/Page/NationSound/Descktop/Index"
-import Presentation from "./Composant/Page/NationSound/Descktop/Presentation/Presentation"
+import PresentationDescktop from "./Composant/Page/NationSound/Descktop/Presentation/Presentation"
 import UseState from "./Composant/Page/NationSound/Descktop/Code/UseState"
 import Maquettes from "./Composant/Page/NationSound/Descktop/Maquettes/Maquettes"
 import UseEffect from "./Composant/Page/NationSound/Descktop/Code/UseEffect"
@@ -22,6 +22,8 @@ import Données from "./Composant/Page/NationSound/Descktop/Code/Données"
 import Deploiement from "./Composant/Page/NationSound/Descktop/Deploiement/Deploiement"
 import IndexPhone from "./Composant/Page/NationSound/Phone/Index"
 import PresentationPhone from "./Composant/Page/NationSound/Phone/Presentation/Presentation"
+import MaquettesPhone from "./Composant/Page/NationSound/Phone/Maquettes/Maquettes"
+import TechnologiePhone from "./Composant/Page/NationSound/Phone/Technologies/Technologies.jsx"
 
 const router = createBrowserRouter([
     {
@@ -43,7 +45,7 @@ const router = createBrowserRouter([
                 children : [
                     {
                         path : '/nationsound/desktop',
-                        element: <Presentation/>
+                        element: <PresentationDescktop/>
                     },
                     {
                         path : '/nationsound/desktop/initialisation',
@@ -111,6 +113,14 @@ const router = createBrowserRouter([
                         path : '/nationsound/phone',
                         element: <PresentationPhone/>
                     },
+                    {
+                        path : '/nationsound/phone/maquettes',
+                        element: <MaquettesPhone/>
+                    },
+                    {
+                        path : '/nationsound/phone/technologies',
+                        element: <TechnologiePhone/>
+                    }
 
                 ]
             }

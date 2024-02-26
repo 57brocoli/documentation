@@ -46,7 +46,7 @@
             }
         },
         {
-            "titre" : "React",
+            "titre" : "React-Native",
             "content" : {
                 "introduction":[
                     "Tout Comme la version mobile, elles ont été développer en React",
