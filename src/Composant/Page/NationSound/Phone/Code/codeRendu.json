@@ -1,0 +1,293 @@
+{
+    "titre" : "Code côté rendu",
+    "section" : [
+        {
+            "titre" : "Operateur ternaire",
+            "content" : {
+                "introduction" : [
+                    "L'operateur ternaire de JavaScript est une facon d'ecrire une conditions de facon plus condensé. Il s'agit d'une syntaxe basée sut l'operateur ternaire \" ? \" qui est un opérateur de comparaison. Elle permet entre autre d'écrire une condition sur une ligne, ce qui permet d'avoir un code plus court et plus gagné du temps."
+                ],
+                "imgConditionIf": "/documentation/NS_VersionDescktop/Code/rendu/conditionIf.png",
+                "imgTernaire": "/documentation/NS_VersionDescktop/Code/rendu/ternaireInitial.png",
+                "utilisation":[
+                    {
+                        "nom": "Pour la methode channel",
+                        "lieux" : "Page1.jsx / Page2.jsx",
+                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/ternaire.png"],
+                        "explication" : [
+                            "Ici il sagit du fichier 'Page1.jsx'. Ce conposant représente la 1er couche de navigation.",
+                            "Son utilisation est simple :",
+                            "Avec le paramêtre transmit au composant, les conditions vont être parcourut une à une.",
+                            "Une fois qu'une des condtions est validée elle est exécutée.",
+                            "La condition vas donc charger le composant qui suit les \" && \". "
+                        ]
+                    },
+                    {
+                        "nom": "Pour filtré le rendu",
+                        "lieux" : "ArticleWPComponent.jsx / ArticlePixeleventComponent.jsx",
+                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/ternaireFiltre.png"],
+                        "explication" : [
+                            {
+                                "cas" : "Lorsque la valeur de la variable \"filtre\" est  \"null\" (condition de la ternaire) :",
+                                "puces" : [
+                                    "1 - On verifie que la variable \"article\" est initialisé \" articles && \"",
+                                    "2 - Avec la methode .slice on renvoie une portion du tableau d'origine. Cette portion est définit par le premier indice \"0\" et \"nombreArticle\".",
+                                    "3 - Avec la methode .map( ) on retourne le composant \"ArticleCards\"."
+                                    
+                                ]
+                            },
+                            {
+                                "cas" : "Lorsque la valeur de la variable \"filtre\" est différent de null (dans le cas ou la condition n'est pas rempli) :",
+                                "puces" : [
+                                    "1 - On verifie que la variable \"article\" est initialisé \" articles && \"",
+                                    "2 - AVEC LA METHODE .filter( ) ON FILTRE LES ARTICLES POUR RENVOYER UNIQUEMENT CEUX DANS LA CATEGORIE EST EGALE A CHAINE DE CARACTERE CONTENU DANS filter. ",
+                                    "3 - Avec la methode .slice on renvoie une portion du tableau d'origine. Cette portion est définit par le premier indice \"0\" et \"nombreArticle\".",
+                                    "4 - Avec la methode .map( ) on retourne le composant \"ArticleCards\""
+                                ]
+                            }
+                            
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Traitement des données",
+            "content" : {
+                "introduction" : [
+                    "Dans cette partie de la documentation nous allons parler de la facon dont les données provenant de l'api sont traitées. Il est important de noter que les données traitées proviennent des api WordPress et ApiPlatform. Leur recueil et leur transfert entre composant parent à composant enfant sont traités dans les hooks ' UseLoader, UseEffect, UseState, UseParams ' de la section code côté script de la documentation.",
+                    "De plus certaines de ces parties sont differentes en fonction des couches de navigations. Il est aussi important de savoir qu'il existe des differences entre les structures des données recueillis en fonction des api (Wordpress et ApiPlatform), c'est pourquoi il existe des composants differents en fonction de l'origine des données.",
+                    "Il faut garder à l'esprit que les composants de chaque couche sont à 90% identique car ils ont la même fonction, mais des données différentes. C'est pourquoi ici, nous allons détailler le traitement des données pour chaque couche en prenons un composant comme exemple."
+                ],
+                "img": "",
+                "composants":[
+                    {
+                        "nom": "Home.jsx",
+                        "introduction" : [
+                            {
+                                "nom": "Home.jsx",
+                                "text" : [
+                                    "Pour rappel il s'agit du composant qui représente la 1er couche de navigation. Cette 1er couche est ni plus ni moin que la page d'accueil.",
+                                    "Ce composant contient :",
+                                    "- Le composant Navigation qui est La barre de navigation",
+                                    "- Le composant HomeComponent qui traitera les données",
+                                    "- Le composant Footer qui comme sont nom l'indique, le pied de page."
+                                ]
+                            },
+                            {
+                                "nom": "HomeComponent.jsx",
+                                "text" : [
+                                    "Il s'agit du seul composant propre à la page d'accueil. Le header et le footer etant des composants appartenant à toute les couches, ce qui fait donc de HomeComponent l'unique composant de la 1er couche de navigation.",
+                                    "Dans le cahier des charges il est imposer, sur cette page, d'afficher le programme, les sponsors, ainsi que la carte interactive.",
+                                    "Nous y avons rajouter une section pour afficher des lieux de résidence qui pourrait intérésser les clients pour leur sejour.",
+                                    "Les données ne sont pas toutes récupérées au moment ou notre composant est charger. C'est ce qui est detaillé ci dessous."
+                                ]
+                            }
+                        ],
+                        "explication" : [
+                            {
+                                "titre": "Les données",
+                                "puces" : [
+                                    {
+                                        "text" : [
+                                            "Les données de la page d'accueil sont d'abord récupéré en même temps que la route est appellée dans App.jsx.",
+                                            "- Le loader initialise l'appel à l'api pour récupéré les données.",
+                                            "- ' https://pixelevent.site/api/views/1 ' est l'api, ' 1 ' etant l'id de la page d'accueil dans la base de données. Ce qui nous permet de récupérer pour la route ' / ' les données de la page 1.",
+                                            "- Ces données sont automatiquement transmises à la route."
+                                        ],
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/homeDonnees1.png"]
+                                    },
+                                    {
+                                        "text" : [
+                                            "Elles sont récupérées dans le composant Home.jsx grace au hook ' useLoaderData ' de react-router-dom, pour être stockées dans la variable ' view '. ",
+                                            "Puis transmises a notre composant enfant 'HomeComponent.jsx."
+                                        ],
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/homeDonnees2.png"]
+                                    },
+                                    {
+                                        "text" : [
+                                            "Notre variable ' view ' qui possède nos données est récupérée par notre composant ' HomeComponent '. Ainsi elles peuvent enfin être traitées."
+                                        ],
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/homeDonnees.png"]
+                                    },
+                                    {
+                                        "text" : [
+                                            "La liste des hotels, quant à elle, est récupérée et stockée dans la variable ' hotels ' au moment ou le composant est chargé grace au hook ' useEffect ' qui initialise une appel à l'api comme sur cette image."
+                                        ],
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/homeDonneesHotel.png"]
+                                    }
+                                ]
+                            },
+                            {
+                                "titre": "Le rendu",
+                                "puces" : [
+                                    {
+                                        "text" : "Dans un premier temps, les données du header sont afficher dans la balise ' header ' pour l'image et le titre de la page. ensuite un text est introduit dans une balise ' h5 ' en tête du main.",
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/homeHeader.png"]
+                                    },
+                                    {
+                                        "text" : "Pour ce qui est des sections de la page, elles sont grace à la methode map( ) listées les une apres les autres en fonction de leur index. L'instruction donne alors ceci :",
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/homeSectionMap.png"]
+                                    },
+                                    {
+                                        "text" : "Elles sont ensuite traitées une à une en fonction de leur style d'affichage par une ternaire et grace à la propriété ' display ' ( il est possible de choisir un style d'affichage depuis le site PixelEvent ). Pour rappel les sections proviennent du site PixelEvent. L'image ci dessous montrent l'exemple pour le style1.",
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/homeSection.png"]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "nom": "Page1.jsx",
+                        "introduction" : [
+                            {
+                                "nom": "Page1.jsx",
+                                "text" : [
+                                    "Page1.jsx représente la seconde couche de navigation.",
+                                    "Ce composant contient :",
+                                    "- Le composant Navigation qui est La barre de navigation",
+                                    "- Les composants : 'BilletterieComponent', 'AboutComponent', 'ProgrammeConponent', 'ArtisteComponent', 'SponsorComponent', 'ActualiteComponent', 'MapComponent'. Bien sur un seul de ces composants est chargé, et c'est grace à la methode channel que cela est possible.",
+                                    "- Le composant Footer qui comme sont nom l'indique, le pied de page."
+                                ]
+                            },
+                            {
+                                "nom": "BilletterieComponent.jsx",
+                                "text" : [
+                                    "Le composant 'BilletterieComponent' servira d'exemple pour la documentation car il est facile de comprendre la logique du traitement des donnée à traver ce composant.",
+                                    "A la difference de la 1er couche de navigation, dans la seconde couche les données provenant de la route sont uniquement dédiées au header de la page.",
+                                    "Tandis que les données propre au composant, sont récupérées au moment ou notre composant est chargé. Dans notre exemple la liste des billets est récupéré au moment ou notre composant 'BilletterieComponent' est chargé. Dans un notre cas, Le programme sera récupéré lorsque le composant 'ProgrammeConponent' est chargé.",
+                                    "L'objectif est de récupérer et uniquement ce qui doit être traité dans notre composant. Ici la liste des billets."
+                                ]
+                            }
+                        ],
+                        "explication" : [
+                            {
+                                "titre": "Les données",
+                                "puces" : [
+                                    {
+                                        "text" : [
+                                            "Les données du header de la page sont d'abord récupéré en même temps que la route est appellée dans App.jsx.",
+                                            "- Le loader initialise l'appel à l'api pour récupéré les données.",
+                                            "- ' https://pixelevent.site/api/views/1 ' est l'api, ' 2 ' etant l'id de la page billeterie dans la base de données. Ce qui nous permet de récupérer pour la route ' /billetterie ' les données de la page 2.",
+                                            "- Ces données sont automatiquement transmises à la route."
+                                        ],
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/page1Donnees1.png"]
+                                    },
+                                    {
+                                        "text" : [
+                                            "Elles sont récupérées dans le composant Page1.jsx grace au hook ' useLoaderData ' de react-router-dom, pour être stockées dans la variable ' view '. ",
+                                            "Puis transmises a notre composant enfant 'BilletterieComponent.jsx"
+                                        ],
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/page1Donnees2.png"]
+                                    },
+                                    {
+                                        "text" : [
+                                            "Notre variable ' view ' qui possède nos données est récupérée par notre composant ' BilletterieComponent '. Ainsi elles peuvent enfin être traitées."
+                                        ],
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/page1Donnees3.png"]
+                                    },
+                                    {
+                                        "text" : [
+                                            "La liste des billets, quant à elle, est récupérée et stockée dans la variable ' billets ' au moment ou le composant est chargé grace au hook ' useEffect ' qui initialise une appel à l'api comme sur cette image."
+                                        ],
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/page1Donnees4.png"]
+                                    }
+                                ]
+                            },
+                            {
+                                "titre": "Le rendu",
+                                "puces" : [
+                                    {
+                                        "text" : "Dans un premier temps, les données du header sont afficher dans la balise ' header ' pour l'image et le titre de la page. ensuite un text est introduit dans une balise ' h5 ' en tête du main.",
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/page1Donnees5.png"]
+                                    },
+                                    {
+                                        "text" : "Pour ce qui est de la liste des billets, elle est grace à la methode map( ) listée pour les affichées les une apres les autres en fonction de leur index. L'instruction donne alors ceci :",
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/page1Donnees6.png"]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "nom": "Page2.jsx",
+                        "introduction" : [
+                            {
+                                "nom": "Page2.jsx",
+                                "text" : [
+                                    "Page2.jsx représente la troisième couche de navigation.",
+                                    "Ce composant contient :",
+                                    "- Le composant Navigation qui est La barre de navigation",
+                                    "- Les composants : 'ArtisteDetails', 'ArticleComponent', 'ArticleWpDetailComponent', 'EpisodeComponent', 'LieuComponent'. Bien sur un seul de ces composants est chargé, et c'est grace à la methode channel que cela est possible.",
+                                    "- Le composant Footer qui comme sont nom l'indique, le pied de page."
+                                ]
+                            },
+                            {
+                                "nom": "ArtisteDetails.jsx",
+                                "text" : [
+                                    "Le composant 'ArtisteDetails' servira d'exemple pour la documentation car il est facile de comprendre la logique du traitement des donnée à traver ce composant.",
+                                    "Il s'agit du composant qui affiche, comme son nom l'indique, les details d'un artiste.",
+                                    "Le recueil des données pour la 3eme couche se fait grace à un parametre qui est l'identifiant de l'object. Par exemple dans notre cas, le parametre serat l'identifiant de l'artiste en question."
+                                ]
+                            }
+                        ],
+                        "explication" : [
+                            {
+                                "titre": "Les données",
+                                "puces" : [
+                                    {
+                                        "text" : [
+                                            "L'identifiant de l'artiste, que l'on vas appeler ' id ' est récupéré dans le dernier sous composant de la seconde couche. Dans notre cas il s'agit du composant ' ArtisteComponent '.",
+                                            "Dans le NavLink l'id devient un paramètre qui définit la route."
+                                        ],
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/page2Donnees1.png"]
+                                    },
+                                    {
+                                        "text" : [
+                                            "Dans notre composant App.jsx la route prend bien notre id en parametre pour configuré la route."
+                                        ],
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/page2Donnees2.png"]
+                                    },
+                                    {
+                                        "text" : [
+                                            "L'id est ensuite récuépéré grace au hook ' useParamas ' de react-router-dom.",
+                                            "Il est ensuite transmit a notre composant ' ArtisteDetails '."
+                                        ],
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/page2Donnees3.png"]
+                                    },
+                                    {
+                                        "text" : [
+                                            "L'id de l'artiste est récupéré dans notre composant ' ArtisteDetails '."
+                                        ],
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/page2Donnees4.png"]
+                                    },
+                                    {
+                                        "text" : [
+                                            "Dans notre composant une appel à l'api est initialisé, et la liste des artistes est stocker dans la variable ' artistes '.",
+                                            "L'id est ensuite utilisé pour filtré la liste afin de récupéré uniquement celui qui possède le même identifiant.",
+                                            "Les données de notre artiste est donc stocker dans la variable ' artiste ', et peuvent être traité dans le rendu."
+                                        ],
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/page2Donnees5.png"]
+                                    }
+                                ]
+                            },
+                            {
+                                "titre": "Le rendu",
+                                "puces" : [
+                                    {
+                                        "text" : "Dans un premier temps, les données de l'artiste sont affichées comme sur les maquettes graphique, avec une image de l'artiste à gauche, puis à droite son nom en titre, un liens pour écouter un morceau et une description de l'artiste.",
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/page2Rendu1.png"]
+                                    },
+                                    {
+                                        "text" : "Dans un second temp, la liste des evenements ( episode ) auquel l'artiste se produit esr afficher.",
+                                        "img" : ["/documentation/NS_VersionDescktop/Code/rendu/page2Rendu2.png"]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

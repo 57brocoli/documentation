@@ -1,0 +1,185 @@
+{
+    "titre" : "Initialisation",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Nous verrons ici comment le projet à été crée avec React-Native.",
+                    "Il est possible de crée un projet ReactNative en une seul igne de commande avec expo. Cette methode etant tres rapide et offre de nombre avantage au niveau de la documentation, de nombreux packages on adopter l'installation par expo. Cette solution est destinée au petit projet.",
+                    "C'est pourquoi nous nous tournerons vers la methode \"CLI\", plus fastidieuse mais sans limite de taille."
+                ]
+            }
+        },
+        {
+            "titre" : "Creation du projet",
+            "content" : {
+                "introduction" : [
+                    "Avant de crée un nouveau projet React-Native, il est imperativement n'ecessaire d'avoir prealablement installer quelque outils tel que : Node / JDK / AndroidStudio:"
+                ],
+                "img" : "",
+                "puces" :[
+                    "Pour installer les outils vous pouvez consulter la page à cette adresse : https://reactnative.dev/docs/environment-setup?guide=native, ou suivre ces étapes :",
+                    "1 - Ouvrez une invite de commande en tant qu'administrateur puis exécutez la commande suivante : « choco install -y nodejs-lts microsoft-openjdk17 »",
+                    "2 - Téléchargez et installez Android Studio. Android studio nous permettra surtout de simulé notre application sur un smatphone virtuel. Dans l'assistant d'installation d'Android Studio, assurez-vous que les cases en regard de tous les éléments suivants sont cochées : Android SDK / Android SDK Platform / Android Virtual Device.",
+                    "3 - Configuration du SDK. Le SDK est le smatphone virtuel. Ouvrez Android studio, puis clicker sur \"More Actions\" puis \"SDK Manager\". Dans \"Android SDK\" aller dans l'onglet \"SDK Platforms\" recherchez et développez l’entrée Android 13 (Tiramisu), puis cocher les cases : Android SDK Platform 33 / Google APIs Intel x86 Atom System Image. Ensuite, sélectionnez l'onglet \"SDK Tools\" puis assurez-vous que 33.0.0 est sélectionné. Enfin, cliquez sur « Appliquer » pour télécharger et installer le SDK Android et les outils de construction associés.",
+                    "4 - Configurer la variable d'environement ANDROID_HOME. Taper dans la barre de recherche windows \"Variable d'environement\". Dans la section \"Variables utilisateur pour\" suivit du nom de l'utilisateur, clicker sur \"Nouvelle\". Nom de la variable : \" ANDROID_HOME \". Valeur de la variable : \" C:\\User\\nom de l'utilisateur\\AppData\\Local\\Android\\Sdk\". Puis clicker sur ok"
+                ],
+                "text" : "Enfin l'initialisation de notre projet React-Native suis ces étapes bien précises :",
+                "etapes": [
+                    {
+                        "nom" : "1 - Création du dossier.",
+                        "lieux" : "bureau",
+                        "ilustration" : {
+                            "img" : ["/documentation/NS_VersionPhone/Initialisation/initialisation1.png"],
+                            "text" : "Le nom du dossier est enfet le nom du projet."
+                        }
+                    },
+                    {
+                        "nom" : "2 - Ouvrir le dossier dans l'editeur de texte.",
+                        "lieux" : "Visual Studio Code",
+                        "ilustration" : {
+                            "img" : ["/documentation/NS_VersionDescktop/Initialisation/etape2.png"],
+                            "text" : "Avec Visual Studio Code, sur «File» puis «Open Folder», ouverture du dossier «Nation Sound». Cela nous permettra de crée des dossiers, d'éditer des fichier directement dans notre dossier projet, plus courament dit : ' à la racine du projet '"
+                        }
+                    },
+                    {
+                        "nom" : "3 - Ouvrir le terminal",
+                        "lieux" : "Visual Studio Code",
+                        "ilustration" : {
+                            "img" : ["/documentation/NS_VersionDescktop/Initialisation/etape3.png"],
+                            "text" : "VSC possède un terminal intégré. Le terminal nous permettra d'entré des lignes de commande pour diverses raisons, notament ici l'instalation de react, mais aussi plus tard les packages utiles au développement"
+                        }
+                    },
+                    {
+                        "nom" : "4 - « npx react-native@latest »",
+                        "lieux" : "Visual Studio Code / Terminal",
+                        "ilustration" : {
+                            "img" : [
+                                "/documentation/NS_VersionPhone/Initialisation/initialisation4.png",
+                                "/documentation/NS_VersionPhone/Initialisation/initialisation5.png"
+                            ],
+                            "text" : "Entrer dans le terminal : « npx react-native@latest init NationSound ». Cette commande vas lancer l'intalation du nouveau projet React-Native. Le dossier projet serat automatiquement crée dans notre premier dossier."
+                        }
+                    },
+                    {
+                        "nom" : "5 - npm start :",
+                        "lieux" : "Visual Studio Code / Terminal",
+                        "ilustration" : {
+                            "img" : [
+                                "/documentation/NS_VersionPhone/Initialisation/initialisation7.png"
+                            ],
+                            "text" : "Metro est l'outil de création JavaScript pour React Native. Pour démarrer le serveur de développement Metro. Il faut dabord se placer dans le dossier du code source puis exécutez la commande suivante à partir du terminal : « npm start »"
+                        }
+                    },
+                    {
+                        "nom" : "6 - npm run android",
+                        "lieux" : "Visual Studio Code / Terminal",
+                        "ilustration" : {
+                            "img" : [
+                                "/documentation/NS_VersionPhone/Initialisation/initialisation8.png",
+                                "/documentation/NS_VersionPhone/Initialisation/initialisation9.png"
+                            ],
+                            "text" : "Ouvrez un nouveau terminal, en n'oublions pas de ce placer dans à la racine du projet avec \"cd NationSound\", puis exécutez : « npm run android ». Ce qui vas automatiquement lancer notre application sur notre smartphone virtuel configuré préalablement."
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Initialisation de l’environnement de travail.",
+            "introduction" : [
+                "Maintenant que ReactNative est installé, l’environnement doit être réaménager pour commencer sur une base vierge. C’est ce que l’on appellera l’initialisation de l’environnement.",
+                "En gros nous allons ici nous démunir de tous les fichiers et codes inutiles à la racine du projet",
+                "L’initiation suit ces étapes :"
+            ],
+            "etapes": [
+                {
+                    "nom" : "1 - Suppretion du code dans App.tsx",
+                    "lieux" : "Dossier ' App.tsx '",
+                    "ilustration" : {
+                        "img" : [
+                            "/documentation/NS_VersionPhone/Initialisation/environement1.png"
+                        ],
+                        "text" : "Renomer le fichier en App.js, puis supprimer l'integralité du code. Entrer \"rnce\", avec l'autocomplétion de VSC une nouvelle fonction exportable serat automatiquement crée, pour obtenir le même résultat que sur l'img d'ilustration."
+                    }
+                },
+                {
+                    "nom" : "2 - Verification sur notre smartphone",
+                    "lieux" : "smartphone virtuel",
+                    "ilustration" : {
+                        "img" : [
+                            "/documentation/NS_VersionPhone/Initialisation/environement2.png"
+                        ],
+                        "text" : "Une grande page blanche serat visible. Il est maintenant possible de commencer à coder et configurer l'architecture des dossiers et nos couche de navigation."
+                    }
+                }
+            ]
+        },
+        {
+            "titre" : "Installation des packages",
+            "introduction" : [
+                "Node.js nous permet d’utiliser le gestionnaire de packages NPM. Un package est un ‘mini’ logiciel qui répond à un besoin spécifique du code. Il peut par exemple s’agir d’un service qui traduit le format des dates en standard."
+            ],
+            "content" : [
+                {
+                    "titre" : "La liste des packages installés :",
+                    "elements" : [
+                        {
+                            "nom" : "React-navigation",
+                            "img" : "/react-navigation.png",
+                            "utilité" : "Configurer les routes de navigation en React. Principalement utilisé dans notre fichier App.js",
+                            "commande" : [
+                                "« npm install @react-navigation/native »",
+                                "« npm install react-native-screens react-native-safe-area-context »",
+                                "« npm install @react-navigation/native-stack »",
+                                "« npm install @react-navigation/bottom-tabs »",
+                                "« npm install @react-navigation/material-bottom-tabs react-native-paper react-native-vector-icons »"
+                            ]
+                        },
+                        {
+                            "nom" : "React-native-vector-icons",
+                            "img" : "/react2.png",
+                            "utilité" : "Il s'agit d'une large librairie d'icones. principalement utilisé pour embélir nos interfaces.",
+                            "commande" : ["« npm install --save react-native-vector-icons »"]
+                        },
+                        {
+                            "nom" : "Axios",
+                            "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/axios.png",
+                            "utilité" : "Configurer les requêtes vers une api.",
+                            "commande" : ["« npm install axios »"]
+                        },
+                        {
+                            "nom" : "bcryptjs",
+                            "img" : "/react2.png",
+                            "utilité" : "Package indisponssable pour crypter les mots de passe utilisateur.",
+                            "commande" : ["« npm install bcryptjs »"]
+                        },
+                        {
+                            "nom" : "Moment",
+                            "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/moment.png",
+                            "utilité" : "Manipuler et traduire le format des date en JS.",
+                            "commande" : ["« npm install moment »"]
+                        },
+                        {
+                            "nom" : "React-google-maps",
+                            "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/google-map.png",
+                            "utilité" : "Utiliser l’interface de google maps pour la page carte",
+                            "commande" : ["« npm install @react-google- maps/api »"]
+                        }
+                    ]
+                },
+                {
+                    "titre" : "La liste des packages importés (CDN) :",
+                    "puces" : [
+                        "- Bootstrap : Framework destiné au css. « https://getbootstrap.com/ ». Ligne 8 ; 14 .",
+                        "- Fontawesome : package qui propose une librairie d’icônes pour illustrer nos interfaces. « https://fontawesome.com/ ». Ligne 7."
+                    ],
+                    "img" : "../../public/documentation/NSDescktop/packages.png"
+                }
+            ]
+        }
+        
+    ]
+    
+}

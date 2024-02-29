@@ -24,6 +24,13 @@ import IndexPhone from "./Composant/Page/NationSound/Phone/Index"
 import PresentationPhone from "./Composant/Page/NationSound/Phone/Presentation/Presentation"
 import MaquettesPhone from "./Composant/Page/NationSound/Phone/Maquettes/Maquettes"
 import TechnologiePhone from "./Composant/Page/NationSound/Phone/Technologies/Technologies.jsx"
+import InitialisationPhone from "./Composant/Page/NationSound/Phone/Initialisation/Initialisation.jsx"
+import LogiquePhone from "./Composant/Page/NationSound/Phone/Logique/Logique.jsx"
+import UseStatePhone from "./Composant/Page/NationSound/Phone/Code/UseState.jsx"
+import UseEffectPhone from "./Composant/Page/NationSound/Phone/Code/UseEffect.jsx"
+import UseRefPhone from "./Composant/Page/NationSound/Phone/Code/UseRef.jsx"
+import VarFoncPhone from "./Composant/Page/NationSound/Phone/Code/VarFonc.jsx"
+import TernairePhone from "./Composant/Page/NationSound/Phone/Code/Ternaire.jsx"
 
 const router = createBrowserRouter([
     {
@@ -120,8 +127,35 @@ const router = createBrowserRouter([
                     {
                         path : '/nationsound/phone/technologies',
                         element: <TechnologiePhone/>
+                    },
+                    {
+                        path : '/nationsound/phone/initialisation',
+                        element: <InitialisationPhone/>
+                    },
+                    {
+                        path : '/nationsound/phone/logique',
+                        element: <LogiquePhone/>
+                    },
+                    {
+                        path : '/nationsound/phone/useState',
+                        element: <UseStatePhone/>
+                    },
+                    {
+                        path : '/nationsound/phone/useEffect',
+                        element: <UseEffectPhone/>
+                    },
+                    {
+                        path : '/nationsound/phone/useRef',
+                        element: <UseRefPhone/>
+                    },
+                    {
+                        path : '/nationsound/phone/varFonc',
+                        element: <VarFoncPhone/>
+                    },
+                    {
+                        path : '/nationsound/phone/ternaire',
+                        element: <TernairePhone/>
                     }
-
                 ]
             }
         ]

@@ -42,7 +42,6 @@
                         ]
                     }
                 }
-                
             ]
         },
         {
@@ -84,7 +83,7 @@
                             {
                                 "nom" : "React-navigation",
                                 "img" : "/react-navigation.png",
-                                "utilité" : "Configurer les routes de navigation en React. Principalement utilisé dans notre fichier App.jsx"
+                                "utilité" : "Configurer les routes de navigation en React. Principalement utilisé dans notre fichier App.js"
                             },
                             {
                                 "nom" : "React-native-vector-icons",
@@ -125,7 +124,7 @@
                         "commandes" : [
                             {   
                                 "nom" : "1. Se rendre sur https://github.com/",
-                                "utilité" : "Il nous faut crée un compte si cela n'est pas fait, puis crée un répository. le dépot à pour nom 'NationSoundReact'"
+                                "utilité" : "Il nous faut crée un compte si cela n'est pas fait, puis crée un répository. le dépot à pour nom 'NationSoundReactNative'"
                             },
                             {   
                                 "nom" : "2. git init",
@@ -144,7 +143,7 @@
                                 "utilité" : ""
                             },
                             {   
-                                "nom" : "6. git remote add origin https://github.com/nomducompte/NationSoundReact.git",
+                                "nom" : "6. git remote add origin https://github.com/nomducompte/NationSoundReactNative.git",
                                 "utilité" : "Git vas lié notre dépot local avec le répository distant."
                             },
                             {   
@@ -189,42 +188,7 @@
                     }
                 }
             ]
-        },
-        {
-            "titre" : "Vite",
-            "content" : {
-                "introduction" : [
-                    "Avant d’utiliser Vite, il est obligatoire d’avoir installé Node.js sur le poste de travail. Node.js est un outils incontournable qui permet aux développeurs de créer des applications et outils côté serveur en JavaScript. Dans ce projet il sera d’une grande utilité grâce à son gestionnaire de packages (NPM). Vite est un outil ‘build’ qui nous permettra d’installer l’environnement de travail nécessaire pour commencer à développer notre projet. Il nous permettra :"
-                ],
-                "img" : "/react2.png",
-                "puces" :[
-                    "1. Dans un premier temps d’installer React avec toutes ses dépendances,",
-                    "2. De mettre à disposition un serveur de développement extrêmement rapide en local,",
-                    "3. De disposer d’une commande ‘build’ pour générer des ressources statiques hautement optimisées pour la production."
-                ]
-            }
         }
-
-        
-    ],
-    
-    "partie3" : {
-        "titre" : "WordPress",
-        "intro" : {
-            "text" : "Le backoffice est assuré par un système de gestion de contenu (CMS), il doit permettre d’alimenter le contenu du site en article via une api. Il est donc nécessaire que la solution choisie offre comme fonctionnalité la rédaction de texte ainsi que le partage de contenu. Le fait de séparer interface utilisateur et backoffice, contribue à différencier style de mise en page et contenu, cela permet :",
-            "puce" : [
-                "- Au client d’avoir la main libre sur la rédaction du contenu du site, grâce à l’interface de WordPress qui intègre un éditeur visuel WYSIWYG. A l’image de Word il s’agit d’une interface de traitement de texte.",
-                "- De rendre nos interfaces utilisateur dynamiques. Le site React est alors une interface qui fait naviguer nos utilisateurs dans le contenu qui est rédigé en backoffice."
-            ],
-            "img" : "../../public/documentation/NSDescktop/wordpress.png"
-        },
-        "contenu" : {
-            "title" : "Pourquoi wordpress ?",
-            "text" : [
-                "Selon W3Techs, Wordpress fait tourner 42% de tous les sites web sur internet. De plus il détient 62% de parts de marché pour les systèmes de gestion de contenu sur les sites web avec un CMS connu. En comparaison, Joomla est à la seconde position avec 4.6% de part de marché. Ces chiffres montrent ne API REST qui permet de communiquer avec d’autres sites et applications. Les articles pourront donc être récupérés par nos interfaces utilisateur.",
-                "Contrairement aux interfaces utilisateur développées avec React, un site Wordpress ne se construit pas avec un éditeur de code, le développement se fait avec un navigateur. Il peut être monté en local avec une solution de serveur local comme XAMPP, mais dans le cadre du projet, le backoffice sera directement créé sur le serveur hébergeur."
-            ]
-        }
-    }
+    ]
     
 }

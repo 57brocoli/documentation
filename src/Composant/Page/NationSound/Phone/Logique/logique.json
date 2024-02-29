@@ -1,0 +1,220 @@
+{
+    "titre" : "Logique de développement",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "La logique de développement pour ce projet s'adapte fortement au framework Reat. Il faut comprendre par 'logique de développement' l'architecture du projet dans l'agencement des dossiers et fichier, ainsi que les methodes et techniques propre au code.",
+                    "A son intallation un architecture de base nous est proposée. Dans ce projet quelques modifications ont été adoptées pour aporter un structure de développement propre"
+                ]
+            }
+        },
+        {
+            "titre" : "Architecture du projet", 
+            "partieA" : {
+                "titre" : "Racine du projet",
+                "content" : {
+                    "introduction" : [
+                        "Ici il serat question de l'ordre de rangement des dossiers et fichiers du projet."
+                    ],
+                    "img" : "/documentation/NS_VersionPhone/Logique/architecture1.png",
+                    "puces" : [
+                        {
+                            "titre" : "index.html",
+                            "img" : "",
+                            "text" : "Dans un premier temps il faut retenir que le fichier 'Index.html' represente ce qu'on pourrait appeller le composant mêre de tous les autres composants de notre projet, car il serat le header de toutes nos pages. Il importe ensuite le fichier 'App.js' dans le body."
+                        },
+                        {
+                            "titre" : "App.jsx",
+                            "img" : "/documentation/NS_VersionPhone/Logique/architecture2.png",
+                            "text" : "On pourrait l'appeler le contrôleur, car son rôle ressemble à celui du model 'mvc'. Toutes les routes possibles sont codées et répèrtoriées ici. Pour plus de lisibilité seule la route \"Accueil\" est visible sur l'image."
+                        },
+                        {
+                            "titre" : "src",
+                            "img" : "",
+                            "text" : "Le dossier public contient touts les composants du site, les styles css, les images, et quelque donées en .json qui permet de charger des pages en statique si besoin."
+                        }
+                    ]
+                }
+            },
+            "partieB" : {
+                "titre" : "Dossier scr",
+                "content" : {
+                    "introduction" : [
+                        "Stocke toutes les fichiers necessaires au développement. On retrouve les composants, le css, les images, et les données en statiques"
+                    ],
+                    "img" : "/documentation/NS_VersionPhone/Logique/architecture3.png",
+                    "puces" : [
+                        {
+                            "titre" : "Assets",
+                            "img" : [
+                                "/documentation/NS_VersionPhone/Logique/architecture4.png"
+                            ],
+                            "text" : "Contient deux sous dossiers 'constantes' et 'img' : Le dossier contante stocke toutes les variables de style les plus génériques. Tandi que le dossier img stocke toute les images."
+                        },
+                        {
+                            "titre" : "Composants",
+                            "img" : [
+                                "/documentation/NS_VersionPhone/Logique/architecture5.png"
+                            ],
+                            "text" : "Regroupe tout les composants 'enfants' qui auront pour fonction d'afficher des donées sur les ecrans (interfaces utilisateurs). Dans la pratique ils constituent les composants du dossier 'ecrans'."
+                        },
+                        {
+                            "titre" : "data",
+                            "img" : [
+                                "/documentation/NS_VersionPhone/Logique/architecture6.png"
+                            ],
+                            "text" : "Contient les fichier au format JSON utile pour les pages statique si besoin."
+                        },
+                        {
+                            "titre" : "ecrans",
+                            "img" : [
+                                "/documentation/NS_VersionPhone/Logique/architecture7.png"
+                            ],
+                            "text" : "Il s'agit des composants 'majeur', qui representent les pages. Ce sont ceux qui sont appellés dans le systeme de routage configuré dans le fichier App.js."
+                        }
+                    ]
+                }
+            },
+            "partieC" : {
+                "titre" : "Dossier scr",
+                "content" : {
+                    "introduction" : [
+                        "Stocke toutes les fichiers necessaires au développement. On retrouve les composants, le css, et les données en statiques"
+                    ],
+                    "img" : "/documentation/NS_VersionDescktop/Logique/src.png",
+                    "puces" : [
+                        {
+                            "titre" : "Assets",
+                            "img" : "",
+                            "text" : "Contient deux sous dossiers 'Data' et 'Styles' : l'un stocke les données pour les composants chargées en statique, l'autre le fichier css qui contient tout les styles ainsi que la font 'RaphLanockFuture' enoncer dans le cahier des charges."
+                        },
+                        {
+                            "titre" : "Components",
+                            "img" : "",
+                            "text" : "Qui signifie en francais 'composants', il regroupe tout les composants 'enfants' qui auront pour fonction d'afficher des donées sur les interfaces utilisateurs. Dans la pratique leurs utiliter sont de composés des composant 'mères'. Ce dossier contient plusieurs sous dossiers qui seront plus de detaillés plus bas dans la page."
+                        },
+                        {
+                            "titre" : "Pages",
+                            "img" : "",
+                            "text" : "Contient les composants 'mères'. Comparer au dossier Component, les composant ici representent théoriquement les pages que l'utilisateur verra sur son écran."
+                        },
+                        {
+                            "titre" : "App.jsx",
+                            "img" : "",
+                            "text" : "On pourrait l'appeler le contrôleur, car son rôle ressemble à celui du model 'mvc'. Toutes les routes possibles sont codées et répèrtoriées ici. Pour plus de lisibilité seule la route ‘actualite’ est visible sur l'image."
+                        },
+                        {
+                            "titre" : "main.jsx",
+                            "img" : "",
+                            "text" : "Il s'agit du composant appellé par notre index.html (au niveau du body) cité précédement. Sa fonction est d'appelé le composant App.jsx, qui lui vas définir en fonction de l'url, le composant qui sera appellé et afficher à l'écran."
+                        }
+                    ]
+                }
+            }
+        },
+
+
+
+        {
+            "titre" : "Méthodologie", 
+            "partieA" : {
+                "titre" : "Methode channel",
+                "content" : {
+                    "introduction" : [
+                        "Tout comme la logique des couches de navigation, la méthode 'channel' est propre aux développement du projet et non à un langage de programmation. Elle est initialisée dans les composants \" majeurs \" présent dans le dossier \" ecrans \". Elle est présente dans la seconde et dans la troisieme couche de navigation. Cette méthode va permettre d’appliquer la logique de développement.",
+                        "Pour comprendre comment cette méthode fonctionne, il faut s’imaginer le modèle duquel elle s’est inspirée. Prenons un spectateur devant sa télévision qui appuis sur le bouton «1» de sa télécommande, afin de regarder le programme diffusé sur le canal 1, la télé se «connecte» alors à cette fréquence et affiche l’émission qui passe sur cette longueur d’onde.",
+                        "Entre chaque couche de navigation, sa logique et sa finalité reste la même, mais son initialisation est différent."
+                    ],
+                    "img" : "",
+                    "puces" : [
+                        {
+                            "titre" : "Mise en pratique",
+                            "img" : "",
+                            "text" : "Pour ilustrer son initialisation, le fichier 'Page1.js' serat le support. Pour que la methode channel marche, il nous faut un parametre, Ce parametre provient sois de la couche précédente, sois du menu. Le parametre représente enfet pour l'utilisateur la page à consulté, pour le code il s'agit d'une chaine de caractère qui définirat quel composant doit être chargé. En pratique la méthode suit une à une ces étapes :",
+                            "etapes" : [
+                                {
+                                    "nom" : "1 - Definition du canal",
+                                    "lieux" : "NavBar.js",
+                                    "ilustration" : {
+                                        "img" : "/documentation/NS_VersionPhone/Logique/methode1.png",
+                                        "text" : "L'exemple se baserat sur la page billeterie. Lorsque l'utilisateur demande à voir la page billeterie, la route prend le paramettre \"pageBilletterie\"."
+                                    }
+                                },
+                                {
+                                    "nom" : "2 - Récupération du canal",
+                                    "lieux" : "Page1.js",
+                                    "ilustration" : {
+                                        "img" : "/documentation/NS_VersionPhone/Logique/methode2.png",
+                                        "text" : "On récupère le parametre de la route lorsque le composant \"Page1\" est chargé."
+                                    }
+                                },
+                                {
+                                    "nom" : "3 - Attribution du composant",
+                                    "lieux" : "Page1.js",
+                                    "ilustration" : {
+                                        "img" : "/documentation/NS_VersionPhone/Logique/methode3.png",
+                                        "text" : " Dans le rendu du composant, chaque opérateur ternaire va être parcouru jusqu’à arriver à la première condition qui correspond au paramêtre récupéré, puis charger le composant qui est appelé. Ici notre canal est \"pageBilleterie\", la 1ere condition qui est validé. Il y'aura donc deux composant qui serat chargé pour construire notre page, \"HeaderPage\" pour le header et \"Billetterie\" pour chargé la liste des billets."
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "partieB" : {
+                "titre" : "",
+                "content" : {
+                    "introduction" : [
+                        ""
+                    ],
+                    "img" : "",
+                    "puces" : [
+                        
+                    ]
+                }
+            }
+        },
+
+
+        {
+            "titre" : "Couche de navigation", 
+            "partieA" : {
+                "titre" : "Les 3 couches de navigation",
+                "content" : {
+                    "introduction" : [
+                        "Pour répondre aux besoins du projet qui figurent dans le cahier des charges, et afin de simplifier la navigation, la structure du site se décompose en 3 couches de navigation. Chaque couche se compose de plusieurs pages qui ont la même fonction."
+                    ],
+                    "img" : "/documentation/NSDescktop/structureNavigation.png",
+                    "puces" : [
+                        {
+                            "titre" : "1er couche :",
+                            "text" : "Elle correspond à la page d’accueil. C’est le point d’entrée du site. Elle est composée de plusieurs sections qui amènent l’utilisateur vers une page dédiée à sa thématique propre (section programme envoie vers la page programme)."
+                        },
+                        {
+                            "titre" : "2nd couche :",
+                            "text" : "Elle regroupe les pages suivantes : Actualités, Programme, Billetterie, Sponsors, A-propos, Map. La seconde couche de navigation représente une page qui traite une à deux thématiques par section, et donne des informations de façon globale. Exemple : la page programme affiche deux sections, la première étant l’affichage des articles relatifs aux festival, et la seconde, la FAQ qui répond aux questions les plus fréquemment posées sur le festival. L’utilisateur a sur cette page la possibilité de cliquer sur certains éléments comme un événement qui compose le programme ou un article de l’actualité pour être redirigé vers une page de la dernière couche de navigation."
+                        },
+                        {
+                            "titre" : "3ème couche :",
+                            "text" : "Une page ou l’information est précise et centrée sur un sujet. Il peut s’agir de la description d’un événement du programme avec l’heure, le lieux, le nom de l’artiste et une description de l’artiste ou bien d’un article."
+                        }
+                    ]
+                }
+            },
+            "partieB" : {
+                "titre" : "",
+                "content" : {
+                    "introduction" : [
+                        ""
+                    ],
+                    "img" : "",
+                    "puces" : [
+                        
+                    ]
+                }
+            }
+        }
+    ]
+}

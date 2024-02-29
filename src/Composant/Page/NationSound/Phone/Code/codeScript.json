@@ -1,0 +1,273 @@
+{
+    "titre" : "Code côté script",
+    "section" : [
+        {
+            "titre" : "UseState",
+            "content" : {
+                "introduction" : [
+                    "UseState est un hook offert par react. Plus souvant appellé ' hook d'etat ', il nous permet entre autre d'instancié nos variables. Son utilisation est indiponssable car il s'implifie la manipulation des données.",
+                    "Il est present dans presque tout nos composants. Il se situe en tête de fonction et avant le rendu. Majoritairement utilisé comme une variable pour stocker les données provenant de l'api, il est aussi utilisé dans les fonctions de filtrage ou dans la methode channel des composants de la secondes couche de navigation."
+                ],
+                "imgImport": "/documentation/NS_VersionPhone/Code/useStateImport.png",
+                "utilisation":[
+                    {
+                        "nom": "Comme une variable",
+                        "lieux" : "La majorité des composants",
+                        "img" : [
+                            "/documentation/NS_VersionPhone/Code/useState1.png"
+                        ],
+                        "explication" : [
+                            "Ici il sagit du fichier \"Page1.js\". Ce conposant affiche les articles provenant de notre backoffice PixelEvent.",
+                            "Sont instanciation est simple :",
+                            "1 - la variable prend comme non significatif \" articles \", car elle contiendra les articles.",
+                            "2 - Ensuit le seteur \"setArticles\" sera utile par la suite pour modifier le contenu de notre variable si besoin.",
+                            "3 - Enfin nous avons le hook \"useState( [ ] )\" qui instancie notre variable en lui attribuant le type \"array\" grace aux crochers.",
+                            "Pour le moment notre variable est un tableau vide. Par la suite dans le composant un l'autre hook \"useEffect\" viendra utilisé le seteur pour remplir notre variable d'articles. C'est ce qui ce passe sur l'image ci dessous :"
+                        ],
+                        "imgSeteur" : [
+                            "/documentation/NS_VersionDescktop/Code/useState1seteur.png"
+                        ],
+                        "explicationSeteur" : [
+                            "Le seteur \"setArticles\" prend en paramêtre le resultat du fetch. A partir de ce moment notre variable \"articles\" prend comme valeur le tableau des articles provenant du backoffice."
+                        ]
+                    },
+                    {
+                        "nom": "Pour filtrer le contenu",
+                        "lieux" : "Information.js",
+                        "img" : [
+                            "/documentation/NS_VersionPhone/Code/useState3.png"
+                        ],
+                        "explication" : [
+                            "- La variable 'nombreArticle' définit le nombre par default d'aticle à afficher ( 3 )."
+                        ],
+                        "imgSeteur" : [
+                            "/documentation/NS_VersionPhone/Code/useState4.png"
+                        ],
+                        "explicationSeteur" : [
+                            "Sur cette image, nous voyons comment le seteur ' setNombreArticle ' est utilisé dans une fonction pour changer le nombre d'article à afficher à l'ecran."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "UseEffect",
+            "content" : {
+                "introduction" : [
+                    "UseEffect est un hook offert par react. Pour s'implifier son fonctionnement, et ne cité uniquement celuit utilisé dans le projet, il s'agit d'une fonction que l'on peut choisir le moment ou il serat executé. Soit au chargement du composant, sois l'orsque l'etat du composant change. Dans la grande majorité du temp, ce hook est utilisé au chargement du composant, pour lancer un api à une api."
+                ],
+                "imgImport": "/documentation/NS_VersionPhone/Code/useEffectImport.png",
+                "utilisation":[
+                    {
+                        "nom": "Appel à une api",
+                        "lieux" : "La majorité des composants",
+                        "img" : ["/documentation/NS_VersionPhone/Code/useEffect1.png"],
+                        "explication" : [
+                            "Ici il sagit du fichier 'Page1.jsx'.",
+                            "Sont utilisation est simple :",
+                            "1 - La Fonction est initialisé. Elle lance grace à axios, une apel à l'api. dans les crochets en fin d'instruction \" [ ] \" aucune valeur est donnée, cela aurat pour effet d'executer la fonction au chargement du composant.",
+                            "2 - Les données sont receuillis avec \" .get( ) \".",
+                            "3 - Puis avec \" .then( ) \" et le seteur \" setArticles \" les donées sont transférés à la variable \" Articles \"."
+                        ]
+                    },
+                    {
+                        "nom": "Geolocalisation",
+                        "lieux" : "Map.js",
+                        "img" : ["/documentation/NS_VersionPhone/Code/useEffect2.png"],
+                        "explication" : [
+                            "L'objectif est de récupérer la position de l'utilisateur au moment ou l'utilisateur utilise pour la première fois le carte s'il l'accepte.",
+                            "Sont utilisation est simple :",
+                            "1 - La Fonction est initialisé. Elle lance la fonction \" requestLocationPermission( ) \" et stocker les données recueillies dans la variable \" result \".",
+                            "2 - Les données receuillies sont ensuit utilisées pour les afficher dans la console, et les attribuer à la variable \" location \" par l'intermediaire de son seteur."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "UseRef",
+            "content" : {
+                "introduction" : [
+                    "UseRef est un hook offert par react. Il ressemble un peu au hook useState, dans son utilité de stocker une valeur, mais il est nettement different car il permet de référencer une valeur qui n’est pas nécessaire au code du rendu lui-même. Il serat utilisé dans ce projet dans les animations comme le slide du menu."
+                ],
+                "imgImport": "/documentation/NS_VersionPhone/Code/useRefImport.png",
+                "utilisation":[
+                    {
+                        "nom": "Pour animer le menu",
+                        "lieux" : "NavBar.js",
+                        "imgInit" : ["/documentation/NS_VersionPhone/Code/useRef1.png"],
+                        "explicationInit" : [
+                            "Chaque useRef est initialisé dans une variable.",
+                            "Il s'agirat d'attribuer une valeur par default."
+                        ],
+                        "imgMethode" : ["/documentation/NS_VersionPhone/Code/useRef2.png"],
+                        "explicationMethode" : [
+                            "Au moment ou l'utilisateur clicke que le button burgeur la methode \" onPress \" :",
+                            "- Change la valeur de \" showmenu \", ce qui permet au code de s'avoir si le menu est ouvert ou pas.",
+                            "- \" Animated \" provient de ReactNative, et avec sa methode \" .timing( ) \", l'animation se realise. Elle prend en 1er parametre la valeur sur lequelle elle vas agir, il s'agit de notre useRef. Puis en second paramêtre un objet avec les propriétés :",
+                            "\" toValue \" qui defnit la valeur apres animation, dans le cas de \" slideMenu \" si le menu est ouvert la valeur est 260, si non 0.",
+                            "\" duration \" qui defnit la duré de l'animation.",
+                            "\" useNativeDriver \" qui doit être definit sur \"true\".",
+                            "- Et enfin la dernière methode \" .start() \" qui execute l'animation."
+                        ],
+                        "imgRendu" : ["/documentation/NS_VersionPhone/Code/useRef3.png"],
+                        "explicationRendu" : [
+                            "Prenons le cas de l'animation \" slideMenu \" :",
+                            "- \" Animated.view \" serat une section qui englobe notre menu, ainsi notre animation n'affecterat que notre menu.",
+                            "- Dans le style avec la prpriété \" transform \" on peut déplacer grace à \" translateX \" sur le plan horizontal notre menu.",
+                            "- De cette facon, l'orsque showmenu est egale à \" true \" ( menu ouvert ), la valeur de slideLenu est de 260, ce qui déplace notre menu de 260px à l'horizontal avec une duré de 300."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Variable et Fonction",
+            "content" : {
+                "introduction" : [
+                    "Au delat des hooks utilisés dans ce projet, certaines variables et fonctions sont instanciées de facon naturel. Par naturel il faut comprendre identique au base du language de programmation. Ici il s'agit de JavaScript."
+                ],
+                "imgImport": "",
+                "variable":[
+                    {
+                        "nom": "Stocker des données",
+                        "lieux" : "La plus part des composants",
+                        "img" : [
+                            "/documentation/NS_VersionPhone/Code/var1.png"
+                        ],
+                        "explication" : [
+                            "Il s'agit d'une variable qui contient l'email de l'uitlisateur actuel'.",
+                            "Elle est récupérée grace à l'objet \" auth( ) \" qui provient du systeme d'identification de firebase."
+                        ]
+                    },
+                    {
+                        "nom": "Stocker le chemin d'acces au dossier photo du site pixelevent",
+                        "lieux" : "Tous les composants qui affichent des images",
+                        "img" : [
+                            "/documentation/NS_VersionPhone/Code/var2.png"
+                        ],
+                        "explication" : [
+                            "Les variables contiennent en réalité un objet, d'en la clef ' uri ' a pour valeur le chemnin d'acces vers le dossier qui stocke les images."
+                        ]
+                    }
+                ],
+                "fonction":[
+                    {
+                        "nom": "Inscription",
+                        "lieux" : "SignUp",
+                        "img" : [
+                            "/documentation/NS_VersionPhone/Code/fonc1.png"
+                        ],
+                        "explication" : [
+                            "Cette fonction permet à la fois d'inscrire l'utilisateur dans la base de donnée de firebase, et d'enregistré ses données dans la base de donnée de liveevent.",
+                            "Elle opère de suivant ces étapes : ",
+                            "1er partie :",
+                            "- La fonction execute plusieurs conditions pour verifier que l'utilisateur a bien remplit tous les champs. Si ce n'est pas le cas la fonction s'arrête et envoie une alert à l'ecran.",
+                            "2nd partie :",
+                            "- Grace au systeme de firebase, l'objet \" auth( ) \" et la methode \" .createUserWithEmailAndPassword( ) \" crée un nouveau utilisateur avec email et password.",
+                            "- Si tout est ok, l'utilisateur est redirigé vers la page Home.",
+                            "- Si l'adresse mail est deja connue de la base de donnée de firebase, ou si l'adresse mail est invalide ou si le mot de passe n'est pas compatible aux règles de sécurité, la fonction n'enregistre pas l'utilisateur et renvoie une alert à l'ecran.",
+                            "3eme partie :",
+                            "- bcrypt prend le mot de passe de l'utilisateur pour le scripter.",
+                            "- La fonction execute un fetch avec la methode \" POST \" pour envoyer les données de l'utilisateur dans la base de donnée de pixelevent."
+                        ]
+                    },
+                    {
+                        "nom": "Authentification",
+                        "lieux" : "Login.js",
+                        "img" : [
+                            "/documentation/NS_VersionPhone/Code/fonc2.png"
+                        ],
+                        "explication" : [
+                            "Cette fonction permet à l'utilisateur de se connecter avec un compte existant.",
+                            "Grace au systeme de firebase, l'objet' \" auth( ) \" permet à la fonction d'opère suivant ces étapes :",
+                            "- La methode \" .signInWithEmailAndPassword( ) \" prend en parametre l'email et password pour authentifié l'utilisateur.",
+                            "- Si les parametre sont valide, un identifiant est crée pour le nouveau utilisateur et est attribué à la propriété \" uid \" de l'objet \" auth \". L'utilisateur est auhentifié et redirigé vers la page Home",
+                            "- Si l'email ou si le password sont incorects, une alert est envoyer à l'ecran."
+                        ]
+                    },
+                    {
+                        "nom": "Utilisateur déja connecté",
+                        "lieux" : "Login.js",
+                        "img" : [
+                            "/documentation/NS_VersionPhone/Code/fonc3.png"
+                        ],
+                        "explication" : [
+                            "Cette fonction est authomatiquement executé à chaque fois que l'application est ouvert.",
+                            "Elle permet de verifié si un utilisateur est déja connecté. Ainsi elle évite à l'utilisateur sur son smatphone de devoir se connecter à chaque fois qu'il ouvre l'application.",
+                            "Cette fonction, comme les precedente fonction utilise l'objet \" auth( ) \".",
+                            "Elle vas avec un condition verifié si la propriété \" currentUser \" :",
+                            "- Si contient les données de l'utilisateur, alors l'utilisateur est directement dirigé vers la page Home",
+                            "- Si vide, la fonction s'arrête, l'utilisateur reste sur cette page."
+                        ]
+                    },
+                    {
+                        "nom": "Deconnexion",
+                        "lieux" : "NavBar.js , Profil.js",
+                        "img" : [
+                            "/documentation/NS_VersionPhone/Code/fonc9.png"
+                        ],
+                        "explication" : [
+                            "Fonction pour que l'utilisateur se deconnecte. Elle est assez simple, avec l'object \" auth( ) \" de firebase, la methode \" .signOut( ) \", effectue la deconnexion. Puis la fonction redirige l'utilisateur vers la page \" LogIn \"."
+                        ]
+                    },
+                    {
+                        "nom": "Envoie de requête",
+                        "lieux" : "RequestForm.js",
+                        "img" : [
+                            "/documentation/NS_VersionPhone/Code/fonc4.png"
+                        ],
+                        "explication" : [
+                            "Cette fonction est utile pour les utilisateurs qui souhaitent envoyer un mail directement à la société LiveEvent.",
+                            "Elle n'est pas unique, en vue de sa complexité elle est divisée en plusieurs sous fonctions qui jouent chaqu'un un role bien distinct.",
+                            "La 1er fonction englobe et execute les sous fonctions. c'est celle qui est appellée lorsque l'utilisateur appuie sur \" Envoyer \"."
+                        ],
+                        "img2": [
+                            "/documentation/NS_VersionPhone/Code/fonc5.png"
+                        ],
+                        "explication2" : [
+                            "Cette sous fonction est exécutée en premier. Elle a pour fonction de vérifier si les champs sont vides. Si c'est le cas, un text apparait à l'ecran. Pour autant cette sous fonction ne vas pas arréter la fonction mère, elle analyse uniquement si les champs sont vide et agit en conséquent.",
+                            "Avec des simples conditions, chaques champs sont vérifiées. Pour exemple le champ \" firstname \" :",
+                            "- Si le champ est remplit, sont verificateur \" checkFirstname \" prend comme valeur \" true \" et la fonction continue au prochain champ.",
+                            "- Si le champ est vide, sont verificateur \" checkFirstname \" prend comme valeur \" false \", la fonction vas s'arrêter à la seconde sous fonction car elle ne répondrat pas au condition pour qu'elle sois exécuté. De plus, si \" checkFirstname \" est à \" false \", dans le rendu un text avertira l'utilisateur que le champ est vide."
+                            
+                        ],
+                        "img3": [
+                            "/documentation/NS_VersionPhone/Code/fonc6.png"
+                        ],
+                        "explication3" : [
+                            "Cette sous fonction est exécuté en second. Elle a pour fonction de vérifier si les champs sont remplit et que l'adresse mail est bien valide. Si c'est le cas, cette sous fonction vas lancer une autre sous fonction \" send( ) \" qui serat detailler plus bas. Si ce n'est pas le cas, deux possibilités :",
+                            "- Si un champ est vide la fonction n'est pas du tout exécuté car elle ne remplit pas les conditions d'initialisation qui est que tous les champs doivent est remplits.",
+                            "- Si l'adresse mail n'est pas validé par l'expression regulière, notre sous fonction n'execute pas la sous fonction \" send( )\" mais renvoie un msg à l'ecran pour avertir que l'adresse mail est invalide."
+                        ],
+                        "img4": [
+                            "/documentation/NS_VersionPhone/Code/fonc7.png"
+                        ],
+                        "explication4" : [
+                            "Cette sous fonction est exécutée une fois que toute les conditions sont valides (champs du formulaire remplit et adresse mail valide).",
+                            "Elle realise les choses suivantes :",
+                            "- Exécuté un fetch pour se connecter à l'api et transmettre avec la methode \" POST \" le mail à la base de donnée de liveevent. Il est impératif que tous les champs soient remplits, sans quoi la transmition du mail ne pourat se faire, d'où l'importance des sous fonctions précedentes et des conditions à remplir pour que notre fonction \" send ( ) \" sois executée.",
+                            "- Une fois le mail envoyé, la fonction vas nettoyer le formulaire. Tous les champs seront vidés et réinitialisé.",
+                            "- un message de succes apparait à l'ecran avertissant l'utilisateur que son mail à bien été envoyer."
+                        ]
+                    },
+                    {
+                        "nom": "Publication de commentaire",
+                        "lieux" : "ArticleDetail.js",
+                        "img" : [
+                            "/documentation/NS_VersionPhone/Code/fonc8.png"
+                        ],
+                        "explication" : [
+                            "Cette fonction permet de concrétisée les interactions entre utilisateur et le contenu, et entre plusieurs utilisateurs. Ainsi l'utilisateur peut partager son avis sur un contenu à travers un commentaire. Pour le moment le commentaire ne peut être que du text. Contrairement à la fonction d'envoie de requête, ici les conditions d'envoie sont moin strictes et se font uniquement dans le rendu.",
+                            "La fonction opère de cette facon :",
+                            "- Etaplit une connection avec l'api avec un fetch en \" POST \", et envoie le commentaire dans la base de donnée de Liveevent.",
+                            "- Netoie le formulaire en vidant le champ.",
+                            "- Relance un appel à l'api pour recupéré la nouvelle liste des commentaires pour mettre à jour la liste des commentaire stocker dans \" comments \". Ainsi le rendu est automatiquement actualisé et fait apparaitre le nouveau commentaire."
+                        ]
+                    }
+                    
+                ]
+            }
+        }
+    ]
+}

@@ -60,42 +60,27 @@ function Index() {
                         Logique de développement
                     </NavLink>
                 </div>
-                {/* <div className="items-center flex-shrink-0 text-white ms-5 my-4">
+                <div className="items-center flex-shrink-0 text-white ms-5 my-4">
                     <h3 className="font-bold text-xl ">Code</h3>
                     <h3 className="font-bold text-lg mt-2 mx-4">Côté script</h3>
                     <ul className='mt-2 mx-5'>
                         <li className='my-1'>
-                            <NavLink to='/nationsound/desktop/usestate' className="font-bold m-2">
+                            <NavLink to='/nationsound/phone/useState' className="font-bold m-2">
                                 UseState
                             </NavLink>
                         </li>
                         <li className='my-1'>
-                            <NavLink to='/nationsound/desktop/useeffect' className="font-bold m-2">
+                            <NavLink to='/nationsound/phone/useeffect' className="font-bold m-2">
                                 UseEffect
                             </NavLink>
                         </li>
                         <li className='my-1'>
-                            <NavLink to='/nationsound/desktop/useLoaderData' className="font-bold m-2">
-                                UseLoader
+                            <NavLink to='/nationsound/phone/useRef' className="font-bold m-2">
+                                UseRef
                             </NavLink>
                         </li>
                         <li className='my-1'>
-                            <NavLink to='/nationsound/desktop/useNavigation' className="font-bold m-2">
-                                UseNavigation
-                            </NavLink>
-                        </li>
-                        <li className='my-1'>
-                            <NavLink to='/nationsound/desktop/useParams' className="font-bold m-2">
-                                UseParams
-                            </NavLink>
-                        </li>
-                        <li className='my-1'>
-                            <NavLink to='/nationsound/desktop/useRouteError' className="font-bold m-2">
-                                UseRouteError
-                            </NavLink>
-                        </li>
-                        <li className='my-1'>
-                            <NavLink to='/nationsound/desktop/varfonc' className="font-bold m-2">
+                            <NavLink to='/nationsound/phone/varfonc' className="font-bold m-2">
                                 Variable et Fonction
                             </NavLink>
                         </li>
@@ -103,17 +88,17 @@ function Index() {
                     <h3 className="font-bold text-lg mt-2 mx-4">Côté rendu</h3>
                     <ul className='mt-2 mx-5'>
                         <li className='my-1'>
-                            <NavLink to='/nationsound/desktop/ternaire' className="font-bold m-2">
+                            <NavLink to='/nationsound/phone/ternaire' className="font-bold m-2">
                                 Operateur ternaire
                             </NavLink>
                         </li>
-                        <li className='my-1'>
+                        {/* <li className='my-1'>
                             <NavLink to='/nationsound/desktop/traitementdonnees' className="font-bold m-2">
                                 Traitement des données
                             </NavLink>
-                        </li>
+                        </li> */}
                     </ul>
-                </div> */}
+                </div>
                 {/* <div className='my-4 mx-5'>
                     <NavLink to='/nationsound/desktop/deploiement' className="text-xl text-white font-bold">
                         Deploiement

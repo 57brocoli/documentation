@@ -11,6 +11,7 @@ function Fonction({data}) {
                             <div className='mx-4'>
                                 <section className='py-2'>
                                 <h3 className='my-3'>Lieux : {data[0].lieux}</h3>
+                                <div className='flex flex-row'>
                                     {data[0].img.map((img, index)=>{
                                         return(
                                             <img key={index} src={img} className='rounded border-2 my-2' alt="useState"/>
@@ -23,6 +24,8 @@ function Fonction({data}) {
                                             )
                                         })}
                                     </div>
+                                </div>
+                                    
                                 </section>
                             </div>
                         </div>
@@ -91,8 +94,6 @@ function Fonction({data}) {
                                 </section>
                             </div>
                         </div>
-
-                        
                     </>
                 }
             </article>
