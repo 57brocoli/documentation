@@ -31,6 +31,7 @@ import UseEffectPhone from "./Composant/Page/NationSound/Phone/Code/UseEffect.js
 import UseRefPhone from "./Composant/Page/NationSound/Phone/Code/UseRef.jsx"
 import VarFoncPhone from "./Composant/Page/NationSound/Phone/Code/VarFonc.jsx"
 import TernairePhone from "./Composant/Page/NationSound/Phone/Code/Ternaire.jsx"
+import DonneesPhone from "./Composant/Page/NationSound/Phone/Code/Donnees.jsx"
 
 const router = createBrowserRouter([
     {
@@ -155,6 +156,10 @@ const router = createBrowserRouter([
                     {
                         path : '/nationsound/phone/ternaire',
                         element: <TernairePhone/>
+                    },
+                    {
+                        path : '/nationsound/phone/traitementdonnees',
+                        element: <DonneesPhone/>
                     }
                 ]
             }

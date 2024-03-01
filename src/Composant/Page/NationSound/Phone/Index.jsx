@@ -92,11 +92,11 @@ function Index() {
                                 Operateur ternaire
                             </NavLink>
                         </li>
-                        {/* <li className='my-1'>
-                            <NavLink to='/nationsound/desktop/traitementdonnees' className="font-bold m-2">
+                        <li className='my-1'>
+                            <NavLink to='/nationsound/phone/traitementdonnees' className="font-bold m-2">
                                 Traitement des données
                             </NavLink>
-                        </li> */}
+                        </li>
                     </ul>
                 </div>
                 {/* <div className='my-4 mx-5'>

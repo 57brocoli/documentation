@@ -13,7 +13,16 @@ function Ternaire() {
     },[])
 
     if (data.section) {
-        var ternaire = data.section[0]
+        var ternaire = data.section.filter(x=>x.titre === "Operateur ternaire").at(0)
+    }
+
+    const channel = {
+        text : "Pour comprendre d'ou viennent les paramêtres : ",
+        link : "/nationsound/phone/logique",
+    }
+    const requete = {
+        text : "Pour mieux comprendre comment fonctionne le script du formulaire : ",
+        link : "/nationsound/phone/varfonc",
     }
 
     return (
@@ -24,11 +33,11 @@ function Ternaire() {
                         <h2 className='text-2xl font-bold mb-10 orange'>{ternaire.titre}</h2>
                         {ternaire.content.introduction.map((intro,index)=>{
                             return(
-                                <p key={index} className='text-lg '>{intro}</p>
+                                <p key={index} className='text-lg font-semibold'>{intro}</p>
                             )
                         })}
 
-                        <div className='rounded border-2 p-3 my-3'>
+                        <section className='rounded border-2 p-3 my-3'>
                             <h3 className='text-lg font-bold pb-2 jaune'>Avantages</h3>
                             <div>
                                 <p>Les avantages non négligables d'utilisé ce type d'instruction et non pas de rester sur une utilisation standard avec des " if " sont :</p>
@@ -43,67 +52,49 @@ function Ternaire() {
                                 <p>Dans un projet classique en javascript pure, un fichier script devrai être écrit, avec l'utilisation des conditions avec l'operateur " if ", agir avec des " addEventListener " sur des élements avec des " id " bien specifique.</p>
                                 <p>Avec React et la syntaxe des composants, il devient plus facile de rendre notre code plus concis pour avoir une application interactive.</p>
                             </div>
-                        </div>
-                        <div>
-                            <p>Dans cette documentation, pour plus de clarté 2 utilisations des opérateurs ternaires seront expliquées, il s'agit des utilisations les plus pertinantes pour comprendre sa pertinance dans ce projet.</p>
-                        </div>
+                        </section>
+                        
+                        <h2 className='font-semibold text-lg orange pt-3'>Dans notre projet, les opérateurs ternaires premettent surtout d'adapter le rendu à ce que l'utilisateur décide de voir. Rendant ainsi notre site interactif</h2>
                         
                         <hr className='my-7'/>
 
                         <section>
                             <h2 className='text-xl font-bold'>Cas d'utilisation :</h2>
-                            <article className='mt-4 mb-8'>
-                                <h3 className='text-xl font-bold my-2 jaune'>{ternaire.content.utilisation[0].nom}</h3>
-                                <div className='mx-4'>
-                                    <h3 className='my-3'>Lieux : {ternaire.content.utilisation[0].lieux}</h3>
-                                    <section className='py-2'>
-                                        {ternaire.content.utilisation[0].img.map((img, index)=>{
-                                            return(
-                                                <img key={index} src={img} className='rounded border-2 my-2' alt="useState"/>
-                                            )
-                                        })}
-                                        <div className='mt-3'>
-                                            {ternaire.content.utilisation[0].explication.map((ex,index)=>{
-                                                return(
-                                                    <p key={index} className='py-1'>{ex}</p>
-                                                )
-                                            })}
-                                        </div>
-                                        <p>Pour comprendre comment et d'ou les paramêtres sont transmit à notre composant, il faut comprendre <Link to={'/nationsound/desktop/logique'} className='text-rose-600 visited:text-purple-600'>La methode channel</Link> qui est expliqué dans la section " Methodes "</p>
-                                    </section>
-                                </div>
-                            </article>  
-
-                            <article className='mt-4 mb-8'>
-                                <h3 className='text-xl font-bold my-2 jaune'>{ternaire.content.utilisation[1].nom}</h3>
-                                <div className='mx-4'>
-                                    <h3 className='my-3'>Lieux : {ternaire.content.utilisation[1].lieux}</h3>
-                                    <section className='py-2'>
-                                        {ternaire.content.utilisation[1].img.map((img, index)=>{
-                                            return(
-                                                <img key={index} src={img} className='rounded border-2 my-2' alt="useState"/>
-                                            )
-                                        })}
-                                        <div className='mt-3'>
-                                            {ternaire.content.utilisation[1].explication.map((ex,index)=>{
-                                                return(
-                                                    <div key={index}>
-                                                        <p className='py-1'>{ex.cas}</p>
-                                                        <ul>
-                                                            {ex.puces.map((puce, index)=>{
-                                                                return(
-                                                                    <li key={index} className='py-1 px-5 '>{puce}</li>
-                                                                )
-                                                            })}
-                                                        </ul>
+                            {ternaire.content.utilisation.map((util, index)=>{
+                                return(
+                                    <article key={index} className='mt-4 mb-8'>
+                                        <h3 className='text-xl font-bold my-2 jaune'>{util.nom}</h3>
+                                        <div className='mx-4'>
+                                            <h3 className='my-3'>Lieux : {util.lieux}</h3>
+                                            <section className='py-2'>
+                                                <div className='lg:flex'>
+                                                    <div className='basis-1/2 me-3'>
+                                                        {util.img.map((img, index)=>{
+                                                            return(
+                                                                <img key={index} src={img} className='rounded border-2 my-2' alt="useState"/>
+                                                            )
+                                                        })}
                                                     </div>
-                                                )
-                                            })}
-                                            <p>&rarr; La methode de filtrage est detaillée <Link to={"/nationsound/desktop/logique"} className='text-rose-600 visited:text-purple-600'>dans la section "Methodes"</Link></p>
+                                                    <div className='lg:mt-0 mt-3 basis-1/2'>
+                                                        {util.explication.map((ex,index)=>{
+                                                            return(
+                                                                <p key={index} className='py-1'>{ex}</p>
+                                                            )
+                                                        })}
+                                                    </div>
+                                                </div>
+                                                {util.nom === "Pour la methode channel" && 
+                                                    <p>{channel.text} <Link to={channel.link} className='text-rose-600 visited:text-purple-600'>La methode channel.</Link></p>
+                                                }
+                                                {util.nom === "Afficher des erreurs" && 
+                                                    <p>{requete.text} <Link to={requete.link} className='text-rose-600 visited:text-purple-600'>La fonctions "Envoie de requête."</Link></p>
+                                                }
+                                            </section>
                                         </div>
-                                    </section>
-                                </div>
-                            </article>   
+                                    </article>  
+                                )
+                            })}
+                            
                         </section>
                     </motion.div>
                 }
