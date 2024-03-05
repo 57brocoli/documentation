@@ -77,7 +77,7 @@ function Presentation() {
                                         <p>{data.section[2].content.introduction[1]}</p>
                                     </div>
                                     <div className='basis-3/6 order-2 lg:order-1'>
-                                        <div className='test test1 center' style={{backgroundImage:`url(${data.section[2].content.img[0]})`}}/>
+                                        <div className='codeSource codeSource1 center' style={{backgroundImage:`url(${data.section[2].content.img[0]})`}}/>
                                     </div>
                                 </article>
                             </section>

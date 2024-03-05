@@ -32,6 +32,10 @@ import UseRefPhone from "./Composant/Page/NationSound/Phone/Code/UseRef.jsx"
 import VarFoncPhone from "./Composant/Page/NationSound/Phone/Code/VarFonc.jsx"
 import TernairePhone from "./Composant/Page/NationSound/Phone/Code/Ternaire.jsx"
 import DonneesPhone from "./Composant/Page/NationSound/Phone/Code/Donnees.jsx"
+import DeploiementPhone from "./Composant/Page/NationSound/Phone/Deploiement/Deploiement.jsx"
+import IndexLE from "./Composant/Page/LiveEvent/Index.jsx"
+import PresentationLE from "./Composant/Page/LiveEvent/Presentation/Presentation.jsx"
+import MaquettesLE from "./Composant/Page/LiveEvent/Maquettes/Maquettes.jsx"
 
 const router = createBrowserRouter([
     {
@@ -160,9 +164,27 @@ const router = createBrowserRouter([
                     {
                         path : '/nationsound/phone/traitementdonnees',
                         element: <DonneesPhone/>
+                    },
+                    {
+                        path : '/nationsound/phone/deploiement',
+                        element: <DeploiementPhone/>
                     }
                 ]
-            }
+            },
+            {
+                path : '/liveevent',
+                element: <IndexLE/>,
+                children: [
+                    {
+                        path:'/liveevent',
+                        element: <PresentationLE/>
+                    },
+                    {
+                        path:'/liveevent/maquettes',
+                        element: <MaquettesLE/>
+                    }
+                ]
+            },
         ]
     }
 ])

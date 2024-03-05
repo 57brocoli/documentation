@@ -4,8 +4,6 @@ import {motion} from 'framer-motion'
 import '../../style.css'
 import { Link } from 'react-router-dom'
 import logo from '/logo1.jpg'
-// import presentationDescktop from '/documentation/NS_VersionDescktop/Presentation/presentationDescktop.png'
-// import presentationPhone from '/documentation/NS_VersionDescktop/Presentation/presentationPhone.png'
 import presentation from '/documentation/NS_VersionPhone/Presentation/presentationPhone.png'
 
 function Presentation() {
@@ -64,12 +62,12 @@ function Presentation() {
                                 <article className=' lg:flex mx-auto pt-10'>
                                     <div className='px-10 basis-3/6 order-1 lg:order-2'>
                                         <h2 className='text-4xl font-bold mb-6'>{data.section[2].titre}</h2>
-                                        <p className='font-semibold'>{data.section[2].content.introduction[0]}<a href="https://github.com/57brocoli/NationSoundReact" target='blank' className=' visited:text-purple-600'>cette address</a></p>
+                                        <p className='font-semibold'>{data.section[2].content.introduction[0]}<a href={data.githubLink} target='blank' className=' visited:text-purple-600'>cette address</a></p>
                                         <br />
                                         <p className='font-semibold'>{data.section[2].content.introduction[1]}</p>
                                     </div>
                                     <div className='basis-3/6 order-2 lg:order-1'>
-                                        <div className='test test1 center' style={{backgroundImage:`url(${data.section[2].content.img[0]})`}}/>
+                                        <div className='codeSource codeSource1 center' style={{backgroundImage:`url(${data.section[2].content.img[0]})`}}/>
                                     </div>
                                 </article>
                             </section>

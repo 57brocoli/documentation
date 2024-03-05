@@ -18,6 +18,7 @@
 }
 .bgPage{
     background : linear-gradient(var(--dark), var(--bleu-fonce));
+    color: white;
 }
 .nav{
     background-color: var(--dark);

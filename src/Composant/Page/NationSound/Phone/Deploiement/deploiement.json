@@ -1,0 +1,15 @@
+{
+    "titre" : "Deploiement",
+    "section" : [
+        {
+            "titre": "introduction",
+            "content" : {
+                "titre" : "Local",
+                "introduction" : [
+                    "Le projet est disponible uniquement en local."
+                ],
+                "img" : ""
+            }
+        }
+    ]
+}

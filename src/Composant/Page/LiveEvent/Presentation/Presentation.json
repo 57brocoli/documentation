@@ -1,0 +1,82 @@
+{
+    "logo":"/logo.jpg",
+    "titre" : "LiveEvent",
+    "introduction" : "Bienvenu sur la documentation du site de la Live Event.",
+    "githubLink" : "https://github.com/57brocoli/LiveEventSymphony",
+    "section" : [
+        {
+            "titre" : "Presentation",
+            "content" : {
+                "introduction":[
+                    "Ce site web a été conçu et développé par Heremoana Perry pour mettre en lumière les activités de la société \" Live Event \" œuvrant dans l'événementiel. La plateforme a pour vocation de présenter et de promouvoir les événements organisés par notre entreprise à travers la publication de contenus sous forme d'articles détaillant les événements à venir. En plus de servir de vitrine pour nos projets, LiveEvent sert également de canal de communication interactif, offrant aux utilisateurs la possibilité d'interagir avec notre contenu dans une dynamique rappelant les réseaux sociaux. Ce projet permet donc d'offrir une expérience engageante et immersive à la communauté d'utilisateurs, tout en facilitant la découverte et la participation aux evenement exceptionnels."
+                ],
+                "img" : [
+                    "/documentation/LiveEvent/Presentation/presentation1.png",
+                    "/documentation/LiveEvent/Presentation/presentation2.png"
+                ],
+                "text" : [
+                    {
+                        "titre" : "Live Event",
+                        "text" : [
+                            "Société basé à Paris et qui oppère dans l'événementiel au départ organisateur de concerts, cette société s'est transformée pour élargir son action en Europe à travers de multiples activités :", 
+                            [
+                                "Billetterie (plus de 20 % de ses revenus, en commercialisant aussi les tickets pour d'autres organisateurs et artistes)",
+                                "Gestion ou location de salles.",
+                                "Organisation de tournées (pour le compte des artistes sous contrat mais aussi par la vente de concerts à des salles tierces), mais également promotion de concerts (affiches, produits dérivés, relations médias, réseaux sociaux, etc.), plus des deux-tiers de ses revenus estimés.",
+                                "Management, gestion d'artistes et production (environ 5 % de ses revenus estimés).",
+                                "Partenariats, 900 annonceurs travaillant avec l'entreprise (environ 4 % de ses revenus)."
+                            ],
+                            "La société « Live Events » a un DSI qui gère l’infrastructure réseaux et logiciel de la société. « Live Events » n’ayant pas à disposition de service informatique pouvant gérer le développement de logiciel spécifique, les opérations de développement et de maintenance sont gérées par des prestataires sélectionnés par des appels d’offres."
+                        ]
+                    },
+                    {
+                        "titre" : "Le besoin",
+                        "text" : [
+                            "La société Live Event ne possedant pas de pole informatique pouvant gérer le développement de produit informatique de ce genre a donc lancé un appel d'offre. Elle a fournit un cahier des charges définisant les different aspects fonctionnels du produit. vous pouvez retrouver l'intégralité du cahier des charges dans la section dédié. Voici les grandes lignes :",
+                            [
+                                "Site web web responssive mobile.",
+                                "Creation de compte utilisateur.",
+                                "Administré et géré la base de données (evenements, articles, lieux, billets...).",
+                                "Canal de communiquation pour informer les utilisateurs sur les evenements organisées par la société."
+                            ],
+                            "Le site possède de nombreuse fonctionnalitées tel que l'abonnement à la newsletters, l'envoie de mail, mais informer les utilisateurs sur les événements qu'elle origanise sur l'aspect front end, et administré ses sous site en backoffice représente les deux grandes parties des fonctions attendues du produit final. Cela fait partie des informations traités dans la section cahier des charges."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Symfony",
+            "content" : {
+                "introduction":[
+                    "Symfony est un framework PHP, utilisé par les développeurs pour créer des sites ou applications Web complexes, robustes, fiables, évolutifs, maintenables et performants.",
+                    "Le choix pour cette solution de développement de notre projet s’est fait sur plusieurs points essentiels pour garantir un produit efficace qui répond aux exigences du cahier des charges."
+                ],
+                "puces" : [
+                    "- Symfony est un langague serveur basé sur PHP, qui vas nous permettre à la fois de développer des interfaces utilisateur pour l'aspect front-end, et de configuré une api pour garantir la connextion entre backoffice et d'autre service tel que nos applications resct.",
+                    "- Grace au bundle, crée une base de données, des formulaire, des composants se fait avec seulement une ligne de commande, ce qui nous permet un gain de temps phénomenal.",
+                    "- Il se base sur le model MVC qui sépare la logique, l'interface utilisateur et le flux de contrôle de votre application."
+                ],
+                "img" : [
+                    "/symfony.png"
+                ]
+            }
+        },
+        {
+            "titre" : "Code Source",
+            "content" : {
+                "introduction":[
+                    "le code source est reserver au développeur en charge du maintient du site, il est accessible sur git-hub à : ",
+                    "Les explications du code sorce sont accessibles dans le reste de la documentation. Le code source est régulièrement mis a jour en fonction des avancé du language et des apports souhaiter du client."
+                ],
+                "puces" : [
+                ],
+                "img" : [
+                    "/documentation/LiveEvent/Presentation/presentation3.png"
+                ]
+            }
+        }
+            
+    ]
+
+}

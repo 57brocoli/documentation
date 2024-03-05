@@ -2,7 +2,7 @@
     "logo":"/logo.jpg",
     "titre" : "NationSound",
     "introduction" : "Bienvenu sur la documentation de l'application mobile d'édié au festival Nation Sound",
-    "githubLink" : "https://github.com/57brocoli/NationSoundReact",
+    "githubLink" : "https://github.com/57brocoli/NationSoundReactNative",
     "descktopVersionLink" : "/nationsound/phone",
     "section" : [
         {

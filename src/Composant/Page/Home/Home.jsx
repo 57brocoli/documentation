@@ -50,7 +50,7 @@ function Home() {
                 </Link>
             </motion.div>
             <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{ duration:2 }} className='border-2 rounded-md p-6 mx-4 my-9 lg:basis-1/3'>
-                <Link to='/nationsound' >
+                <Link to='/liveevent' >
                     <div className='box-iconFloat box-symfony'>
                         <img src={symfony} alt="logo symfony" className='iconFloat'/>
                     </div>
