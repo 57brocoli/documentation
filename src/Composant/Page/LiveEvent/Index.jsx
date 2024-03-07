@@ -46,17 +46,17 @@ function Index() {
                     </NavLink>
                 </div>
                 <div className='my-4 mx-5'>
-                    <NavLink to='/nationsound/desktop/technologies' className="text-xl text-white font-bold">
+                    <NavLink to='/liveevent/technologies' className="text-xl text-white font-bold">
                         Technologies
                     </NavLink>
                 </div>
                 <div className='my-4 mx-5'>
-                    <NavLink to='/nationsound/desktop/initialisation' className="text-xl text-white font-bold">
+                    <NavLink to='/liveevent/initialisation' className="text-xl text-white font-bold">
                         Initialisation
                     </NavLink>
                 </div>
                 <div className='my-4 mx-5'>
-                    <NavLink to='/nationsound/desktop/logique' className="text-xl text-white font-bold">
+                    <NavLink to='/liveevent/logique' className="text-xl text-white font-bold">
                         Logique de développement
                     </NavLink>
                 </div>

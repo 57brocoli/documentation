@@ -22,7 +22,7 @@
                                 "titre" : "Bar de navigation sur PC :",
                                 "img" : "/documentation/LiveEvent/Maquettes/NavBar.png",
                                 "text" : [
-                                    "Texte en noir sur fond blanc. Un logo et le nom du festival qui redirige vers la page d’accueil.Puis le nom des autres pages."
+                                    "Texte en noir sur fond blanc. le logo et le nom de la société qui redirige vers la page d’accueil. Puis le nom des autres pages."
                                 ]
                             },
                             {
@@ -46,22 +46,131 @@
                     }
                 },
                 "partieB" : {
-                    "titre" : "Structure des pages",
+                    "titre" : "Structure des pages utilisateur",
                     "content" : {
-                        "introduction" : "Les pages de chaques couches de navigation possèdent des caractéristiques qui les différencie. Cela est du au fait qu'ils ne diffusent pas l'information de la même facon.",
+                        "introduction" : "Ici nous allons parcourir les pages les plus courament utilisées.",
                         "img" : "../../public/documentation/NSDescktop/structureNavigation.png",
                         "puces" : [
                             {
                                 "titre" : "Page Accueil :",
-                                "text" : "Il s'agit de la page d'accueil. C’est le point d’entrée du site. Elle est composée de plusieurs sections qui amènent l’utilisateur vers une page dédiée à sa thématique propre (section programme envoie vers la page programme)."
+                                "img" : "/documentation/LiveEvent/Maquettes/pageAccueil.png",
+                                "text" : ""
                             },
                             {
-                                "titre" : "2nd couche :",
-                                "text" : "Elle regroupe les pages suivantes : Actualités, Programme, Billetterie, Sponsors, A-propos, Map. La seconde couche de navigation représente une page qui traite une à deux thématiques par section, et donne des informations de façon globale. Exemple : la page programme affiche composée de deux sections, la première étant l’affichage des articles relatifs aux festival, et la seconde, la FAQ qui répond aux questions les plus fréquemment posées sur le festival. L’utilisateur a sur cette page la possibilité de cliquer sur certains éléments comme un événement qui compose le programme ou un article de l’actualité pour être redirigé vers une page de la dernière couche de navigation."
+                                "titre" : "Page Event :",
+                                "img" : "/documentation/LiveEvent/Maquettes/pageEvent.png",
+                                "text" : ""
                             },
                             {
-                                "titre" : "3ème couche :",
-                                "text" : "Une page ou l’information est précise et centrée sur un sujet. Il peut s’agir de la description d’un événement du programme avec l’heure, le lieux, le nom de l’artiste et une description de l’artiste ou bien d’un article."
+                                "titre" : "Page contact :",
+                                "img" : "/documentation/LiveEvent/Maquettes/pageContact.png",
+                                "text" : ""
+                            },
+                            {
+                                "titre" : "Page utilisateur :",
+                                "img" : "/documentation/LiveEvent/Maquettes/pageUtilisateur.png",
+                                "text" : ""
+                            }
+                        ]
+                    }
+                },
+                "partieC" : {
+                    "titre" : "Structure de formulaire Administrateur pour LiveEvent",
+                    "content" : {
+                        "introduction" : "Ici nous allons parcourir quelque pages pour avoir une idée du rendu des formulaire.",
+                        "img" : "../../public/documentation/NSDescktop/structureNavigation.png",
+                        "puces" : [
+                            {
+                                "titre" : "Edition article :",
+                                "img" : "/documentation/LiveEvent/Maquettes/editionArticle.png",
+                                "text" : [
+                                    "Les formulaires possèdent la même structure et logique que cette exemple.",
+                                    "Les champs :",
+                                    "- Les 3 premières : permettent de rédiger du contenu.",
+                                    "- Image en avant : Il s'agit de l'image principale de l'article.",
+                                    "- Images : liste d'images pour illustrer l'article.",
+                                    "- Vidéo : Ajouter une vidéo à l'article. (optionnel)",
+                                    "- Catégories : ajouter une catégorie à l'article.",
+                                    "- Événement référent : événement que l'article traite.",
+                                    "- Section notification : permet de rédiger le mail de notification."
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "partieD" : {
+                    "titre" : "Structure des formulaire Administrateur pour NationSound",
+                    "content" : {
+                        "introduction" : "Ici nous allons parcourir quelque pages pour avoir une idée du rendu des formulaire.",
+                        "img" : "../../public/documentation/NSDescktop/structureNavigation.png",
+                        "puces" : [
+                            {
+                                "titre" : "Page administrateur :",
+                                "img" : "/documentation/LiveEvent/Maquettes/adminNationSound.png",
+                                "text" : [
+                                    "Pour la page administrateur de NationSound, chaque contenu est catégorisé dans chaque section :",
+                                    "- La section programme : Permet de rédiger le programme du festival.",
+                                    "- La section contenu : rédiger le contenu des pages.",
+                                    "- La section autre : rédiger du contenu annexe." 
+                                ]
+                            },
+                            {
+                                "titre" : "Programme => Jour => Toutes les journées:",
+                                "img" : "/documentation/LiveEvent/Maquettes/journée.png",
+                                "text" : [
+                                    "Cette page répertorie les journées du programme.",
+                                    "En haut à droite :",
+                                    "- Le bouton Dashboard renvoie à la page administrateur ou ouvre un menu administrateur.",
+                                    "- Le bouton Ajouter une journée redirige vers le formulaire de création d'une journée.",
+                                    "Au centre, chaque journée :",
+                                    "- Peut être modifiée ou supprimée.",
+                                    "- Est composée de plusieurs épisodes avec un nom, une heure, un artiste et un lieu. Tous les épisodes peuvent être modifiés ou supprimés.",
+                                    "- Il est possible d'ajouter un nouvel épisode à la journée."
+                                ]
+                            },
+                            {
+                                "titre" : "Programme => Jour => Ajouter une journée:",
+                                "img" : "/documentation/LiveEvent/Maquettes/journéeAdd.png",
+                                "text" : [
+                                    "Simple formulaire :",
+                                    "- Le bouton Dashboard renvoie à la page administrateur ou ouvre un menu administrateur.",
+                                    "- Une journée ppossède un nom, soit être attribué à un programme, et une date.",
+                                    "Il est important de noter qu'ici il n'est pour le moment pas possible d'ajouter directement des épisode à la journée. Pour ce faire il faut se rendre sur la page \" Toute les journées \", puis clicker sur \" Ajouter un épisode \"."
+                                ]
+                            },
+                            {
+                                "titre" : "Contenu => Accueil (partie header)",
+                                "img" : "/documentation/LiveEvent/Maquettes/adminAccueil1.png",
+                                "text" : [
+                                    "La page accueil est divisé en deux partie, le header que nous allons detailler, et les sections de page.",
+                                    "- Le bouton Dashboard renvoie à la page administrateur ou ouvre un menu administrateur.",
+                                    "- Le header possède : une image et un texte.",
+                                    "- Un boutton \" Modifier \" pour ouvrir le formulaire de modification."
+                                ]
+                            },
+                            {
+                                "titre" : "Contenu => Accueil (partie section de page)",
+                                "img" : "/documentation/LiveEvent/Maquettes/adminAccueil2.png",
+                                "text" : [
+                                    "La page accueil est divisé en deux partie, le header, et les sections de page que nous allons detailler.",
+                                    "- Il s'agit de la liste des sections qui composent la page accueil.",
+                                    "- Chaque section possède : un titre, une ou plusieurs image et un texte.",
+                                    "- Un boutton \" Modifier \" pour ouvrir le formulaire de modification.",
+                                    "- Un boutton \" Supprimer \" pour supprimer la section."
+                                ]
+                            },
+                            {
+                                "titre" : "Autre => Lieux",
+                                "img" : "/documentation/LiveEvent/Maquettes/adminLieux.png",
+                                "text" : [
+                                    "Page qui repertorie tous les lieux qui apparaitrons sur la carte de NationSound.",
+                                    "- Le bouton Dashboard renvoie à la page administrateur ou ouvre un menu administrateur.",
+                                    "- Le bouton Ajouter un lieu redirige vers le formulaire de création d'un lieu.",
+                                    "Au centre, chaque lieu :",
+                                    "- Un boutton \" Detail \" pour ouvrir la page details",
+                                    "- Un boutton \" Modifier \" pour ouvrir le formulaire de modification.",
+                                    "- Un boutton \" Supprimer \" pour supprimer le lieu."
+                                ]
                             }
                         ]
                     }

@@ -1,0 +1,203 @@
+{
+    "titre" : "Initialisation",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Afin d'initialiser ce project nous aurons besoin d'un certain nombre d'outils. Certain sont des logiciels destinées au réalisation de prototypage de maquettes, d'autres seront destinées au développement et à la création du site. Nous parlerons ici uniquement des technologies utilisées durons la phase de développement du site, et de leur instalations.",
+                    "Vous trouverez la liste des technologies utilisées ici, classées en fonction de leur utilité."
+                ]
+            }
+        },
+        {
+            "titre" : "Prérequis avant instalation",
+            "content" : {
+                "introduction" : [
+                    "Avant d’initialisé un nouveau projet avec Symfony, il est indisponssable d'avoir installer sur le poste de travaille quelque programme, sans quoi il ne serait pas possible de lancé ce genre de projet. Le projet est actuelement developper avec la version 6 de Symfony, voici donc les programmes à installer au prealable pour cette version: "
+                    
+                ],
+                "img" : "/xampp.png",
+                "puces" :[
+                    "- Installer PHP 8.1 ou plus. Ainsi que les extensions suivant : \"Ctype iconv PCRE Session SimpleXML Tokenizer\" qui sont normalement activer par default.",
+                    "- Installer Composer, pour installer les packages PHP.",
+                    "- Installer Symfony CLI",
+                    "- Installer un serveur local tel que XAMPP pour le développement et les tests de sites web et d’applications.",
+                    "La documentation de symfony 6 est disponible sur https://symfony.com/doc/6.4/setup.html."
+                ],
+                "text" : "L'initialisation de notre projet suis ces étapes bien précises :",
+                "etapes": [
+                    {
+                        "nom" : "1 - Création du dossier.",
+                        "lieux" : "bureau",
+                        "ilustration" : {
+                            "img" : ["/documentation/LiveEvent/Initialisation/dossier.png"],
+                            "text" : "Le nom du dossier est enfet le nom du projet."
+                        }
+                    },
+                    {
+                        "nom" : "2 - Ouvrir le dossier dans l'editeur de texte.",
+                        "lieux" : "Visual Studio Code",
+                        "ilustration" : {
+                            "img" : ["/documentation/NS_VersionDescktop/Initialisation/etape2.png"],
+                            "text" : "Avec Visual Studio Code, sur «File» puis «Open Folder», ouverture du dossier «Live Event». Cela nous permettra de crée des dossiers, d'éditer des fichier directement dans notre dossier projet, plus courament dit : ' à la racine du projet '"
+                        }
+                    },
+                    {
+                        "nom" : "3 - Ouvrir le terminal",
+                        "lieux" : "Visual Studio Code",
+                        "ilustration" : {
+                            "img" : ["/documentation/NS_VersionDescktop/Initialisation/etape3.png"],
+                            "text" : "VSC possède un terminal intégré. Le terminal nous permettra d'entré des lignes de commande pour diverses raisons, notament ici l'instalation de react, mais aussi plus tard les packages utiles au développement"
+                        }
+                    },
+                    {
+                        "nom" : "4 - « composer create-project »",
+                        "lieux" : "Visual Studio Code / Terminal",
+                        "ilustration" : {
+                            "img" : ["/documentation/LiveEvent/Initialisation/init1.png"],
+                            "text" : "Entrer dans le terminal : « composer create-project symfony/skeleton:\"6.4.*\" LiveEvent». Cette commande vas lancer l'intalation de Symfony"
+                        }
+                    },
+                    {
+                        "nom" : "5 - Installation des dependances symfony :",
+                        "lieux" : "Visual Studio Code / Terminal",
+                        "ilustration" : {
+                            "img" : [
+                                "/documentation/LiveEvent/Initialisation/init2.png"
+                            ],
+                            "text" : "Une fois l'instalation de Symfony terminer, il reste à installer les dependances utiles pour developper notre site web. Pour cela il faut dans un premier temp se placer dans le dossier fraichement crée avec \" cd LiveEvent \", puis lancer la commande d'instalation \" composer require webapp \""
+                        }
+                    },
+                    {
+                        "nom" : "6 - « symfony serve »",
+                        "lieux" : "Visual Studio Code / Terminal",
+                        "ilustration" : {
+                            "img" : [
+                                "/documentation/LiveEvent/Initialisation/init3.png",
+                                "/documentation/LiveEvent/Initialisation/init4.png"
+                            ],
+                            "text" : "Maintenant que les dependances sont installer, il ne reste plus qu'a lancer le projet sur le serveur local. Pour cela, dans le terminal lancer la commande : \" symfony serve \", puis se rendre à l'adresse http://127.0.0.1:8000"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Initialisation de l’environnement de travail.",
+            "introduction" : [
+                "Maintenant que Symfony est installé, l’environnement doit être réaménager pour commencer sur une base vierge. C’est ce que l’on appellera l’initialisation de l’environnement.",
+                "En gros nous allons ici nous démunir de tous les fichiers et codes inutiles à la racine du projet",
+                "L’initiation suit ces étapes :"
+            ],
+            "etapes": [
+                {
+                    "nom" : "1 - Suppression des dossiers et fichier inutile",
+                    "lieux" : "racine",
+                    "ilustration" : {
+                        "img" : [
+                            "/documentation/LiveEvent/Initialisation/env1.png"
+                        ],
+                        "text" : "A la racine, le dossier \" assets \" regroupe tous les fichier css et js du projet. Il n'est pas insdiponssable et serat supprimer et remplacer par un autre fichier. "
+                    }
+                },
+                {
+                    "nom" : "2 - Création du nouveau dossier assets",
+                    "lieux" : "public",
+                    "ilustration" : {
+                        "img" : [
+                            "/documentation/LiveEvent/Initialisation/env2.png"
+                        ],
+                        "text" : "Dans le dossier \" public \", nous allons remplacer le dossier \" assets \" supprimer par un nouveau dossier. Ce nouveau dossier \" assets \" contiendra les fichiers css et js pour le projet"
+                    }
+                },
+                {
+                    "nom" : "3 - Configuré le fichier \" base.html.twig \"",
+                    "lieux" : "Templates/base.html.twig",
+                    "ilustration" : {
+                        "img" : [
+                            "/documentation/LiveEvent/Initialisation/env3.png"
+                        ],
+                        "text" : "Dans le fichier base.html.twig retiré ce qui est dans le block javascripts."
+                    }
+                },
+                {
+                    "nom" : "3 - Symfony/asset (facultatif)",
+                    "lieux" : "Templates/base.html.twig",
+                    "ilustration" : {
+                        "img" : [
+                        ],
+                        "text" : "Si une erreur s'affiche expliquant que le dossier assets n'existe pas, l'installation du package Symfony Asset permet de pallier à ce problème. Dans la console, entrez la commande : \"composer require symfony/asset\"."
+                    }
+                }
+            ]
+        },
+        {
+            "titre" : "Installation des packages",
+            "introduction" : [
+                "Comme évoqué plus tôt dans ce chapitre, Node.js nous permet d’utiliser le gestionnaire de packages NPM. Un package est un ‘mini’ logiciel qui répond à un besoin spécifique du code. Il peut par exemple s’agir d’un service qui traduit le format des dates en standard."
+            ],
+            "content" : [
+                {
+                    "titre" : "La liste des packages installés :",
+                    "elements" : [
+                        {   
+                            "nom" : "Api-platform",
+                            "img" : "/apiplatform.png",
+                            "utilité" : "Indisponssable pour ce projet, car il nous permettra de configurer notre api.",
+                            "commande" : ["« symfony composer req api »"]
+                        },
+                        {   
+                            "nom" : "Fakerphp",
+                            "img" : "/faker.png",
+                            "utilité" : "Utile pendant la phase de développement, pour remplir nos tables de notre base de donnée de données fictif.",
+                            "commande" : ["« composer req fakerphp/faker »"]
+                        },
+                        {   
+                            "nom" : "knplabs",
+                            "img" : "/knp.png",
+                            "utilité" : "Packages utile pour construire une pagination.",
+                            "commande" : ["« composer require knplabs/knp-paginator-bundle »"]
+                        },
+                        {   
+                            "nom" : "Doctrine",
+                            "img" : "/symfony.png",
+                            "utilité" : "Packages propre à symfony qui nous permettra d'interagir avec la base de données.",
+                            "commande" : [
+                                "« composer req doctrine/orm »",
+                                "« composer req --dev symfony/maker-bundle »"
+                            ]
+                        },
+                        {   
+                            "nom" : "Twig",
+                            "img" : "/twig.jpg",
+                            "utilité" : "Packages propre à symfony qui nous permettra de programmer nos interfaces coté rendu.",
+                            "commande" : ["« composer req symfony/twig-bundle »"]
+                        }
+                    ]
+                },
+                {
+                    "titre" : "La liste des packages importés (CDN) :",
+                    "puces" : [
+                        "- Fontawesome : package qui propose une librairie d’icônes pour illustrer nos interfaces. « https://fontawesome.com/ »."
+                    ],
+                    "img" : "/documentation/LiveEvent/Initialisation/init5.png"
+                },
+                {
+                    "titre" : "La liste des packages installer :",
+                    "puces" : [
+                        "- Bootstrap : Framework destiné au css. « https://getbootstrap.com/ ».",
+                        "Son instalation suit les étapes suivantes :",
+                        "- Dans le dossier public, crée un nouveau dossier \" assets \"",
+                        "- Dans le dossier \" assets \" crée deux dossier \" css \" et \" js \"",
+                        "- Se rendre sur le site de bootstrap pour telecharger bootstrap,",
+                        "- Décompresser le dossier telechergé puis se rendre dans le dossier \" css \", copier les fichiers \" bootstrap.min.css \" ainsi que \" bootstrap.min.css.map \" et les coller dans le dossier \" css \" crée dans assets dans la seconde étape.",
+                        "- Copier et coller aussi les fichiers \" bootstrap.bundle.js \" et \" bootstrap.bundle.js.map \" et les coller dans le dossier \" js \".",
+                        "- Configurer maintenant le fichier \" templates/base.html.twig \" en ajoutant la balise <link rel=\"stylesheet\" href=\"{{ asset('assets/css/bootstrap.min.css') }}\"> ainsi que la balise <script src='{{asset('assets/js/bootstrap.bundle.js')}}' defer></script>"
+                    ],
+                    "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/bootstrap.png"
+                }
+            ]
+        }
+    ]
+}

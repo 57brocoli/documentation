@@ -1,0 +1,196 @@
+{
+    "titre" : "Technologies",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Avant d'initialiser le project nous aurons besoin d'un certain nombre d'outils. Certain sont des logiciels destinées au réalisation de prototypage de maquettes, d'autres seront destinées au développement et à la création du site. Nous parlerons ici uniquement des technologies utilisées durons la phase de développement du site.",
+                    "Vous trouverez la liste des technologies utilisées ici, classées en fonction de leur utilité."
+                ]
+            }
+        },
+        
+        {
+            "titre" : "Languages ",
+            "section" : [
+                {
+                    "titre" : "PHP",
+                    "content" : {
+                        "introduction" : [
+                            "Le but n’étant pas de faire une présentation exhaustive du langage PHP, mais seulement une introduction concrète, afin de comprendre la nécessité d’utiliser PHP. À ce jour il existe plusieurs langages serveur. PHP est un langage de script côté serveur largement utilisé pour le développement web. Initialement développé en 1994 il est devenu l'un des langages les plus populaires pour la création de sites web dynamiques et interactifs. Le chois d'utiliser PHP pour notre projet reside dans les points suivant:"
+                        ],
+                        "img" : "/php.png",
+                        "puces" :[
+                            "- PHP est largement utilisé dans l'industrie du développement web, ce qui signifie qu'il existe une grande quantité de ressources, de tutoriels, de frameworks et de bibliothèques disponibles pour les développeurs PHP.",
+                            "- De plus, pour ce projet, sa conjonction avec MySQL pour la gestion des bases de données serat d'une grande utilité.",
+                            "- Enfin de nombreux hébergeurs web supportent PHP, ce qui facilite le déploiement des applications web développées avec ce langage."
+                        ]
+                    }
+                },
+                {
+                    "titre" : "Symfony",
+                    "content" : {
+                        "introduction" : [
+                            "Symfony est un framework open source écrit en PHP, conçu pour accélérer et simplifier le développement d'applications web robustes, évolutives et hautement performantes.",
+                            "Basé sur le modèle MVC l’une des plus utilisées pour les applications Web. Elle consiste à découper l’application en modules qui ont trois responsabilités différentes :",
+                            "- Les modèles gèrent l’accès aux données (le plus souvent dans une base de données).",
+                            "- Les vues sont les interfaces graphiques présentées à l’utilisateur.",
+                            "- Les contrôleurs contiennent la logique des actions à effectuer suivant la requête de l’utilisateur.",
+                            "Ce qui simplifie enormement la logique du code. Mais cette technologie vas aussi nous permettre de :" 
+                        ],
+                        "img" : "/symfony.png",
+                        "puces" :[
+                            "- A la fois de développer des interfaces utilisateur pour l'aspect front-end, et de configuré une api pour garantir la connextion entre backoffice et d'autre service tel que nos applications resct.",
+                            "- Grace au bundle, crée une base de données, des formulaire, des composants se fait avec seulement une ligne de commande, ce qui nous permet un gain de temps phénomenal.",
+                            "-  Symfony est conçu pour offrir de bonnes performances, grâce à des fonctionnalités telles que le cache, la compilation automatique des templates, et l'optimisation de l'ORM (Object-Relational Mapping) avec Doctrine. De plus, Symfony propose des outils de profiling et de débogage pour identifier et résoudre les goulets d'étranglement de performance."
+                        ]
+                    }
+                }
+                
+            ]
+        },
+        {
+            "titre" : "Editeur de text ",
+            "section" : 
+                [
+                    {
+                        "titre" : "Visual Studio Code", 
+                        "content" : {
+                            "introduction" : ["De son acronyme VSC, Visual Studio Code est un éditeur de code open source et multiplate-forme (Windows, Mac et Linux) qui supporte la majorité des langages informatique. Bien qu’il existe plusieurs éditeurs sur le marché, le choix d’adopter VSC pour ce projet découle des ses avantages :"],
+                            "img": "/documentation/NS_VersionDescktop/Technologies/VSC.png",
+                            "puces" : [
+                                "- Son coût : il est gratuit.",
+                                "- IntelliSense : fonction de complétion du code, initialement intégré. Ce qui apporte un gain de temps considérable dans la phase de développement.",
+                                "- Terminal : VSC possède un terminal intégré qui permet de travailler sur une seul interface, de plus à partir de la version 2.0 les commandes git sont nativement intégrées.",
+                                "- Extensions : Il est possible d’installer plusieurs extensions adaptées à son utilisation afin d’être plus efficace (Eslint, Prettier, Mithril Emmet). Celles utilisées dans le projet seront automatiquement installées avec les packages du Framework."
+                            ]
+                        }
+                    }
+                ]
+        },
+        {
+            "titre" : "Packages",
+            "section" : 
+                [
+                    {
+                        "titre" : "Liste des packages utilisés dans ce projet", 
+                        "elements" : [
+                            {   
+                                "nom" : "Api-platform",
+                                "img" : "/apiplatform.png",
+                                "utilité" : "Indisponssable pour ce projet, car il nous permettra de configurer notre api."
+                            },
+                            {   
+                                "nom" : "Fakerphp",
+                                "img" : "/faker.png",
+                                "utilité" : "Utile pendant la phase de développement, pour remplir nos tables de notre base de donnée de données fictif."
+                            },
+                            {   
+                                "nom" : "knplabs",
+                                "img" : "/knp.png",
+                                "utilité" : "Packages utile pour construire une pagination."
+                            },
+                            {   
+                                "nom" : "Doctrine",
+                                "img" : "/symfony.png",
+                                "utilité" : "Packages propre à symfony qui nous permettra d'interagir avec la base de données."
+                            },
+                            {   
+                                "nom" : "Twig",
+                                "img" : "/twig.jpg",
+                                "utilité" : "Packages propre à symfony qui nous permettra de programmer nos interfaces coté rendu."
+                            },
+                            {
+                                "nom" : "Bootstrap",
+                                "img" : "/documentation/NS_VersionDescktop/Initialisation/Logo/bootstrap.png",
+                                "utilité" : "Nous permet d'avoir des styles css prédéfinit. Dans la pratique cela nous permet d'aller beaucoup plus vite pour l'aspect les interfaces utilisateur."
+                            }
+                        ]
+                    }
+                ]
+        },
+
+        {
+            "titre" : "Gestionnaire de version",
+            "section" : [
+                {
+                    "titre" : "GitHub",
+                    "content" : {
+                        "introduction" : [
+                            "A un haut niveau, GitHub est un site web et un service de cloud qui aide les développeurs à stocker et à gérer leur code, ainsi qu’à suivre et contrôler les modifications qui lui sont apportées. On l'apelle aussi 'le controle de version'.",
+                            "En pratique il faut le voir comme un logiciel qui nous permettra d'effectuer des sauvegardes de notre code à un instant T sur le web. Il s'utilise principalement dans le terminal, et dans ce projet nous aurons besoin uniquement des commandes de base."
+                        ],
+                        "img" : "/github2.png",
+                        "commandes" : [
+                            {   
+                                "nom" : "1. Se rendre sur https://github.com/",
+                                "utilité" : "Il nous faut crée un compte si cela n'est pas fait, puis crée un répository. le dépot à pour nom 'LiveEventSymphony'"
+                            },
+                            {   
+                                "nom" : "2. git init",
+                                "utilité" : "Dans le terminal de Visual Studio Code, entrer la commande git init pour initialiser git."
+                            },
+                            {   
+                                "nom" : "3. git add .",
+                                "utilité" : "Enregistre les modifications apportées au code, puis prépare une sauvegarde."
+                            },
+                            {   
+                                "nom" : "4. git commit -m",
+                                "utilité" : "Donne un titre à la sauvegarde, puis effectue une sauvegarde du code. En fait ce qu'on apelle un commit."
+                            },
+                            {   
+                                "nom" : "5. git commit -M main",
+                                "utilité" : ""
+                            },
+                            {   
+                                "nom" : "6. git remote add origin https://github.com/nomducompte/LiveEventSymphony.git",
+                                "utilité" : "Git vas lié notre dépot local avec le répository distant."
+                            },
+                            {   
+                                "nom" : "7. git push -u origin main",
+                                "utilité" : "Cette commande envoie le commit sur le repository distant qui est sur le web."
+                            }
+
+                        ],
+                        "commandeCode" : [
+                            {   
+                                "nom" : "1. git add ."
+                            },
+                            {   
+                                "nom" : "2. git commit -m"
+                            },
+                            {   
+                                "nom" : "1. git push -u origin main "
+                            }
+                        ],
+                        "commandeBranche" : [
+                            {   
+                                "nom" : "git branch",
+                                "utilité" : "Voir la liste des branches"
+                            },
+                            {   
+                                "nom" : "git branche nomDeLaBranche",
+                                "utilité" : "Crée une nouvelle branche avec pour nom 'nomDeLaBranche'"
+                            },
+                            {   
+                                "nom" : "git checkout nomDeLaBranche",
+                                "utilité" : "Bascule sur la branche 'nomDeLaBranche'"
+                            },
+                            {   
+                                "nom" : "git merge nomDeLaBranche",
+                                "utilité" : "Fusionne deux branches."
+                            },
+                            {   
+                                "nom" : "git branche -D nomDeLaBranche",
+                                "utilité" : "Supprime la branche qui a pour nom 'nomDeLaBranche'"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+
+        
+    ]
+}

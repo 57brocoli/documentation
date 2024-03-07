@@ -36,6 +36,9 @@ import DeploiementPhone from "./Composant/Page/NationSound/Phone/Deploiement/Dep
 import IndexLE from "./Composant/Page/LiveEvent/Index.jsx"
 import PresentationLE from "./Composant/Page/LiveEvent/Presentation/Presentation.jsx"
 import MaquettesLE from "./Composant/Page/LiveEvent/Maquettes/Maquettes.jsx"
+import TechnologiesLE from "./Composant/Page/LiveEvent/Technologies/Technologies.jsx"
+import InitialisationLE from "./Composant/Page/LiveEvent/Initialisation/Initialisation.jsx"
+import LogiqueLe from "./Composant/Page/LiveEvent/Logique/Logique.jsx"
 
 const router = createBrowserRouter([
     {
@@ -182,6 +185,18 @@ const router = createBrowserRouter([
                     {
                         path:'/liveevent/maquettes',
                         element: <MaquettesLE/>
+                    },
+                    {
+                        path:'/liveevent/technologies',
+                        element: <TechnologiesLE/>
+                    },
+                    {
+                        path:'/liveevent/initialisation',
+                        element: <InitialisationLE/>
+                    },
+                    {
+                        path:'/liveevent/logique',
+                        element: <LogiqueLe/>
                     }
                 ]
             },

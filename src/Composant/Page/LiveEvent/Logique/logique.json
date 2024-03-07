@@ -1,0 +1,260 @@
+{
+    "titre" : "Logique de développement",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "La logique de développement pour ce projet s'appuie sur le model MVC. Il faut comprendre par 'logique de développement' l'architecture du projet dans l'agencement des dossiers et fichier, ainsi que les methodes et techniques propre au code.",
+                    "A son intallation un architecture de base nous est proposée. Dans ce projet quelques modifications ont été adoptées pour aporter un structure de développement propre"
+                ]
+            }
+        },
+        {
+            "titre" : "Architecture du projet", 
+            "partieA" : {
+                "titre" : "Racine du projet",
+                "content" : {
+                    "introduction" : [
+                        "Ici il serat question de l'ordre de rangement des dossiers et fichiers du projet."
+                    ],
+                    "img" : "/documentation/LiveEvent/Logique/architecture1.png",
+                    "puces" : [
+                        {
+                            "titre" : "bin",
+                            "img" : "",
+                            "text" : "Dossier qui repertorie toutes les commande symfony utile pour le terminal. ( crée des formulaire, entités... )"
+                        },
+                        {
+                            "titre" : "config",
+                            "img" : "",
+                            "text" : "Configuration des packages installer."
+                        },
+                        {
+                            "titre" : "migration",
+                            "img" : "",
+                            "text" : "repertorie toutes les fichiers de configuration, de modification de la base de données."
+                        },
+                        {
+                            "titre" : "public",
+                            "img" : "",
+                            "text" : "Dossier qui contient tout les styles, script js, images utile pour le projet."
+                        },
+                        {
+                            "titre" : "src",
+                            "img" : "",
+                            "text" : "Contient toute la logique du code, les entités, les controller, formulaires, repository..."
+                        },
+                        {
+                            "titre" : "templates",
+                            "img" : "",
+                            "text" : "Contient toutes les vues."
+                        }
+                    ]
+                }
+            },
+            "partieB" : {
+                "titre" : "Dossier scr",
+                "content" : {
+                    "introduction" : [
+                        "Stocke toutes les fichiers necessaires au développement. On retrouve les composants, le css, les images, et les données en statiques"
+                    ],
+                    "img" : "/documentation/LiveEvent/Logique/architecture2.png",
+                    "puces" : [
+                        {
+                            "titre" : "ApiRessource",
+                            "img" : [
+                                "/documentation/LiveEvent/Logique/architecture3.png"
+                            ],
+                            "text" : "Contient uniquement le gitignore de apiplatforme."
+                        },
+                        {
+                            "titre" : "Controller",
+                            "img" : [
+                                "/documentation/LiveEvent/Logique/architecture4.png"
+                            ],
+                            "text" : "Regroupez tous les contrôleurs du site dans 3 dossiers différents. Les contrôleurs qui gèrent les vues publiques sont simplement stockés dans le dossier \" Controller \". Les contrôleurs qui gèrent les vues administrateur de LiveEvent sont stockés dans le sous-dossier \" Admin \". Les contrôleurs qui gèrent les vues administrateur de NationSound sont dans le sous-dossier \" NationSound \"."
+
+
+                        },
+                        {
+                            "titre" : "DataFixtures",
+                            "img" : [
+                                "/documentation/LiveEvent/Logique/architecture5.png"
+                            ],
+                            "text" : "Les fichiers utiles uniquement pour la phase de développement, il s'agit d'exécutables programmables utilisés pour remplir la base de données de données fictives."
+                        },
+                        {
+                            "titre" : "Entity",
+                            "img" : [
+                                "/documentation/LiveEvent/Logique/architecture6.png"
+                            ],
+                            "text" : "Ce dossier contient toutes les entités de notre base de données, ainsi que leur configuration. Chaque entité est rangée par dossier avec la même logique que pour les contrôleurs. Les \" Trait \" sont des paramètres communs dans la configuration des entités."
+                        },
+                        {
+                            "titre" : "Form",
+                            "img" : [
+                                "/documentation/LiveEvent/Logique/architecture7.png"
+                            ],
+                            "text" : "Ce dossier contient toutes les formulaires."
+                        },
+                        {
+                            "titre" : "Repository",
+                            "img" : [
+                                "/documentation/LiveEvent/Logique/architecture8.png"
+                            ],
+                            "text" : "Les repository sont des fichiers qui configurent des requêtes sur nos entités. A chaque fois qu'une entité est crée, son répository est crée automatiquement. les repositorys sont généralement appelés dans les methodes des controllers."
+                        },
+                        {
+                            "titre" : "Security",
+                            "img" : [
+                                "/documentation/LiveEvent/Logique/architecture9.png"
+                            ],
+                            "text" : "Le fichier \" UserAuthenticator \" est un controller qui gère la securité pour l'authentification ou l'inscription pour un utilisateur."
+                        },
+                        {
+                            "titre" : "Security",
+                            "img" : [
+                                "/documentation/LiveEvent/Logique/architecture10.png"
+                            ],
+                            "text" : "Les services sont des methodes génériques qui sont appelées dans les controllers. Par exemple le fichier \" JWTService \" gère des token pour les utilisateur qui souhaite changer leur mot de passe. le fichier \" PictureService \" gère la création, l'ajustement et l'ajout des images dans la base de donées. \" SendMailService \" se charge de crée et envoyer un mail."
+                        }
+                    ]
+                }
+            },
+            "partieC" : {
+                "titre" : "Dossier template",
+                "content" : {
+                    "introduction" : [
+                        "Stocke toutes les vues."
+                    ],
+                    "img" : "/documentation/LiveEvent/Logique/architecture11.png",
+                    "puces" : [
+                        {
+                            "titre" : "_partials",
+                            "img" : ["/documentation/LiveEvent/Logique/architecture12.png"],
+                            "text" : "les fichier \"partial\" sont des composant réutilisables comme la navbar ou le footer. Les partiels propre à toutes les pages utilisateur sont stocker dans le dossier \" _partials \". Ceux qui des pages administrateurs de LiveEvent sont dans \" admin \" et ceux des pages administrateur de NationSound dans le dossier \" NationSound \"."
+                        },
+                        {
+                            "titre" : "admin",
+                            "img" : ["/documentation/LiveEvent/Logique/architecture13.png"],
+                            "text" : "Dossier qui regroupe toutes les pages administrateur. \" article, background_image, category, event, requete, sponsor, user \" sont des dossiers pour chaque pages administrateur du le site LiveEvent. Tous les dossiers present dans \" NationSound \" sont destinés aux pages administrateur de NationSound. "
+                        },
+                        {
+                            "titre" : "les autres",
+                            "img" : ["/documentation/LiveEvent/Logique/architecture14.png"],
+                            "text" : "Il s'agit des dossiers destinés aux pages utilisateurs. Seul le dossier \" test \" est destiné aux pages de test pour la phase de développement."
+                        },
+                        {
+                            "titre" : "base.html.twig",
+                            "img" : ["/documentation/LiveEvent/Logique/architecture15.png"],
+                            "text" : "Ces fichiers sont les fichiers de base. Ils ont la même structure qu'une page HTML. Ils sont ce que l'on pourrait appeler des composants parent, car ils utilisent un système de blocs pour intégrer des composants enfants, aussi bien pour le \" body \" de la page que pour les styles et les fichiers JS. Ces blocs sont remplis avec les fichiers situés dans les autres dossiers cités précédemment. Le fichier \" baseTest.html.twig \" est destiné aux pages de test."
+                        }
+                    ]
+                }
+            }
+        },
+
+
+
+        {
+            "titre" : "Méthodologie", 
+            "partieA" : {
+                "titre" : "Methode channel",
+                "content" : {
+                    "introduction" : [
+                        "Tout comme la logique des couches de navigation, la méthode 'channel' est propre aux développement du projet et non à un langage de programmation. Elle est initialisée dans les composants \" majeurs \" présent dans le dossier \" ecrans \". Elle est présente dans la seconde et dans la troisieme couche de navigation. Cette méthode va permettre d’appliquer la logique de développement.",
+                        "Pour comprendre comment cette méthode fonctionne, il faut s’imaginer le modèle duquel elle s’est inspirée. Prenons un spectateur devant sa télévision qui appuis sur le bouton «1» de sa télécommande, afin de regarder le programme diffusé sur le canal 1, la télé se «connecte» alors à cette fréquence et affiche l’émission qui passe sur cette longueur d’onde.",
+                        "Entre chaque couche de navigation, sa logique et sa finalité reste la même, mais son initialisation est différent."
+                    ],
+                    "img" : "",
+                    "puces" : [
+                        {
+                            "titre" : "Mise en pratique",
+                            "img" : "",
+                            "text" : "Pour ilustrer son initialisation, le fichier 'Page1.js' serat le support. Pour que la methode channel marche, il nous faut un parametre, Ce parametre provient sois de la couche précédente, sois du menu. Le parametre représente enfet pour l'utilisateur la page à consulté, pour le code il s'agit d'une chaine de caractère qui définirat quel composant doit être chargé. En pratique la méthode suit une à une ces étapes :",
+                            "etapes" : [
+                                {
+                                    "nom" : "1 - Definition du canal",
+                                    "lieux" : "NavBar.js",
+                                    "ilustration" : {
+                                        "img" : "/documentation/NS_VersionPhone/Logique/methode1.png",
+                                        "text" : "L'exemple se baserat sur la page billeterie. Lorsque l'utilisateur demande à voir la page billeterie, la route prend le paramettre \"pageBilletterie\"."
+                                    }
+                                },
+                                {
+                                    "nom" : "2 - Récupération du canal",
+                                    "lieux" : "Page1.js",
+                                    "ilustration" : {
+                                        "img" : "/documentation/NS_VersionPhone/Logique/methode2.png",
+                                        "text" : "On récupère le parametre de la route lorsque le composant \"Page1\" est chargé."
+                                    }
+                                },
+                                {
+                                    "nom" : "3 - Attribution du composant",
+                                    "lieux" : "Page1.js",
+                                    "ilustration" : {
+                                        "img" : "/documentation/NS_VersionPhone/Logique/methode3.png",
+                                        "text" : " Dans le rendu du composant, chaque opérateur ternaire va être parcouru jusqu’à arriver à la première condition qui correspond au paramêtre récupéré, puis charger le composant qui est appelé. Ici notre canal est \"pageBilleterie\", la 1ere condition qui est validé. Il y'aura donc deux composant qui serat chargé pour construire notre page, \"HeaderPage\" pour le header et \"Billetterie\" pour chargé la liste des billets."
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "partieB" : {
+                "titre" : "",
+                "content" : {
+                    "introduction" : [
+                        ""
+                    ],
+                    "img" : "",
+                    "puces" : [
+                        
+                    ]
+                }
+            }
+        },
+
+
+        {
+            "titre" : "Couche de navigation", 
+            "partieA" : {
+                "titre" : "Les 3 couches de navigation",
+                "content" : {
+                    "introduction" : [
+                        "Pour répondre aux besoins du projet qui figurent dans le cahier des charges, et afin de simplifier la navigation, la structure du site se décompose en 3 couches de navigation. Chaque couche se compose de plusieurs pages qui ont la même fonction."
+                    ],
+                    "img" : "/documentation/NSDescktop/structureNavigation.png",
+                    "puces" : [
+                        {
+                            "titre" : "1er couche :",
+                            "text" : "Elle correspond à la page d’accueil. C’est le point d’entrée du site. Elle est composée de plusieurs sections qui amènent l’utilisateur vers une page dédiée à sa thématique propre (section programme envoie vers la page programme)."
+                        },
+                        {
+                            "titre" : "2nd couche :",
+                            "text" : "Elle regroupe les pages suivantes : Actualités, Programme, Billetterie, Sponsors, A-propos, Map. La seconde couche de navigation représente une page qui traite une à deux thématiques par section, et donne des informations de façon globale. Exemple : la page programme affiche deux sections, la première étant l’affichage des articles relatifs aux festival, et la seconde, la FAQ qui répond aux questions les plus fréquemment posées sur le festival. L’utilisateur a sur cette page la possibilité de cliquer sur certains éléments comme un événement qui compose le programme ou un article de l’actualité pour être redirigé vers une page de la dernière couche de navigation."
+                        },
+                        {
+                            "titre" : "3ème couche :",
+                            "text" : "Une page ou l’information est précise et centrée sur un sujet. Il peut s’agir de la description d’un événement du programme avec l’heure, le lieux, le nom de l’artiste et une description de l’artiste ou bien d’un article."
+                        }
+                    ]
+                }
+            },
+            "partieB" : {
+                "titre" : "",
+                "content" : {
+                    "introduction" : [
+                        ""
+                    ],
+                    "img" : "",
+                    "puces" : [
+                        
+                    ]
+                }
+            }
+        }
+    ]
+}
