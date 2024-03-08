@@ -16,7 +16,7 @@ function Technologies() {
     const filtre = ["Languages", "Editeur de text", "Packages", "Gestionnaire de version"]
     const [filtreActive, setFiltreActive] = useState('Languages')
     return (
-        <main className='bgPage pt-20 px-10'>
+        <main className='bgPage pt-20 px-10 w-full'>
             <h1 className='text-xl'>Technologies</h1>
             {data &&
                 <section>

@@ -10,7 +10,7 @@ function Presentation() {
     const data = dataJson
 
     return (
-        <div className='bgPage pt-10'>
+        <div className='bgPage pt-10 w-full'>
             <motion.div initial={{opacity:0}} animate={{opacity: 1}}>
                 <img src={logo} className='logo center'></img>
                 <h1 className='text-7xl fontRaph text-center my-4'>{data.titre}</h1>

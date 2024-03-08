@@ -1,0 +1,309 @@
+{
+    "titre" : "Controller",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Dans le modèle MVC (Modèle-Vue-Contrôleur), le contrôleur (controller) est une composante essentielle chargée de gérer les interactions entre le modèle et la vue. Nous allons pour la documentation découper ses actions en trois parties :",
+                    "1 - Gère Entrées: Le contrôleur reçoit les requêtes initiales de l'utilisateur via l'interface utilisateur ou toute autre source d'entrée. Cela peut être une soumission de formulaire, un clic sur un lien, ou toute autre action initiée par l'utilisateur.",
+                    "2 - Traitement de la Logique Métier: Une fois que le contrôleur reçoit la requête, il traite cette demande en exécutant la logique métier appropriée. Cela peut inclure la validation des données, l'interaction avec la base de données, ou tout autre traitement nécessaire pour répondre à la requête de manière adéquate.",
+                    "3 - Sélection de la Vue approprié et transmet des Données à la Vue: Après avoir traité la demande, le contrôleur décide quelle vue doit être affichée à l'utilisateur en fonction des résultats de la logique métier. Il peut choisir parmi différentes vues pour afficher les données, ou même rediriger l'utilisateur vers une autre page si nécessaire. Une fois la vue sélectionnée, le contrôleur transmet les données nécessaires à la vue pour affichage. Cela peut inclure des données extraites de la base de données, des messages de succès ou d'erreur, ou toute autre information pertinente à afficher à l'utilisateur."
+                ]
+            }
+        },
+        {
+            "titre" : "ProgrammeController",
+            "img" : "/documentation/LiveEvent/Controllers/controller1.png",
+            "content" : {
+                "introduction" : [
+                    "Notre contrôleur est une classe qui possède plusieurs méthodes qui sont exécutées en fonction des entrées que l'administrateur décide d'emprunter.",
+                    "Explication :",
+                    "- Grâce à PHP 8, il est possible de programmer des routes grâce aux attributs. Un attribut est placé en tête du contrôleur. De plus, cet attribut utilise la méthode \" Route \" qui prend plusieurs paramètres. Le premier est la route \" /admin/nationsound \", le second est le nom de la route \" nationSound_ \".",
+                    "- Enfin, il est possible de fixer des autorisations en fonction du \" ROLE \" de l'utilisateur grâce à la méthode  IsGranted()  qui prend comme paramètre \" 'ROLE_ADMIN' \"",
+                    "En conséquence :",
+                    "- L'entrée pour chaque méthode de notre contrôleur est définie par celui du contrôleur suivi de celui de la méthode. Ce qui signifie que chaque méthode est exécutée lorsque la route commence par \" /admin/nationsound \" suivie du chemin de la méthode en question. Plus d'explications dans les détails des méthodes ci-dessous.",
+                    "- L'intégralité des méthodes de notre controleur est accéssible uniquement pour les administrateur."
+                ],
+                "text" : "Pour plus de clarté et comprendre la logique de fonctionnement des controllers, quelques methodes du controller seront documentés du plus simple au plus complexe.",
+                "methodes" : [
+                    {
+                        "titre": "jours",
+                        "img" : "/documentation/LiveEvent/Controllers/methode1.png",
+                        "introduction" : "Cette methode recupère la liste des journées du programme et les transmet à la vue.",
+                        "explication" : [
+                            {
+                                "titre" : "Définition de l'entrée",
+                                "text" : [
+                                    "À la première ligne, tout comme pour le contrôleur, l'entrée est définie grâce à l'attribut.",
+                                    "Notre méthode est donc exécutée lorsque la route est égale à \" /admin/nationsound/jours \" (route du contrôleur + route de la méthode).",
+                                    "Attention, pour appeler notre méthode dans une autre méthode, c'est par le nom qu'il faut le faire. Exemple : \" nationSound_jours \" (nom du contrôleur + nom de la méthode)."
+                                ]
+                            },
+                            {
+                                "titre" : "Logique metier",
+                                "text" : [
+                                    "Pour commencer, notre méthode \" jours \" prendra en paramètre :",
+                                    "- \" DayRepository \", qui est le repository répertoriant les requêtes possibles sur l'entité \" Day \" dans la base de données, pour l'instancier dans la variable \" dr \".",
+                                    "Notre méthode renverra une réponse grâce à \" Response \"",
+                                    "Dans les accolades :",
+                                    "- La variable \" days \" prendra comme valeur le résultat de la requête \" findAll() \" du repository. Cette requête renvoie la liste complète des journées. \" findAll() \" est identique à \" SELECT * \" en SQL."
+                                ]
+                            },
+                            {
+                                "titre" : "Définition de la vue et transfer des données",
+                                "text" : [
+                                    "Toujour dans les accolades :",
+                                    "Notre methode renvoie une reponse \" return $this->render( ) \". render est une méthode qui prend en paramètres :",
+                                    "- La vue choisit par le controller \" 'admin/NationSound/journee/journees.html.twig' \". Qui est en réalité le chemin d'acces au fichier twig.",
+                                    "- Les données : \" [ 'days' => $days ] \". Les données transmises à la vue doivent être initialisées dans un tableau."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "editJour",
+                        "img" : "/documentation/LiveEvent/Controllers/methode2.png",
+                        "introduction" : "Cette methode permet de crée une nouvelle journée dans le programme ou de modifier une déja existente.",
+                        "explication" : [
+                            {
+                                "titre" : "Définition de l'entrée",
+                                "text" : [
+                                    "À la première ligne, tout comme pour le contrôleur, l'entrée est définie grâce à l'attribut.",
+                                    "Notre méthode est donc exécutée lorsque la route est égale à \" /admin/nationsound/jours/edit/{id} \" (route du contrôleur + route de la méthode).",
+                                    "Attention, pour appeler notre méthode dans une autre méthode, c'est par le nom qu'il faut le faire. Exemple : \" nationSound_editJours \" (nom du contrôleur + nom de la méthode)."
+                                ]
+                            },
+                            {
+                                "titre" : "Logique metier",
+                                "text" : [
+                                    "Pour commencer, notre méthode \" editJours \" prendra en paramètre :",
+                                    "- $day qui est l'instance de \" Day \" (qui est une entité), et prend par défaut la valeur \" null \". Le paramètre \" id \" dans l'attribut est automatiquement référencé à l'entité \" Day \".",
+                                    "- $request qui est l'instance de \" Request \". Request nous permet de recupérer des propriétés",
+                                    "- $em qui est l'instance de \" EntityManagerInterface \" qui provient de ORM et permet d'interagir avec la base de données.",
+                                    "Notre méthode renverra une réponse grâce à \" Response \"",
+                                    "Dans les accolades :",
+                                    "- 1 - Il est important de vérifier si la journée sur laquelle nous allons agir existe déja ( dans ce cas se sera une modification ), ou pas encore ( dans ce cas on vas la créer ). Pour verifier on crée une variable \" $new \" qui prend par default \" false \". Puis en verifie avec une simple condition si le paramètre \" id \" dans l'attribut est vide. Si le paramètre est vide alors, $day devient une nouveau objet, et $new prend la valeur \" true \".",
+                                    "- 2 - On crée le nouveau formulaire \" $form \" avec la méthode \" createForm \" qui prend comme paramêtres le modèl \" DayType \", et l'objet \" $day \".",
+                                    "- 3 - Si le formulaire est envoyé et qu'il est valide alors, notre nouvelle objet prend comme attributs les valeurs du formulaire grâce à \" getData( ) \". Puis avec EntityManager on presiste le nouvelle objet, et avec le flush on l'enregistre dans la base de données. Vient enfin la notification de succès en fonction de la valeur de \" $new \"."
+                                ]
+                            },
+                            {
+                                "titre" : "Définition de la vue et transfer des données",
+                                "text" : [
+                                    "Toujour dans les accolades nous avons deux cas de figure:",
+                                    "- Dans un premier temps le controller choisit de rendre la vue \" admin/NationSound/journee/addJournee.html.twig \", en lui transferant le formulaire.",
+                                    "- Si le formulaire est envoyé et valide alors le controller choisit une autre vue, et redirige l'administrateur vers une autre page qui est \" nationSound_jours \". Attention dans une redirection avec \" redirectToRoute( ) \", c'est le nom de la méthode qui doit être donné et non le chemin vers le fichier twig."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "deleteJour",
+                        "img" : "/documentation/LiveEvent/Controllers/methode3.png",
+                        "introduction" : "Cette methode permet de crée une nouvelle journée dans le programme ou de modifier une déja existente.",
+                        "explication" : [
+                            {
+                                "titre" : "Définition de l'entrée",
+                                "text" : [
+                                    "À la première ligne, tout comme pour le contrôleur, l'entrée est définie grâce à l'attribut.",
+                                    "Notre méthode est donc exécutée lorsque la route est égale à \" /admin/nationsound/jours/delete/{id?} \" (route du contrôleur + route de la méthode).",
+                                    "Attention, pour appeler notre méthode dans une autre méthode, c'est par le nom qu'il faut le faire. Exemple : \" nationSound_deleteJour \" (nom du contrôleur + nom de la méthode)."
+                                ]
+                            },
+                            {
+                                "titre" : "Logique metier",
+                                "text" : [
+                                    "Pour commencer, notre méthode \" editJours \" prendra en paramètre :",
+                                    "- $day qui est l'instance de \" Day \" (qui est une entité), et prend par défaut la valeur \" null \". Le paramètre \" id \" dans l'attribut est automatiquement référencé à l'entité \" Day \".",
+                                    "- $em qui est l'instance de \" EntityManagerInterface \" qui provient de ORM et permet d'interagir avec la base de données.",
+                                    "Notre méthode renverra une réponse grâce à \" Response \"",
+                                    "Dans les accolades :",
+                                    "- 1 - Il est important de vérifier si la journée sur laquelle nous allons agir existe ou pas. Avec une condition on verifie si $day contient bien une journée. S'il n'existe pas alors l'administrateur est redirigé vers une autre méthode avec un message d'erreur.",
+                                    "- 2 - Si il y'a bien un object :",
+                                    "=> $episode récupère tous les épisodes de la journée.",
+                                    "=> Si la journée ne contient pas d'épisode :",
+                                    "===> Avec EntityManager on supprime $day.",
+                                    "===> L'administrateur est ensuite rediriger vers une autre méthode avec une notification.",
+                                    "=> Si la journée contient des épisodes :",
+                                    "===> Avec une boucle \" foreach \" on prend chaque épisode pour lui attribuer la valeur \" null \" à \" Day \". On leur retire leur liaison avec $day.",
+                                    "===> Puis avec EntityManager on supprime $day.",
+                                    "===> L'administrateur est ensuite redirigé vers une autre méthode avec une notification."
+                                ]
+                            },
+                            {
+                                "titre" : "Définition de la vue et transfer des données",
+                                "text" : [
+                                    "Toujours dans les accolades nous avons trois cas de figure, mais dans tous les cas l'administrateur est redirigé ver la méthode \" nationSound_jours \".",
+                                    "La difference ce fait dans le contenu de la notification."
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "ContenuController",
+            "img" : "/documentation/LiveEvent/Controllers/controller2.png",
+            "content" : {
+                "introduction" : [
+                    "Notre contrôleur est une classe qui possède plusieurs méthodes qui sont exécutées en fonction des entrées que l'administrateur décide d'emprunter.",
+                    "Explication :",
+                    "- Grâce à PHP 8, il est possible de programmer des routes grâce aux attributs. Un attribut est placé en tête du contrôleur. De plus, cet attribut utilise la méthode \" Route \" qui prend plusieurs paramètres. Le premier est la route \" /admin/nationsound \", le second est le nom de la route \" nationSound_ \".",
+                    "- Enfin, il est possible de fixer des autorisations en fonction du \" ROLE \" de l'utilisateur grâce à la méthode  IsGranted()  qui prend comme paramètre \" 'ROLE_ADMIN' \"",
+                    "En conséquence :",
+                    "- L'entrée pour chaque méthode de notre contrôleur est définie par celui du contrôleur suivi de celui de la méthode. Ce qui signifie que chaque méthode est exécutée lorsque la route commence par \" /admin/nationsound \" suivie du chemin de la méthode en question. Plus d'explications dans les détails des méthodes ci-dessous.",
+                    "- L'intégralité des méthodes de notre controleur est accéssible uniquement pour les administrateur."
+                ],
+                "text" : "Pour plus de clarté et comprendre la logique de fonctionnement des controllers, quelques methodes du controller seront documentés du plus simple au plus complexe.",
+                "methodes" : [
+                    {
+                        "titre": "programme",
+                        "img" : "/documentation/LiveEvent/Controllers/methode4.png",
+                        "introduction" : "Cette methode recupère le contenu de la page Programme et les transmet à la vue.",
+                        "explication" : [
+                            {
+                                "titre" : "Définition de l'entrée",
+                                "text" : [
+                                    "À la première ligne, tout comme pour le contrôleur, l'entrée est définie grâce à l'attribut.",
+                                    "Notre méthode est donc exécutée lorsque la route est égale à \" /admin/nationsound/programme \" (route du contrôleur + route de la méthode).",
+                                    "Attention, pour appeler notre méthode dans une autre méthode, c'est par le nom qu'il faut le faire. Exemple : \" nationSound_contenu_programme \" (nom du contrôleur + nom de la méthode)."
+                                ]
+                            },
+                            {
+                                "titre" : "Logique metier",
+                                "text" : [
+                                    "Pour commencer, notre méthode \" programme \" prendra en paramètre :",
+                                    "- \" ViewRepository \", qui est le repository répertoriant les requêtes possibles sur l'entité \" View \" dans la base de données, pour l'instancier dans la variable \" vw \".",
+                                    "- \" DayRepository \", qui est le repository répertoriant les requêtes possibles sur l'entité \" Day \" dans la base de données, pour l'instancier dans la variable \" dr \".",
+                                    "Notre méthode renverra une réponse grâce à \" Response \"",
+                                    "Dans les accolades :",
+                                    "- La variable \" page \" prendra comme valeur le résultat de la requête \" findOneBy() \" du repository. Cette requête renvoie un object qui a l'attribut \" name \" égale à \" programme \". \" findAll() \" n'a pas d'equivalaent direct en SQL, mais peut être apparenté à \" SELECT * FROM view WHERE name = 'programme' LIMIT 1;.",
+                                    "- La variable \" day \" prendra comme valeur le résultat de la requête \" findAll() \" du repository. Cette requête renvoie la liste complète des journées. \" findAll() \" est identique à \" SELECT * \" en SQL."
+                                ]
+                            },
+                            {
+                                "titre" : "Définition de la vue et transfer des données",
+                                "text" : [
+                                    "Toujour dans les accolades :",
+                                    "Notre methode renvoie une reponse \" return $this->render( ) \". render est une méthode qui prend en paramètres :",
+                                    "- La vue choisit par le controller \" 'admin/NationSound/contenu/page.html.twig' \". Qui est en réalité le chemin d'acces au fichier twig.",
+                                    "- Les données : \" [ 'pageDefaultName' => 'programme', 'title' => 'Programme', 'page' => $page, 'days' => $days] \". Les données transmises à la vue doivent être initialisées dans un tableau."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "edit",
+                        "img" : "/documentation/LiveEvent/Controllers/methode5.png",
+                        "introduction" : "Cette methode permet de crée une nouvelle page ou de modifier une déja existente.",
+                        "explication" : [
+                            {
+                                "titre" : "Définition de l'entrée",
+                                "text" : [
+                                    "À la première ligne, tout comme pour le contrôleur, l'entrée est définie grâce à l'attribut.",
+                                    "Notre méthode est donc exécutée lorsque la route est égale à \" /admin/nationsound/contenu/edit/{name?}-{id?} \" (route du contrôleur + route de la méthode).",
+                                    "Attention, pour appeler notre méthode dans une autre méthode, c'est par le nom qu'il faut le faire. Exemple : \" nationSound_contenu_edit \" (nom du contrôleur + nom de la méthode)."
+                                ]
+                            },
+                            {
+                                "titre" : "Logique metier",
+                                "text" : [
+                                    "Pour commencer, notre méthode \" edit \" prendra en paramètre :",
+                                    "- $name qui fait référence au paramètre \" name \" de la route, et prend par défaut la valeur \" null \".",
+                                    "- $view qui est l'instance de \" View \" qui est une entité. \" View \" fait référence au paramètre \" id \" de la route, et prend par défaut la valeur \" null \".",
+                                    "- $request qui est l'instance de \" Request \". Request nous permet de recupérer des propriétés",
+                                    "- $em qui est l'instance de \" EntityManagerInterface \" qui provient de ORM et permet d'interagir avec la base de données.",
+                                    "- $slugger qui est l'instance de \" SluggerInterface \" une interface permettent de générer des slugs.",
+                                    "- $pictureService qui est l'instance de \" PictureService \" un service près programmer et qui permet de gérer les images.",
+                                    "Notre méthode renverra une réponse grâce à \" Response \"",
+                                    "Dans les accolades :",
+                                    "- 1 - Il est important de vérifier si la page sur laquelle nous allons agir existe déja ( dans ce cas se sera une modification ), ou pas encore ( dans ce cas on vas la créer ). Pour verifier on crée une variable \" $new \" qui prend par default \" false \". Puis en verifie avec une simple condition si le paramètre \" id \" dans l'attribut est vide. Si le paramètre est vide alors, $view devient une nouveau objet, et $new prend la valeur \" true \".",
+                                    "- 2 - On crée le nouveau formulaire \" $form \" avec la méthode \" createForm \" qui prend comme paramêtres le modèl \" ViewType \" près programmer, et l'objet \" $view \".",
+                                    "- 3 - Si le formulaire est envoyé et qu'il est valide alors :",
+                                    "=> Notre nouvelle objet prend comme attributs les valeurs du formulaire grâce à \" getData( ) \".",
+                                    "=> L'attribut \" name \" de notre object $view prend comme valeur \" $name \" grace au seteur de l'entité \" setName( ) \".",
+                                    "=> On crée un slug grace à la méthode \" slug( ) \" qui prend en parametre le nom de $view, puis en donne ce slug à l'attribut \" slug \" de $view grace au seteur de l'entité \" setSlug( ) \".",
+                                    "=> la variable $folder indique le nom du dossier qui contiendra les photos.",
+                                    "=> $headerImage recupère l'image qui est dans le formulaire grace à \" $form->get('headerImage')->getData( ) \".",
+                                    "=> S'il y'a une image :",
+                                    "===> $newfileName fait appelle à la methode \" addFeaturedImage \" du service $pictureServie pour ajouter l'image au dossier $folder, et lui retourner un nom pour notre image.",
+                                    "===> $lastFigure recupère l'image de $view ( s'il y'a ).",
+                                    "===> Si $view possède déja une image :",
+                                    "=====> La méthode \" backgroundImage( ) \" vas supprimer cette image déja existante du dossier $folder",
+                                    "=====> Puis avec EntityManager on supprimer cette image de la base de données.",
+                                    "===> $img est crée et devient l'instance de l'entité Figure.",
+                                    "===> $img prend comme valeur \" $newfilename \" pour l'attribut \" name \" grace au seteur.",
+                                    "===> $view prend \" $img \" comme valeur pour l'attribut \" HeaderImage \" grace au seteur. On crée enfet une liaison entre les entités View et Figure.",
+                                    "=> Puis avec EntityManager on presiste le nouveau objet, et avec le flush on l'enregistre dans la base de données. Vient enfin la notification de succès."
+                                ]
+                            },
+                            {
+                                "titre" : "Définition de la vue et transfer des données",
+                                "text" : [
+                                    "Toujour dans les accolades nous avons deux cas de figure:",
+                                    "- Dans un premier temps le controller choisit de rendre la vue \" admin/NationSound/contenu/editPage.html.twig \", en lui transferant le formulaire, la vue, aussi que d'autres paramêtres.",
+                                    "- Si le formulaire est envoyé et valide, alors le controller choisit une autre vue, et redirige l'administrateur vers une autre methode qui est \" nationSound_contenu_$slug \". Attention dans une redirection avec \" redirectToRoute( ) \", c'est le nom de la méthode qui doit être donné et non le chemin vers le fichier twig."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre": "editSection",
+                        "img" : "/documentation/LiveEvent/Controllers/methode6.png",
+                        "introduction" : "Cette methode permet de crée une nouvelle section dans une page ou de modifier une déja existente.",
+                        "explication" : [
+                            {
+                                "titre" : "Définition de l'entrée",
+                                "text" : [
+                                    "À la première ligne, tout comme pour le contrôleur, l'entrée est définie grâce à l'attribut.",
+                                    "Notre méthode est donc exécutée lorsque la route est égale à \" /admin/nationsound/pagesection/edit/{name?}-{id?} \" (route du contrôleur + route de la méthode).",
+                                    "Attention, pour appeler notre méthode dans une autre méthode, c'est par le nom qu'il faut le faire. Exemple : \" nationSound_contenu_edit_section \" (nom du contrôleur + nom de la méthode)."
+                                ]
+                            },
+                            {
+                                "titre" : "Logique metier",
+                                "text" : [
+                                    "Pour commencer, notre méthode \" editSection \" prendra en paramètre :",
+                                    "- $request qui est l'instance de \" Request \". Request nous permet de recupérer des propriétés.",
+                                    "- $vr qui est l'instance de \" ViewRepository \" qui est le repository répertoriant les requêtes possibles sur l'entité \" View \".",
+                                    "- $pictureService qui est l'instance de \" PictureService \" un service près programmer et qui permet de gérer les images.",
+                                    "- $em qui est l'instance de \" EntityManagerInterface \" qui provient de ORM et permet d'interagir avec la base de données.",
+                                    "- $name qui est le nom de la section, et fait réference au paramètre \" name \" de la route.",
+                                    "- $pageSection qui est l'instance de l'entité \" PageSection \". \" PageSection \" fait référence au paramètre \" id \" de la route, et prend par défaut la valeur \" null \".",
+                                    "Notre méthode renverra une réponse grâce à \" Response \"",
+                                    "Dans les accolades :",
+                                    "- 1 - $page contiendra la reponse de la requête du repository \" findOneBy( ) \". cette requête permet de recupéré un objet qui possède la valeur $name ( nom de la page passer en parametre ). Equivalent à un \" SELECT * FROM PageSection WHERE name = $name LIMIT 1; \".",
+                                    "- 2 - $slug recupère le slug de l'objet $page.",
+                                    "- 3 - On verifie si la section est déja crée ou si elle ne l'est pas. Si elle ne l'est pas $pageSection serat une nouveau object. Et $new prendra \" true \" comme valeur.",
+                                    "- 4 - On crée le nouveau formulaire \" $form \" avec la méthode \" createForm \" qui prend comme paramêtres le modèl \" PageSectionType \", et l'objet \" $pageSection \".",
+                                    "- 5 - Si le formulaire est envoyé et qu'il est valide alors : ",
+                                    "=> notre nouvelle objet prend les valeurs du formulaire grâce à \" getData( ) \". ",
+                                    "=> $pageSection prend comme valeur à l'attribut \" View \" $page. On crée la liaison entre la section que l'on crée et la page sur laquel on se situe.",
+                                    "=> $folder contient le nom du dossier qui contient les images.",
+                                    "=> $images récupère les images du formulaire grâce à \" $form->get('images')->getData( ) \"",
+                                    "=> Pour chaque image récupéré :",
+                                    "===> $fichier utilisera la methode \" addFeaturedImage( ) \" du service \" $pictureService \" pour ajouter l'image au dossier $folder, et lui retourné un nom pour l'image.",
+                                    "===> $img est un object est crée à partir du model \" Figure \".",
+                                    "===> $img prend comme valeur $fichier (nom de l'image) à l'attribut \" Name \" grace au seteur. \" setName \".",
+                                    "===> $pageSection prend comme valeur $img à l'attribut \" Image \" grace au seteur. \" setName \". On crée la liaison entre les entité PageSection et Figure.",
+                                    "===> Grace à EntityManager on presiste le nouvelle objet $img.",
+                                    "=> L'EntityManager presiste aussi notre nouveau objet $pageSection, et avec le flush on l'enregistre dans la base de données."
+                                ]
+                            },
+                            {
+                                "titre" : "Définition de la vue et transfer des données",
+                                "text" : [
+                                    "Toujour dans les accolades nous avons deux cas de figure:",
+                                    "- Dans un premier temps le controller choisit de rendre la vue \" admin/NationSound/contenu/editSection.html.twig \", en lui transferant le formulaire, le nom de la page, la section, et la valeur de new.",
+                                    "- Si le formulaire est envoyé et valide alors le controller choisit une autre vue, et redirige l'administrateur vers une autre methode qui est \" nationSound_contenu_$slug \". Attention dans une redirection avec \" redirectToRoute( ) \", c'est le nom de la méthode qui doit être donné et non le chemin vers le fichier twig."
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

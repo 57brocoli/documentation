@@ -16,7 +16,7 @@ function Maquettes() {
     const [filtreActive, setFiltreActive] = useState('Barre de navigation')
 
     return (
-        <main className='bgPage pt-20 px-10'>
+        <main className='bgPage pt-20 px-10 w-full'>
             <motion.div initial={{opacity: 0}} animate={{opacity: 1}}>
                 <h1 className='text-xl'>Maquettes</h1>
                 {data && 

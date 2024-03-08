@@ -17,7 +17,7 @@ function Logique() {
     const [filtreActive, setFiltreActive] = useState('Architecture')
 
     return (
-        <main className='bgPage pt-20 px-10'>
+        <main className='bgPage pt-20 px-10 w-full'>
             <h1 className='text-xl'>Logique</h1>
             {data && 
                 <section>

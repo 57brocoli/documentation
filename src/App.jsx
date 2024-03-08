@@ -39,6 +39,7 @@ import MaquettesLE from "./Composant/Page/LiveEvent/Maquettes/Maquettes.jsx"
 import TechnologiesLE from "./Composant/Page/LiveEvent/Technologies/Technologies.jsx"
 import InitialisationLE from "./Composant/Page/LiveEvent/Initialisation/Initialisation.jsx"
 import LogiqueLe from "./Composant/Page/LiveEvent/Logique/Logique.jsx"
+import Controllers from "./Composant/Page/LiveEvent/Controllers/Controllers.jsx"
 
 const router = createBrowserRouter([
     {
@@ -197,6 +198,10 @@ const router = createBrowserRouter([
                     {
                         path:'/liveevent/logique',
                         element: <LogiqueLe/>
+                    },
+                    {
+                        path:'/liveevent/controller',
+                        element: <Controllers/>
                     }
                 ]
             },

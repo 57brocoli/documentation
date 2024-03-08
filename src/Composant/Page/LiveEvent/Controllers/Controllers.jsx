@@ -1,28 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import jsonData from './Initialisation.json'
+import React, { useState } from 'react'
+import jsonData from './controllers.json'
 import { motion, AnimatePresence } from "framer-motion"
-import Symfony from './SousComposants/Symfony'
-import Packages from './SousComposants/Packages'
-import Environement from './SousComposants/Environement'
+import ProgrammeController from './SousComposants/Controllers/ProgrammeController'
+import ContenuController from './SousComposants/Controllers/ContenuController'
 
-function Initialisation() {
+function Controllers() {
 
-    const [data, setData] = useState([])
-    useEffect(()=>{
-        setData(jsonData)
-    },[])
+    const data = jsonData
 
-    const filtre = ["Instalation de Symfony", "Initalisation de l'environement", "Instalation des Packages"]
-    const [filtreActive, setFiltreActive] = useState('Instalation de Symfony')
+    const filtre = ["ProgrammeController", "ContenuController"]
+    const [filtreActive, setFiltreActive] = useState('ProgrammeController')
 
     if (data.section) {
-        var packages = data.section.filter(o=>o.titre === "Installation des packages").at(0)
-        var environement = data.section.filter(o=>o.titre === "Initialisation de l’environnement de travail.").at(0)
-    } 
-
+        var programme = data.section.find(o=>o.titre === "ProgrammeController")
+        var contenu = data.section.find(o=>o.titre === "ContenuController")
+        if (!programme) {
+            alert("La section ProgrammeController n'a pas été trouvée.");
+        }
+        if (!contenu) {
+            alert("La section ContenuController n'a pas été trouvée.");
+        }
+    } else {
+        console.error("Aucune section n'a été trouvée dans les données.");
+    }
+    
     return (
         <main className='bgPage pt-20 px-10 w-full'>
-            <h1 className='text-xl '>Initialisation</h1>
+            <h1 className='text-xl '>Controller</h1>
             {data &&
                 <section>
                     <h2 className='text-2xl font-bold mb-10 orange'>{data.titre}</h2>
@@ -62,9 +66,8 @@ function Initialisation() {
                                 exit={{ y: -10, opacity: 0 }}
                                 transition={{ duration: 0.2 }}
                                 >
-                                {filtreActive === "Instalation de Symfony" && <Symfony data={data} setFiltreActive={setFiltreActive}/>}
-                                {filtreActive === "Initalisation de l'environement" && <Environement data={environement}/>}
-                                {filtreActive === "Instalation des Packages" && <Packages data={packages}/>}
+                                {filtreActive === "ProgrammeController" && <ProgrammeController data={programme}/>}
+                                {filtreActive === "ContenuController" && <ContenuController data={contenu}/>}
                                 </motion.div>
                             </AnimatePresence>
                         </>
@@ -75,4 +78,4 @@ function Initialisation() {
     )
 }
 
-export default Initialisation
+export default Controllers
