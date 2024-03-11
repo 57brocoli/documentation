@@ -1,0 +1,56 @@
+{
+    "titre" : "Base de données",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Une base de données est essentielle pour stocker et gérer des données de manière structurée et persistante. Voici quelques-unes des raisons pour lesquelles une base de données est utile dans notre site web :",
+                    "1 -  Permet de stocker divers informations comme : les utilisateurs du site web, des contenus dynamiques tels que des articles de blog, des commentaires, ou des pages statiques, etc.",
+                    "2 - Une bases de données relationnelle permet de créer des relations entre différentes entités de données. Par exemple, un article de blog peut être lié à un utilisateur qui l'a écrit.",
+                    "3 - Si elle est bien conçue, peut contribuer à optimiser les performances du site web en permettant des requêtes efficaces et en minimisant les temps de réponse.",
+                    "4 - Les bases de données offrent des fonctionnalités de sécurité telles que le cryptage des données, les rôles et les autorisations, contribuant ainsi à protéger les données sensibles. La securité est avant tous une question d'actualité."
+                ]
+            }
+        },
+        {
+            "titre" : "Concept",
+            "content" : {
+                "introduction" : [
+                    "En phase de développement la base de données serat crée sur un serveur local. Pour cela il est indispenssable d'avoir installer (comme pendant la phase d'initialisation), un service tel que XAMPP, et bien sur de lancer \" Apache \", et \" MySQL \"."
+                ],
+                "etapes" : [
+                    {
+                        "titre" : "Configuré le fichier .env",
+                        "img": "/documentation/LiveEvent/DB/database1.png",
+                        "text" : [
+                            "- Par default symfony est configuré sur postgrestsql.",
+                            "- Commenter la ligne : \" BATABASE_URL=\"postgresqsl://... \", puis entré les paramêtres comme sur l'image.",
+                            "- Décommenter la ligne : \" BATABASE_URL=\"DATABASE_URL=\"mysql:// \"",
+                            "- \" root: \" signifie qu'il serat en local.",
+                            "- \" @127.0.0.1:3306 \" est l'adresse du serveur.",
+                            "- \" live_event \" le nom de la base de données.",
+                            "- \" serverVersion=10.4.27-MariaDB&charset=utf8mb4 \" la version."
+                        ]
+                    },
+                    {
+                        "titre" : "Utiliser la console",
+                        "img": "/documentation/LiveEvent/DB/database2.png",
+                        "text" : [
+                            "- Dans la console entré la commande : \" php bin/console doctrine:database:create \"."
+                        ]
+                    },
+                    {
+                        "titre" : "Vérifié sur le serveur local",
+                        "img": "/documentation/LiveEvent/DB/database3.png",
+                        "text" : [
+                            "- Dans un navigateur se rendre à l'adresse suivant : \" http://localhost/phpmyadmin/ \"",
+                            "- Vérifier que la base de données est bien visible.",
+                            "- Il est maintenant possible de crée de nouvelles tables."
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -69,27 +69,30 @@ function Index() {
                                 <NavLink to='/liveevent/controller' className="font-bold m-2">
                                     Controller
                                 </NavLink>
+                                {/* <NavLink to='/liveevent/services' className="font-bold m-2">
+                                    Service
+                                </NavLink> */}
                             </li>
                         </ul>
                         <h3 className="font-bold text-lg mt-2 mx-4 jaune">Côté Model</h3>
                         <ul className='mt-2 mx-5'>
                             <li className='my-1'>
-                                <NavLink to='/nationsound/desktop/ternaire' className="font-bold m-2">
-                                    Base de donées
+                                <NavLink to='/liveevent/basedonnees' className="font-bold m-2">
+                                    Base de Données
                                 </NavLink>
                             </li>
                             <li className='my-1'>
-                                <NavLink to='/nationsound/desktop/ternaire' className="font-bold m-2">
+                                <NavLink to='/liveevent/entitys' className="font-bold m-2">
                                     Entity
                                 </NavLink>
                             </li>
                             <li className='my-1'>
-                                <NavLink to='/nationsound/desktop/ternaire' className="font-bold m-2">
+                                <NavLink to='/liveevent/repository' className="font-bold m-2">
                                     Repository
                                 </NavLink>
                             </li>
                             <li className='my-1'>
-                                <NavLink to='/nationsound/desktop/usestate' className="font-bold m-2">
+                                <NavLink to='/liveevent/form' className="font-bold m-2">
                                     Form
                                 </NavLink>
                             </li>

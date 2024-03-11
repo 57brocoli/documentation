@@ -1,0 +1,88 @@
+{
+    "titre" : "Entity",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Avec Symfony une entité représente un objet métier persistant, c'est-à-dire un objet qui est stocké dans une base de données et qui conserve son état entre les différentes requêtes. Les entités sont généralement utilisées dans le cadre de l'ORM (Object-Relational Mapping) de Symfony, qui permet de mapper des objets PHP aux tables de la base de données et vice versa.",
+                    "1 - Une entité est une classe qui possède comme un object, des propriétés et des méthodes.",
+                    "2 - Symfony utilise des annotations ou des fichiers de configuration YAML/XML pour mapper les propriétés de l'entité aux colonnes de la base de données. Cela permet à Doctrine, l'ORM utilisé par Symfony, de comprendre comment transformer les objets PHP en enregistrements de base de données et vice versa.",
+                    "3 - Une fois que l'entité est définie et que le mapping est configuré, il est possible d'utiliser les services fournis par Symfony et Doctrine pour effectuer des opérations CRUD (Create, Read, Update, Delete) sur les entités. Cela inclut la création de nouvelles entités, la récupération d'entités existantes, la mise à jour des données d'une entité et la suppression d'une entité.",
+                    "4 - Les entités peuvent être liées les unes aux autres à l'aide de relations, telles que les relations OneToOne, OneToMany, ManyToOne et ManyToMany. Ces relations permettent de modéliser des relations complexes entre les différentes entités l'application."
+                ]
+            }
+        },
+        {
+            "titre" : "Concept",
+            "content" : {
+                "introduction" : [
+                    "Pour crée une entité avec symfony il existe deux possibilités. La première qui est la plus simple, est d'utiliser la console en s'assurant d'avoir installer le maker bundle et doctrine. La seconde est de rédiger le document manuellement. Bien sur nous allons adopter la première solution."
+                ],
+                "etapes" : [
+                    {
+                        "titre" : "Utiliser la console",
+                        "img": "/documentation/LiveEvent/Entity/console1.png",
+                        "text" : [
+                            "- Dans la console entré la commande : \" symfony console make:entity \".",
+                            "- Donner un nom à notre entité.",
+                            "- Important : s'assurer que de repondre 'yes' lorsque la console demande si nous voulons que note entité sois une ressource de l'API.",
+                            "- Atention : pour des raisons de securité, toute les entités ne doivent pas être accessibles via l'API.",
+                            "- Une fois cela fait, l'entité serat crée et stocker dans src/Entity/, ainsi que son repository dans src/Repository/."
+                        ]
+                    },
+                    {
+                        "titre" : "Configuration de l'entité",
+                        "img": "/documentation/LiveEvent/Entity/console2.png",
+                        "text" : [
+                            "- Ajouter des attribus à l'entité (name, episodes ...).",
+                            "- Atention: il n'est pas utile de crée l'attribut \" id \" car il serat automatiquement crée.",
+                            "- Le fait de crée un attribu à l'entité vas automatiquement crée les methodes associées. Par exemple la proriété \" name \" aura authomatiquement une methode \" getName( ) \" et \" setName( ) \"."
+                        ]
+                    },
+                    {
+                        "titre" : "Générer et exécuter la migration",
+                        "img": "/documentation/LiveEvent/Entity/console3.png",
+                        "text" : [
+                            "- Une fois que vous avez défini votre entité, vous devez générer une migration pour mettre à jour votre base de données en conséquence.",
+                            "- Pour ce faire, dans la console : \" symfony console make:migration \". Cela vas crée un fichier de migration dans le dossier \" migrations \".",
+                            "- Puis executé la migration \" symfony console doctrine:migration:migrate \" qui vas mêtre à jour votre base de données."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Day",
+            "img" : "",
+            "content" : {
+                "introduction" : [
+                    ""
+                ],
+                "parties" : [
+                    {
+                        "titre": "1er partie",
+                        "img" : "/documentation/LiveEvent/Entity/entity1.png",
+                        "introduction" : "Il s'agir des attributs de notre objet.",
+                        "text" : [
+                            "L' attribut #[ORM\\Column] vas déterminer s'il s'agit d'une colone dans notre table, ou s'il s'agit d'une relation suivit de l'entité en relation.",
+                            "L' attribut #[Groupe([])] est dédié à la configuration de l'API.",
+                            "Ensuite nous avons notre propriété avec son type."
+                        ]
+                    },
+                    {
+                        "titre": "2nd partie",
+                        "img" : "/documentation/LiveEvent/Entity/entity2.png",
+                        "introduction" : "Il s'agir des methodes de notre objet.",
+                        "text" : [
+                            "Comme précisé précédemment, toute attribut créé par le MakerBundle va automatiquement générer les méthodes associées.",
+                            "Ces methodes sont utilisable dans les controllers, services...",
+                            "La premier permet de récupéré le \" name \".",
+                            "La second permet de changer le \" name \"."
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

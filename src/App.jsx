@@ -40,6 +40,10 @@ import TechnologiesLE from "./Composant/Page/LiveEvent/Technologies/Technologies
 import InitialisationLE from "./Composant/Page/LiveEvent/Initialisation/Initialisation.jsx"
 import LogiqueLe from "./Composant/Page/LiveEvent/Logique/Logique.jsx"
 import Controllers from "./Composant/Page/LiveEvent/Controllers/Controllers.jsx"
+import Entitys from "./Composant/Page/LiveEvent/Model/Entitys/Entitys.jsx"
+import DataBase from "./Composant/Page/LiveEvent/Model/DataBase/DataBase.jsx"
+import Repository from "./Composant/Page/LiveEvent/Model/Repository/Repository.jsx"
+import Form from "./Composant/Page/LiveEvent/Model/Form/Form.jsx"
 
 const router = createBrowserRouter([
     {
@@ -202,6 +206,22 @@ const router = createBrowserRouter([
                     {
                         path:'/liveevent/controller',
                         element: <Controllers/>
+                    },
+                    {
+                        path:'/liveevent/basedonnees',
+                        element: <DataBase/>
+                    },
+                    {
+                        path:'/liveevent/entitys',
+                        element: <Entitys/>
+                    },
+                    {
+                        path:'/liveevent/repository',
+                        element: <Repository/>
+                    },
+                    {
+                        path:'/liveevent/form',
+                        element: <Form/>
                     }
                 ]
             },

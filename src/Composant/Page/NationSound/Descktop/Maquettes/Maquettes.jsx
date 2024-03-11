@@ -25,7 +25,7 @@ function Maquettes() {
                         {data.section &&
                             <>
                                 <section className='lg:flex'>
-                                    <img src={data.logo} style={{height:200}} className='mr-7'/>
+                                    <img src={data.logo} style={{height:200}} className='mr-7' alt='image Logo'/>
                                     <article className='lg:ms-5 font-semibold'>
                                         <h2 className='text-2xl mb-3'>{data.section[0].titre}</h2>
                                         <p className='text-lg py-2'>{data.section[0].content.introduction[0]}</p>

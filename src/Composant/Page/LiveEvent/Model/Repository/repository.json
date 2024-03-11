@@ -1,0 +1,71 @@
+{
+    "titre" : "Base de données",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Dans Symfony, un repository est une classe qui agit comme une interface entre votre entité et votre couche de persistance de données (généralement une base de données). Plus précisément, un repository est une classe qui fournit des méthodes pour interagir avec la base de données et récupérer des entités associées à une entité spécifique. Les repositories sont généralement gérés par le conteneur de services et injectés dans d'autres classes (les contrôleurs) lorsque nécessaire.",
+                    "1 - Les repositories sont utilisés pour exécuter des requêtes de lecture (SELECT) sur la base de données afin de récupérer des données spécifiques, généralement des instances d'une entité particulière.",
+                    "2 - Les repositories fournissent souvent des méthodes prédéfinies pour des opérations courantes telles que la récupération de toutes les entités, la récupération d'une entité par son identifiant, la récupération d'entités filtrées par des critères spécifiques, etc.",
+                    "3 - Il est possible d'ajouter des méthodes personnalisées à un repository pour effectuer des requêtes complexes ou spécifiques qui ne sont pas couvertes par les méthodes standard de Doctrine.",
+                    "4 - Chaque entité dans Symfony peut avoir son propre repository dédié, qui peut contenir des méthodes spécifiques à cette entité."
+                ]
+            }
+        },
+        {
+            "titre" : "Utilisation",
+            "content" : {
+                "introduction" : [
+                    "Un repository est une classe qui regroupe plusieur méthodes. Ces méthodes sont des requêtes executable sur les entités de base de données que l'on utilise plus généralement dans les controllers.",
+                    "Les requêtes près configurées dans les repositories de Symfony pour interagir avec la base de données sont généralement écrites en DQL (Doctrine Query Language) propre à Doctrine, et qui ressemble fortement au SQL. Mais il est tout à fait possible d'utilisé SQL (Structured Query Language)."
+                ],
+                "etapes" : [
+                    {
+                        "titre" : "Exemple d'une requête pour récupérer les épisodes d'une journée ( findAll( ) ).",
+                        "img": "/documentation/LiveEvent/Repository/reposi1.png",
+                        "text" : [
+                            "Dans cette exemple du controller administrateur \" ProgrammeController \" :",
+                            "- Le repository \" EpisodeRepository \" est d'abord importer dans les paramêtres de notre methode \" programme \". Puis instancier dans une variable \" $episodeRepo \".",
+                            "- \" $episodes \" vas ensuite utiliser la méthode \" findAll( ) \" pour récupérer l'intégralité des épisodes de la table dans la base de données."
+                        ]
+                    },
+                    {
+                        "titre" : "Pour récupérer un utilisateur en fonction de son email ( findOneBy( ) ).",
+                        "img": "/documentation/LiveEvent/Repository/reposi2.png",
+                        "text" : [
+                            "Cas exeptionnel dans la configuration de la route, car il s'agit d'une route spécialement dédié à nationSound :",
+                            "- Le repository \" MobileUserRepository \" est d'abord importer dans les paramêtres de notre methode \" getUsersByEmail \". Puis instancier dans une variable \" $ur \".",
+                            "- \" $users \" vas ensuite utiliser la méthode \" findOneBy( ) \" pour récupérer un seul utilisateur, qui possède l'adresse mail égale à \" $email \"."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Concept",
+            "content" : {
+                "introduction" : [
+                    "Il est tout à fait possible de configurer une requête personalisée. Dans cette exemple nous observé comment le systême de requête avec Knp-paginator fonctionne.",
+                    "Ce systême est utiliser uniquement dans les controllers de LiveEvent."
+                ],
+                "etapes" : [
+                    {
+                        "titre" : "Configuration du repository",
+                        "img": "",
+                        "text" : [
+                            "- ."
+                        ]
+                    },
+                    {
+                        "titre" : "Configuration du controller",
+                        "img": "",
+                        "text" : [
+                            "- ."
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

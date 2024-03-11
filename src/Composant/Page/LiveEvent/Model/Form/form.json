@@ -1,0 +1,83 @@
+{
+    "titre" : "Formulaires",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Les formulaires sont indisponssable dans un site web qui interagit avec ses utilisateur. Avec Symfony, il devient une classe, et par conséquent il devient plus facile de gérer les formulaires. Cette classe est fournie par le composant Form de Symfony, qui facilite la création de formulaires complexes tout en offrant une intégration étroite avec d'autres composants Symfony tels que le système de validation (Validator) et le système d'authentification (Security).",
+                    "1 - Il est possible de crée et configurer un formulaire avec la console.",
+                    "2 - Avec Symfony, la création d'un formulaire est rapide et flexible. Un formulaire créé peut être directement rattaché à une entité (chaque champ fera référence à une propriété de l'entité), ou peut être configuré librement, ou encore les deux.",
+                    "3 - Une fois le formulaire créé, il est facile de le rendre dans une vue Twig en utilisant le moteur de rendu intégré de Symfony. Symfony gère la génération automatique du HTML nécessaire pour afficher le formulaire.",
+                    "4 - Symfony gère automatiquement la soumission des formulaires, la validation des données saisies par l'utilisateur et le retour de messages d'erreur appropriés en cas de problèmes de validation."
+                ]
+            }
+        },
+        {
+            "titre" : "Concept",
+            "content" : {
+                "introduction" : [
+                    "Pour crée un formulaire avec la console il est indisponssable d'avoir installer la package symfony/form ainsi que le maker-bundle comme dans l'initialisation du projet.",
+                    "La majorité des formulaires du site sont dédiées aux administrateurs. Ils sont utilent pour créer de nouvelle entité dans notre base de données, c'est pourquoi nos formulaires porteront sur les entités déja presentent dans la base de données."
+                ],
+                "etapes" : [
+                    {
+                        "titre" : "Crée le formulaire qui porte sur l'entité \" Day \".",
+                        "img": "/documentation/LiveEvent/Form/form1.png",
+                        "text" : [
+                            "Dans le terminal :",
+                            "- Entrer la commande \" symfony console make:form \".",
+                            "- Donner un nom au formulaire.",
+                            "- Puis l'entité à qui le formulaire sera lié.",
+                            "- Pour crée un formulaire non lié à une entité, à la dernier question, cliquer sur \" entrer \"",
+                            "- Une fois le formulaire crée, il serat dans le dossier \" src/Form \"."
+                        ]
+                    },
+                    {
+                        "titre" : "Configurer un formulaire (EpisodeType).",
+                        "img": "/documentation/LiveEvent/Form/form2.png",
+                        "text" : [
+                            "Nous avons dans ce formulaire deux méthodes :",
+                            "La première est le builder : ",
+                            "- La premier chose à faire est d'ajouter le boutton de validation de notre formulaire et de lui donner un type.",
+                            "- Il existe plusieur type de champ, dans notre exemple il y'a \"TextType\" pour préciser qu'il s'agit champ de type \" text \", mais il y'a aussi le type \" EntityType \" qui fait référence à une autre entité de base de données. Cela permet de créer automatiquement les liaisons entre tables.",
+                            "- label : pour ajouter un label au champ",
+                            "- class : uniquement dans les champs de type \" EntityType \", pour précisé l'entité liée.",
+                            "- placeholder : ajouter du text dans les champs.",
+                            "- required : prend la valeur \" true \" ou \" false \" pour préciser si le champ est obligatoire ou pas. Attention tous de même de vérifié si la propriété en question est obligatoire ou pas.",
+                            "- query_builder : il est possible de configuré une requête pour filtrer le choix proposer. Dnas notre exemple la requête permet de récupérer uniquement les entités qui ont la catégory \" Scene \".",
+                            "",
+                            "La seconde méthode permet de lié le formulaire à une entité. Cette methode fait référence à la seconde question lors de la création du foormulaire.",
+                            "- Dans cette exemple le formulaire est lié à la classe \" Episode \""
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Utilisation",
+            "content" : {
+                "introduction" : [
+                    "Il est tout à fait possible de configurer une requête personalisée. Dans cette exemple nous observé comment le systême de requête avec Knp-paginator fonctionne.",
+                    "Ce systême est utiliser uniquement dans les controllers de LiveEvent."
+                ],
+                "etapes" : [
+                    {
+                        "titre" : "Configuration du repository",
+                        "img": "",
+                        "text" : [
+                            "- ."
+                        ]
+                    },
+                    {
+                        "titre" : "Configuration du controller",
+                        "img": "",
+                        "text" : [
+                            "- ."
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
