@@ -45,6 +45,7 @@ import DataBase from "./Composant/Page/LiveEvent/Model/DataBase/DataBase.jsx"
 import Repository from "./Composant/Page/LiveEvent/Model/Repository/Repository.jsx"
 import Form from "./Composant/Page/LiveEvent/Model/Form/Form.jsx"
 import Templates from "./Composant/Page/LiveEvent/Vue/Templates.jsx"
+import DeploiementLE from "./Composant/Page/LiveEvent/Deploiement/Deploiement.jsx"
 
 const router = createBrowserRouter([
     {
@@ -227,6 +228,10 @@ const router = createBrowserRouter([
                     {
                         path:'/liveevent/templates',
                         element: <Templates/>
+                    },
+                    {
+                        path:'/liveevent/deploiement',
+                        element: <DeploiementLE/>
                     }
                 ]
             },

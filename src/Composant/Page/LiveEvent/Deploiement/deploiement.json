@@ -1,0 +1,203 @@
+{
+    "titre" : "Deploiement",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Pour le deploiement du site web LiveEvent nous avons choisit comme hebergeur \" Hostinger \".",
+                    "Hostinger est une société d'hébergement web qui fournit des services d'hébergement de sites web. Il est devenue une option populaire pour les personnes et les entreprises cherchant des solutions d'hébergement web abordables et fiables. Ils offrent une gamme de plans d'hébergement adaptés aux besoins des utilisateurs, allant des options d'hébergement partagé aux solutions plus avancées comme les VPS et l'hébergement cloud.",
+                    "Hostinger est un hébergeur web mutualisé qui est adapté pour les sites web de petite et moyenne taille ce qui correspond tout à fait à notre projet. Il offre notamment des solutions pour hébergé notre base de données MySQL.",
+                    "Cette solution est donc parfaite pour heberger nos sites afin de les réunir dans un seul et unique nom de domaine.",
+                    "Parmi ses options il y-a la possibilité d’obtenir la certification SSL, d’administrer nos dossiers grâce à un accès FTP et d’installer nos dépendances en SSH."
+                ]
+            }
+        },
+        {
+            "titre" : "Hostinger",
+            "content" : {
+                "introduction" : [
+                    "Pour deployer le site web Synfony sur Hostinger il faut d'un premier temps :"
+                ],
+                "etapes" : [
+                    {
+                        "titre" : "Crée la base de données sur notre hébergeur",
+                        "img": "/documentation/LiveEvent/Deploiement/dep1.png",
+                        "text" : [
+                            "Pour cela il faut se rendre sur le tableau de bord de Hostinger:",
+                            "- Cliquer sur \" Sites Web \" dans la barre de navigation.",
+                            "- Puis sur \" Base de données \" et sur  \" gestion \" dans la barre lateral.",
+                            "Nous arrovons donc sur cette page :",
+                            "- Le nom de ma base de données : ",
+                            "- Le nom d'utilisateur : ",
+                            "- Mot de passe : "
+                        ]
+                    },
+                    {
+                        "titre" : "Crée une adresse email pour envoyer nos email aux utilisateur.",
+                        "img": "",
+                        "text" : [
+                            "Pour cela il faut se rendre sur le tableau de bord de Hostinger:",
+                            "- Cliquer sur \" Emails \" dans la barre de navigation.",
+                            "- Puis sur \" Créez un compte email \".",
+                            "- Et créer la boite mail."
+                        ]
+                    },
+                    {
+                        "titre" : "Récupérer les identifiants FTP.",
+                        "img": "",
+                        "text" : [
+                            "Pour cela il faut se rendre sur le tableau de bord de Hostinger:",
+                            "- Cliquer sur \" Site Web \" dans la barre de navigation.",
+                            "- Puis sur \" Fichiers \" et \" Comptes FTP \" dans la barre lateral."
+                        ]
+                    },
+                    {
+                        "titre" : "Récupérer les identifiants SSH.",
+                        "img": "",
+                        "text" : [
+                            "Pour cela il faut se rendre sur le tableau de bord de Hostinger:",
+                            "- Cliquer sur \" Site Web \" dans la barre de navigation.",
+                            "- Puis sur \" Avancé \" et \" Accès SSH \" dans la barre lateral."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Code source",
+            "content" : {
+                "introduction" : [
+                    "Pour être deployer, le code source doit subir quelques modifications, notament le fichier .env :"
+                ],
+                "etapes" : [
+                    {
+                        "titre" : "La base de données",
+                        "img": "/documentation/LiveEvent/Deploiement/dep2.png",
+                        "text" : [
+                            "Dans la section \" DATABASE_URL... \":",
+                            "- Remplacer la base de données local par celle de l'hebergeur.",
+                            "- AAAAAAA === le nom d'utilisateur.",
+                            "- BBBBBBB === le mots de passe.",
+                            "- CCCCCCC === le nom de la base de données."
+                        ]
+                    },
+                    {
+                        "titre" : "La boite mail",
+                        "img": "/documentation/LiveEvent/Deploiement/dep7.png",
+                        "text" : [
+                            "Dans la section \" MAILER_DSN... \":",
+                            "- Ajouter ces valeurs :",
+                            "- AAAAAAA === le nom de la boite mail.",
+                            "- BBBBBBB === le mots de passe."
+                        ]
+                    },
+                    {
+                        "titre" : "Mise en prod",
+                        "img": "/documentation/LiveEvent/Deploiement/dep5.png",
+                        "text" : [
+                            "Dans la section \" APP_ENV... \":",
+                            "- remplacer la valeur \" dev \" par \" prod \"."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Exportation du code source vers l'hebergeur",
+            "content" : {
+                "introduction" : [
+                    "Pour transferer le code source vers le dépot de l'hebergeur nous utilisont le logiciel \" FileZilla \" :"
+                ],
+                "etapes" : [
+                    {
+                        "titre" : "Se connecter au dépot de l'hebergeur :",
+                        "img": "/documentation/LiveEvent/Deploiement/dep4.png",
+                        "text" : [
+                            "Pour se connecter il faut remplir les champs par les données recueillies pour le comptes FTP."
+                        ]
+                    },
+                    {
+                        "titre" : "Tranferer les fichiers du code source",
+                        "img": "/documentation/LiveEvent/Deploiement/dep10.png",
+                        "text" : [
+                            "Dans la section de gauche : se placer dans le repertoire local du code source \" LiveEvent \".",
+                            "Dans la section de droite : repertoire de hostinger. S'il y'a des fichiers, les supprimer.",
+                            "Selectionner tous les fichiers et dossiers du repertoire local, et retirant les dossiers :",
+                            "- .git",
+                            "- node_modules",
+                            "- vendor",
+                            "- gitignore",
+                            "- webpack.config.js",
+                            "Proceder au transfer.",
+                            "=> Le transfère peut prendre un peu de temps.",
+                            "( Sur l'image, dans la section de droite, le dossier \" nationsound \" est le sous domaine qui heberge le site web NationSound, tandis que le dossier \" documentation \" le sous domaine qui heberge le site de la documentation ou nous sommes actuelement. )"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Instalation des dépendance + mise à jour de la base de données + fichier htaccess",
+            "content" : {
+                "introduction" : [
+                    "Une fois les fichier transférés, il faut maintenant procédé à l'instalation des différentes dépendances, et par la suite metre à jour notre nouvelle base de données de l'hebergeur. De plus le fichier htaccess est primordiale."
+                ],
+                "etapes" : [
+                    {
+                        "titre" : "Acceder au repertoire distant:",
+                        "img": "/documentation/LiveEvent/Deploiement/dep8.png",
+                        "text" : [
+                            "- Entrer les identifiants SSH récupérer précedement ainsi que le mot de passe."
+                        ]
+                    },
+                    {
+                        "titre" : "Dans un terminal instalation de composer:",
+                        "img": "",
+                        "text" : [
+                            "- Acceder au repertoire de l'hebergeur avec \" cd public_html \" puis encore une fois \" cd public_html \".",
+                            "- Mettre a jour composer avec les commandes accéssible sur le site getcomposer.org et sur download. les commande sont :",
+                            "php -r \"copy('https://getcomposer.org/installer', 'composer-setup.php');\" ",
+                            "php -r \"if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;\"",
+                            "php composer-setup.php",
+                            "php -r \"unlink('composer-setup.php');\"",
+                            "- Ajouter ensuite un fichier \" composer.phar \" avec la commande : \" php composer.phar update \". Cela vas intaller les dépendances."
+                        ]
+                    },
+                    {
+                        "titre" : "Dans un terminal migrer la base de données:",
+                        "img": "",
+                        "text" : [
+                            "Pour mettre à jour la base de données, entrer les commandes suivantes :",
+                            "php bin/console make:migration",
+                            "php bin/console doctrine:migrations:migrate"
+                        ]
+                    },
+                    {
+                        "titre" : "Dans un terminal ajouter le fichier \" .htacces \":",
+                        "img": "",
+                        "text" : [
+                            "Pour ajouter le fichier .htacces enter la commande \" php composer.phar require symfony/apache-pack \" et repondre \" y \" à la question.",
+                            "Le fichier serat ajouter dans le dossier \" public \"."
+                        ]
+                    },
+                    {
+                        "titre" : "Ajouter un second fichier \" .htacces \" à la racine du projet:",
+                        "img": "/documentation/LiveEvent/Deploiement/dep6.png",
+                        "text" : [
+                            "Dans le repertoire de l'hebergeur, créer un fichier avec le nom : \" .htaccess \".",
+                            "Rediger le contenu comme sur l'image d'ilustration ou copier les contenu accessible à cette adresse : \" https://github.com/Helmi74130/.htaccess \"."
+                        ]
+                    },
+                    {
+                        "titre" : "Il est tempd de voir le résultat:",
+                        "img": "/documentation/LiveEvent/Deploiement/dep9.png",
+                        "text" : [
+                            "Dans un navigateur se rendre à l'adresse : \" https://pixelevent.site/ \"."
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

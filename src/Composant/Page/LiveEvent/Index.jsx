@@ -107,7 +107,7 @@ function Index() {
                         </ul>
                     </div>
                     <div className='my-4 mx-5'>
-                        <NavLink to='/nationsound/desktop/deploiement' className="text-xl text-white font-bold">
+                        <NavLink to='/liveevent/deploiement' className="text-xl text-white font-bold">
                             Deploiement
                         </NavLink>
                     </div>
