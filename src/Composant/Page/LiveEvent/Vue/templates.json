@@ -1,0 +1,164 @@
+{
+    "titre" : "Templates",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Symfony avec le model (MVC), utilise un système de templates pour séparer la logique métier de la présentation. Cela permet aux développeurs de concentrer leur code sur la manipulation des données et la logique applicative, tandis que les designers peuvent se concentrer sur la création d'interfaces utilisateur attrayantes en modifiant les templates.",
+                    "Un template fait référence à un fichier contenant du code HTML et éventuellement d'autres langages de template comme Twig (le moteur de template par défaut de Symfony) ou PHP. Ces templates sont utilisés pour générer des pages Web dynamiques.",
+                    "Les templates dans Symfony peuvent inclure des variables, des boucles, des conditions et d'autres structures de contrôle de flux, permettant une personnalisation dynamique du contenu en fonction des besoins de l'application. Cela favorise une approche modulaire et réutilisable du développement web."
+                ]
+            }
+        },
+        {
+            "titre" : "Concept",
+            "content" : {
+                "introduction" : [
+                    "Avec la console de Symfony, lorsqu'un contrôleur est créé, un template est aussitôt créé et affilié au contrôleur. Mais il est tout à fait possible de créer un template à la main en pensant à ajouter l'extension \" .html.twig \". Ils sont stockés dans le dossier \" templates \" .",
+                    "Twig est un langage de block. On peut voir ce systeme comme un template parents et des templates enfants qui s'intègrent dynamiquement dans le template parent."
+                ],
+                "etapes" : [
+                    {
+                        "titre" : "Le template parent : base.html.twig",
+                        "img": "/documentation/LiveEvent/Vue/base.png",
+                        "text" : [
+                            "Au début du projet, le template parent est tout simplement une page HTML standard avec une balise html qui contient un head et un body.",
+                            "Bien sur il est possible d'avoir plusieur templates de base.",
+                            "On peut aussi voir qu'il y'a des blocs placé un peu partout :",
+                            "- Pour le titre",
+                            "- Pour les style et script",
+                            "- Pour le body",
+                            "C'est blocs vont permettre à notre page d'être dynamique."
+                        ]
+                    },
+                    {
+                        "titre" : "Les templates enfants : tous ceux liés aux controllers.",
+                        "img": "/documentation/LiveEvent/Vue/base2.png",
+                        "text" : [
+                            "Dans les templates crée par la suite les instructions qui intégrent les blocs :",
+                            "- La première instruction \" extends 'base.html.twig' \" signifie que le template parent est \" bas.html?twig\".",
+                            "- Tous ce qui se qui se trouvent dans l'instruction \" block title \" serat le titre de la page.",
+                            "- Tous ce qui se qui se trouvent dans l'instruction \" block body \" representera le contenu de la page."
+                        ]
+                    },
+                    {
+                        "titre" : "Les templates parent : version final.",
+                        "img": "/documentation/LiveEvent/Vue/base3.png",
+                        "text" : [
+                            "Les modifications du template parent final :",
+                            "=> Dans la balise head :",
+                            "- Ajout de la balise meta \"viewport\".",
+                            "- Ajout de la balise link \" icon \" comme son nom l'indique pour l'icon du site.",
+                            "- Ajout de des balises link \" stylesheet \" pour les styles (bootstrap et css pur).",
+                            "- Ajout de des balises link \" preconnect \" pour les fonts de google fonts.",
+                            "- Ajout de des balises script \" preconnect \" pour les scripts js.",
+                            "=> Dans la balise body :",
+                            "- Ajout de la balise header qui est la navbar.",
+                            "- Ajout de la balise main qui serat le contenu dynamique de la page.",
+                            "==> Dans la balise main :",
+                            "--- Si l'utilisateur n'a pas valider son compte une notification se place en tête de page sous la navbar.",
+                            "--- Suivit des notifications.", 
+                            "--- Le block body.",
+                            "--- Puis enfin un footer."
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Formulaire",
+            "content" : {
+                "introduction" : [
+                    "Cet exemple est le formulaire pour rédiger un article à partir de l'interface administrateur de NationSound.",
+                    "Pour bien expliquer la mise en page du formulaire, il serat divisé en deux partie.",
+                    "Comparé à une utilisation simple evoquée dans la partie \" côté model \" patie \" Form \", ici chaque champ du formulaire sera appelé pour les disposer dans un ordre précis, et pour les paramétrer."
+                ],
+                "etapes" : [
+                    {
+                        "titre" : "Partie 1 du formulaire",
+                        "img": "/documentation/LiveEvent/Vue/form1.png",
+                        "explication" : [
+                            {
+                                "text" : [
+                                    "Section 1 : Champ pour le titre."
+                                ],
+                                "img" : []
+                            },
+                            {
+                                "text" : [
+                                    "Section 2 : Champ pour l'introduction."
+                                ],
+                                "img" : []
+                            },
+                            {
+                                "text" : [
+                                    "Section 3 : Champ pour contenu de l'article."
+                                ],
+                                "img" : []
+                            },
+                            {
+                                "text" : [
+                                    "Section 4 : Champ pour contenu de l'image de l'article. Ce champ est divisé en deux partie :",
+                                    "- form_label : Pour ajouter un label ainsi q'une icone qui ouvre une modal explicative.",
+                                    "- form_row : Si l'article est nouveau ou qu'il ne possède pas d'image en avant le champ s'affiche normalement. Si l'article existe déja et qu'il possède déja une image alors son image aparait."
+                                ],
+                                "img" : [
+                                    "/documentation/LiveEvent/Vue/form3.png",
+                                    "/documentation/LiveEvent/Vue/form4.png"
+                                ]
+                            },
+                            {
+                                "text" : [
+                                    "Section 5 : Champ pour contenu les images secondairte de l'article. Ce champ est divisé en deux partie :",
+                                    "- form_label : Pour ajouter un label ainsi q'une icone qui ouvre une modal explicative.",
+                                    "- form_row : Si l'article est nouveau ou qu'il ne possède pas d'images secondaires le champ s'affiche normalement. Si l'article existe déja et qu'il possède déja des images secondaires alors les images s'affichent avec un boutton pour être supprimer."
+                                ],
+                                "img" : [
+                                    "/documentation/LiveEvent/Vue/form5.png",
+                                    "/documentation/LiveEvent/Vue/form6.png"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre" : "Partie 2 du formulaire",
+                        "img": "/documentation/LiveEvent/Vue/form2.png",
+                        "explication" : [
+                            {
+                                "text" : [
+                                    "Section 1 : Champ pour contenu de l'image de l'article. Ce champ est divisé en deux partie :",
+                                    "- form_label : Pour ajouter un label ainsi q'une icone qui ouvre une modal explicative.",
+                                    "- form_row : Le champ en lui même."
+                                ],
+                                "img" : [
+                                    "/documentation/LiveEvent/Vue/form7.png"
+                                ]
+                            },
+                            {
+                                "text" : [
+                                    "Section 2 : Champ pour la categorie."
+                                ],
+                                "img" : []
+                            },
+                            {
+                                "text" : [
+                                    "Section 3 : Champ pour l'événement en relation avec l'article. Ce champ est automatiquement caché, car étant donné que nous nous trouvons dans la partie administrateur de NationSound, chaque article rédigé sera automatiquement lié à l'événement NationSound."
+                                ],
+                                "img" : []
+                            },
+                            {
+                                "text" : [
+                                    "Section 4 : Il s'agir d'une condition :",
+                                    "- Si l'article est nouveau, une section est visible à l'écran. Cette section permet à l'utilisateur d'envoyer un mail aux abonnés de la newsletter pour les notifier du nouvel article publié.",
+                                    "- Si l'article existe déja, cette section n'apparait pas."
+                                ],
+                                "img" : []
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

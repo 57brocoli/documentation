@@ -100,7 +100,7 @@ function Index() {
                         <h3 className="font-bold text-lg mt-2 mx-4 jaune">Côté Vue</h3>
                         <ul className='mt-2 mx-5'>
                             <li className='my-1'>
-                                <NavLink to='/nationsound/desktop/ternaire' className="font-bold m-2">
+                                <NavLink to='/liveevent/templates' className="font-bold m-2">
                                     Templates
                                 </NavLink>
                             </li>

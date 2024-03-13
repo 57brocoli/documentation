@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import jsonData from './form.json'
-import { motion, AnimatePresence } from "framer-motion"
+import jsonData from './templates.json'
+import { AnimatePresence, motion } from "framer-motion"
 import Concept from './SousComposants/Concept';
-import Utilisation from './SousComposants/Utilisation';
+import Formulaire from './SousComposants/Formulaire';
 
-function Form() {
+function Templates() {
     const [data, setData] = useState([]);
 
     useEffect(()=>{
@@ -13,16 +13,16 @@ function Form() {
 
     if (data.section) {
         var intro = data.section.find(o=>o.titre==="Introduction")
+        var formulaire = data.section.find(o=>o.titre==="Formulaire")
         var concept = data.section.find(o=>o.titre==="Concept")
-        var utilisation = data.section.find(o=>o.titre==="Utilisation")
     }
 
-    const filtre = ["Conception", "Utilisation"]
-    const [filtreActive, setFiltreActive] = useState('Conception')
+    const filtre = ["Concept de base", "Formulaire"]
+    const [filtreActive, setFiltreActive] = useState('Concept de base')
 
     return (
         <main className='bgPage pt-20 px-10 w-full'>
-            <h1 className='text-xl'>Formulaires</h1>
+            <h1 className='text-xl'>Templates</h1>
             {data ?
                 <section>
                     <h2 className='text-2xl font-bold mb-10 orange'>{data.titre}</h2>
@@ -36,6 +36,8 @@ function Form() {
                                         <p key={index}>{intro}</p>
                                         )
                                     })}
+                                    <p className='jaune my-2'>Dans ce projet nous allons utiliser le gestionnaire de template \" Twig \". Il s'agit du gestionnaire par default de Symfony, et il est tout à fait optimal pour ce type de projet.
+                                    </p>
                                 </article>
                             : (
                                 <p>Introduction non disponibles.</p>
@@ -61,11 +63,10 @@ function Form() {
                             exit={{ y: -10, opacity: 0 }}
                             transition={{ duration: 0.2 }}
                             >
-                                {filtreActive === "Conception" && <Concept data={concept}/>}
-                                {filtreActive === "Utilisation" && <Utilisation data={utilisation}/>}
+                                {filtreActive === "Concept de base" && <Concept data={concept}/>}
+                                {filtreActive === "Formulaire" && <Formulaire data={formulaire}/>}
                             </motion.div>
                         </AnimatePresence>
-                        
                     </motion.div>   
                 </section>
             : <p>Données non disponibles.</p> }
@@ -73,4 +74,4 @@ function Form() {
     )
 }
 
-export default Form
+export default Templates

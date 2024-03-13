@@ -58,22 +58,40 @@
             "titre" : "Utilisation",
             "content" : {
                 "introduction" : [
-                    "Il est tout à fait possible de configurer une requête personalisée. Dans cette exemple nous observé comment le systême de requête avec Knp-paginator fonctionne.",
-                    "Ce systême est utiliser uniquement dans les controllers de LiveEvent."
+                    "Pour utiliser un formulaire il y'a trois étapes :",
+                    "- Sa creation",
+                    "- Sa mise en page",
+                    "- Son traitement"
                 ],
                 "etapes" : [
                     {
-                        "titre" : "Configuration du repository",
-                        "img": "",
+                        "titre" : "Creation dans le controller",
+                        "img": "/documentation/LiveEvent/Form/form3.png",
+                        "img2" :"/documentation/LiveEvent/Form/form4.png",
                         "text" : [
-                            "- ."
+                            "Dans la méthode editJour du controller ProgrammeController de NationSound.",
+                            "- On commence par inporter \" Request \".",
+                            "- Dans $form, le formulaire est créer grace à \" createForm( ) \" avec comme paramêtres la class \" DayType \" ( qui est le formulaire ), et l'object $day.",
+                            "- Notre formulaire est ensuite envoyer à la vue."
                         ]
                     },
                     {
-                        "titre" : "Configuration du controller",
-                        "img": "",
+                        "titre" : "Mise en page dans la vue",
+                        "img": "/documentation/LiveEvent/Form/form5.png",
                         "text" : [
-                            "- ."
+                            "La mise en page d'un formulaire dans la vue avec twig est assez simple:",
+                            "- \" form_start( form ) \" indique le début du formulaire form",
+                            "- \" form_end( form ) \" indique la fin du formulaire form"
+                        ]
+                    },
+                    {
+                        "titre" : "Traitement du formulaire dans le controller",
+                        "img": "/documentation/LiveEvent/Form/form6.png",
+                        "text" : [
+                            "Retour dans la méthode du controller, juste apres la creation du formulaire :",
+                            "Avec une condition on écoute si le formulaire est envoyer et qu'il est valide:",
+                            "- Alors on donne des instruction.",
+                            "- On redirige l'administrateur vers une nouvelle méthode."
                         ]
                     }
                 ]

@@ -75,47 +75,6 @@ function Repository() {
                                 </article>
                             : <p>Contenu indisponnible</p>}
                         </section>
-
-                        {/* <hr className='my-7'/>
-
-                        <section>
-                            {concept ?
-                                <article className='lg:ms-5 font-semibold'>
-                                    <h2 className='text-2xl orange'>{concept.titre}</h2>
-                                    <ul className='my-3'>
-                                        {concept.content.introduction.map((intro, index)=>{
-                                            return(
-                                                <li key={index} className='my-1'>{intro}</li>
-                                            )
-                                        })}
-                                    </ul>
-                                    <p className='jaune text-xl'>Pour configurer une requête :</p>
-                                    <ul className='m-2 '>
-                                        {concept.content.etapes.map((etape, index)=>{
-                                            return(
-                                                <li key={index} className='my-2'>
-                                                    <section>
-                                                        <h3 className='text-lg '>{etape.titre}</h3>
-                                                        {etape.img &&
-                                                            <div>
-                                                                <img src={etape.img} className='rounded border-2 my-1' alt="image console"/>
-                                                            </div>
-                                                        }
-                                                        {etape.text.map((text, index)=>{
-                                                            return(
-                                                                <p key={index}>{text}</p>
-                                                            )
-                                                        })}
-                                                    </section>
-                                                </li>
-                                            )
-                                        })}
-                                    </ul>
-                                </article>
-                            : <p>Contenu indisponnible</p>}
-                        </section> */}
-                            
-                        
                     </motion.div>   
                 </section>
             : <p>Données non disponibles.</p> }
