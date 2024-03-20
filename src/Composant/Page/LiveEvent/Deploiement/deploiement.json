@@ -21,7 +21,7 @@
                 ],
                 "etapes" : [
                     {
-                        "titre" : "Crée la base de données sur notre hébergeur",
+                        "titre" : "Crée la base de données avec notre hébergeur",
                         "img": "/documentation/LiveEvent/Deploiement/dep1.png",
                         "text" : [
                             "Pour cela il faut se rendre sur le tableau de bord de Hostinger:",
@@ -114,7 +114,7 @@
                         "titre" : "Se connecter au dépot de l'hebergeur :",
                         "img": "/documentation/LiveEvent/Deploiement/dep4.png",
                         "text" : [
-                            "Pour se connecter il faut remplir les champs par les données recueillies pour le comptes FTP."
+                            "Pour se connecter, il faut remplir les champs avec les données recueillies pour le compte FTP."
                         ]
                     },
                     {
@@ -152,7 +152,7 @@
                         ]
                     },
                     {
-                        "titre" : "Dans un terminal instalation de composer:",
+                        "titre" : "Dans un terminal installation de composer:",
                         "img": "",
                         "text" : [
                             "- Acceder au repertoire de l'hebergeur avec \" cd public_html \" puis encore une fois \" cd public_html \".",

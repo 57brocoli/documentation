@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import jsonData from './database.json'
 import { motion } from "framer-motion"
 import logo from '/mysql.png'
+import { Link } from 'react-router-dom';
 
 function DataBase() {
 
@@ -38,9 +39,10 @@ function DataBase() {
                                             })}
                                         </div>
                                     </section>
-                                    <p className='jaune my-2'>Le choix d'une base de données de type relationnel s'est fait sur un critère essentiel pour notre projet. Comme dit précédemment dans les avantages qu'offre une base de données, elle permet de créer des relations entre plusieurs entités, ce qui n'est pas possible avec une base de données non relationnelle. De plus, notre BDD aura pour objectif d'être la source de l'API, il sera donc plus performant lors des requêtes car il sera possible d'exécuter une seule requête pour accéder aux relations qu'une table peut avoir.
-                                    <br/> De plus, ici nous allons parler uniquement de la configuration de la base de données.
+                                    <p className='jaune my-2'>Le choix d'une base de données de type relationnel s'est fait sur un critère essentiel pour notre projet. Comme dit précédemment les avantages qu'offre une base de données est qu'elle permet de créer des relations entre plusieurs entités, ce qui n'est pas possible avec une base de données non relationnelle. De plus, notre BDD aura pour objectif d'être la source de l'API, il sera donc plus performant lors des requêtes car il sera possible d'exécuter une seule requête pour accéder aux relations qu'une table peut avoir.
+                                    <br/> Ici nous allons parler uniquement de la configuration de la base de données en local.
                                     <br/>Pour voir le shema de la base de données <a href="https://www.figma.com/file/stL2LRLdDfXfOgyMIMHDYh/Database-Diagram-(Community)?type=design&node-id=0-1&mode=design&t=riWvMvNRE6iiXOnB-0" className='text-rose-600 visited:text-purple-600' target='blank'>clicker ici</a>
+                                    <br/>Pour consulter sa mise en place sur le serveur de l'herbergeur <Link to={'/liveevent/deploiement'} className='text-rose-600 visited:text-purple-600'>clicker ici</Link>
                                     </p>
                                 </article>
                             : (

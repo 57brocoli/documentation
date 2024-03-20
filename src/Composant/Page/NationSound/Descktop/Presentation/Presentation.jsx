@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import jsonData from './Presentation.json'
-import '../../style.css'
 import { Link } from 'react-router-dom'
 import logo from '/logo1.jpg'
 import {motion} from 'framer-motion'

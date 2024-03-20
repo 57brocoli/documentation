@@ -11,7 +11,8 @@ export default function Navigation() {
 
   return (
    <>
-    <nav className="flex items-center justify-between flex-wrap p-2 nav fixed w-full z-5">
+   
+    <nav className="flex items-center justify-between flex-wrap p-2 nav fixed w-full " style={{zIndex:500}}>
         <div className="flex items-center flex-shrink-0 text-white mr-6">
             <img src={logo} alt="Logo" width="50" height="50" className="ms-2"/>
             <NavLink to='/' className="font-bold text-xl tracking-tight ms-2">
@@ -20,11 +21,17 @@ export default function Navigation() {
         </div>
         <div className="w-full hidden flex-grow lg:flex text-lg lg:items-center lg:w-auto">
             <div className="lg:flex-grow flex justify-center font-bold text-white">
-                <NavLink to='/nationsound' className="block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10">
+                <NavLink to='/nationsound' className={(nav) => (nav.isActive ? "orange block mt-4 lg:inline-block lg:mt-0 mr-10 " : "block mt-4 lg:inline-block lg:mt-0 mr-10 navhover")}>
                 Nation Sound
                 </NavLink>
-                <NavLink to='/liveevent' className="block mt-4 lg:inline-block lg:mt-0 hover:text-white mr-10">
+                <NavLink to='/liveevent' className={(nav) => (nav.isActive ? "orange block mt-4 lg:inline-block lg:mt-0 mr-10" : "block mt-4 lg:inline-block lg:mt-0 mr-10 navhover")}>
                 Live Event
+                </NavLink>
+                <NavLink to='/basededonnees' className={(nav) => (nav.isActive ? "orange block mt-4 lg:inline-block lg:mt-0 mr-10" : "block mt-4 lg:inline-block lg:mt-0 mr-10 navhover")}>
+                Base de données
+                </NavLink>
+                <NavLink to='/api' className={(nav) => (nav.isActive ? "orange block mt-4 lg:inline-block lg:mt-0 mr-10" : "block mt-4 lg:inline-block lg:mt-0 mr-10 navhover")}>
+                API
                 </NavLink>
             </div>
         </div>

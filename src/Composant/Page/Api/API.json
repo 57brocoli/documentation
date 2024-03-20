@@ -1,0 +1,179 @@
+{
+    "titre" : "API",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Une API, est un ensemble de règles et de protocoles qui permettent à des logiciels applicatifs de communiquer entre eux. Elle définit les méthodes et les données qu'un logiciel peut utiliser pour interagir avec un autre logiciel, un service ou une plateforme.",
+                    "API Platform est un framework PHP open source moderne pour la création d'API web et d'applications RESTful. Il permet aux développeurs de construire rapidement des API HTTP basées sur les meilleures pratiques et les standards du web, en utilisant des outils modernes et des composants puissants.",
+                    "- API Platform simplifie la création d'API RESTful en fournissant des outils pour définir les ressources, les opérations CRUD (Create, Read, Update, Delete), les relations entre les ressources, et plus encore, en utilisant des annotations PHP ou des fichiers de configuration YAML.",
+                    "- Il fournit des mécanismes de validation des données entrantes et sortantes, ce qui garantit que les données respectent les contraintes définies par l'API, assurant ainsi l'intégrité des données et la sécurité de l'application."
+                ]
+            }
+        },
+        {
+            "titre" : "Concept",
+            "content" : {
+                "introduction" : [
+                    "Notre API est directement intégrée au code source du projet \" LiveEvent \", qui, pour rappel, est à la fois le site de la société du même nom et le backoffice de l'application mobile et du site web \" NationSound \".",
+                    "Pour utiliser API Platform, il est nécessaire, dans un premier temps, d'effectuer quelques manipulations :",
+                    " - D'installer API Platform : dans la console : \" symfony composer require api  \".",
+                    " - D'avoir crée prealablement la base de données : dans la console : \" symfony console doctrine:database:create  \"."
+                ],
+                "img" : [
+                    ""
+                ],
+                "explications" : [
+                    {
+                        "titre" : "Utilisation",
+                        "introduction" : [
+                            "Une fois API Platform installer il faut tout de même s'assurer que nos entité font partie de l'api rest.",
+                            "Pour cela il existe deux manières de verifié :"
+                        ],
+                        "content" : [
+                            {
+                                "titre" : "Pendant la creation de l'entité",
+                                "text" : [
+                                    "Avec le Maker Bundle de Symfony, pour créer une entité, il suffit d'utiliser le terminal et de saisir la commande \" symfony console make:entity \".",
+                                    "Cette commande va alors lancer la configuration de l'entité. Ainsi, un ensemble de questions va être posé à l'administrateur.",
+                                    "Parmi ces questions, a deuxième demande si l'on veut que notre entité soit une ressource de notre API. Il necessaire de répondre \"yes\" uniquement si l'on veut que les données de cette futur table deviennent accessibles."
+                                ],
+                                "img": ["/documentation/API/api1.png"]
+                            },
+                            {
+                                "titre" : "Dans le fichier de l'entité",
+                                "text" : [
+                                    "Si la base de données à été crée avant l'instalation de synfony, il est tout de même possible de rendre nos entités accessibles via l'API.",
+                                    "Pour cela il faut se rendre dans le fichier de chaque entité. Attention tous de même à le faire uniquement pour les tables que l'on veut transformer comme ressources de l'api.",
+                                    "Dans le fichier il suffit de rajouter l'attribut \" #[ApiResource] \" comme indiquer sur l'image d'ilustration."
+                                ],
+                                "img": ["/documentation/API/api2.png"]
+                            }
+                        ]
+                    },
+                    {
+                        "titre" : "Consultation",
+                        "introduction" : [
+                            "Pour consulter l'interface d'API Platform, le framework nous met à disposition une route vers une page qui présente l'intégralité des entités ressources ainsi que les méthodes pour interagir avec chaque entité.",
+                            "Cette route peut être configurable est configurable."
+                        ],
+                        "content" : [
+                            {
+                                "titre" : "Pour consulter l'interface",
+                                "text" : [
+                                    "Dans un navigateur il suffit de rajouter \" /api \" apres le nom de domaine. Par exemple pour consulter l'interface de l'API du site LiveEvent la route est \" https://pixelevent.site/api \"."
+                                ],
+                                "img": ["/documentation/API/api3.png"]
+                            },
+                            {
+                                "titre" : "Configurer la route",
+                                "text" : [
+                                    "Ce chemin d'accès peut paraître intuitif mais surtout facile d'accès pour tout le monde.",
+                                    "Pour changer la route, il suffit de se rendre dans le code source, à la racine du projet, dans le dossier \" config \", puis dans le dossier \" routes \", et enfin dans le fichier \" api_platform.yaml \".",
+                                    "A la ligne \" prefix \", il est possible de reconfigurer cette route."
+                                ],
+                                "img": ["/documentation/API/api4.png"]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Configuration",
+            "content" : {
+                "introduction" : [
+                    "Une fois que API Platform est installer, les entités on été ajouter en tant que ressource, la route d'acces à l'interface reconfigurer. Il devient necessaire pour des raison de sécurité et afin d'être conforme à la législation et aux bonnes pratiques du \" RGPD \", de configurer :",
+                    "- Les méthodes (CRUD) d'accès aux données. Il est important de préciser que les tables de la base de données consultables via l'API ont été choisies de façon à ne laisser aucune méthode d'accès aux données des utilisateurs à travers les requêtes vers la base de données.",
+                    "- Ainsi que les données collectables sur chaque entité via les requêtes."
+                ],
+                "img" : [
+                    ""
+                ],
+                "explications" : [
+                    {
+                        "titre" : "Les méthodes",
+                        "introduction" : [
+                            "API Platform met a disposition par default des methodes d'access aux ressources. Ces methodes sont :",
+                            "- GET : Pour récupérer une ressource ou une collection de ressources.",
+                            "- POST : En envoyant une requête POST avec les données appropriées, il est possible de créer une nouvelle entrée dans la base de données ou une nouvelle ressource dans l'API.",
+                            "- PUT ou PATCH : Ces méthodes sont utilisées pour mettre à jour une ressource existante. Vous pouvez envoyer une requête PUT ou PATCH avec les données mises à jour pour modifier les propriétés d'une ressource.",
+                            "- DELETE : Cette méthode est utilisée pour supprimer une ressource existante.",
+                            "Nous avons décidé de garder uniquement les méthodes \" GET \", et dans certaines situations la méthode \" POST \" comme par exemple pour la table \" Request \".",
+                            "Pour configurer cela :"
+                        ],
+                        "content" : [
+                            {
+                                "titre" : "Dans le fichier de l'entité",
+                                "text" : [
+                                    "Precedemant nous avons vue comment transformer notre entité en ressource consultable via l'API avec l'attribut \" #[ApiRessource] \".",
+                                    "Maintenant nous allons configurer cette attribut pour ne selectionner que les operations qui nous interesse. (operations === methodes)",
+                                    "Sur l'image il s'agit de l'entité \" Comment \".",
+                                    "Le parametre \" operations \" prend dans un tableau les methodes qui nous interesses. Pour cette tables nous utiliserons les méthodes :",
+                                    "- Get( ) pour récupérer un commentaire.",
+                                    "- GetCollection( ) pour récupérer tous les commentaires.",
+                                    "- Post( ) pour crée un nouveau commentaire."
+                                ],
+                                "img": ["/documentation/API/api5.png"]
+                            }
+                        ]
+                    },
+                    {
+                        "titre" : "Les données recoltables",
+                        "introduction" : [
+                            "Une fois que les opérations sont établies, ils nous reste plus qu'a selectionner les données que l'on veut récolter sur nos entités.",
+                            "Pour cela, sur les operations \" Get( ) \" et \" GetCollection( ) \" nous utiliserons la méthode \" normalizationContext \" qui permettra de recolter uniquement certaine propriétés de nos entités."
+                        ],
+                        "content" : [
+                            {
+                                "titre" : "Dans le fichier de l'entité",
+                                "text" : [
+                                    "Toujours dans le même exemple qui est l'entité \" Comment \".",
+                                    "Notre methode \" normalizationContext \" prend un tableau qui regroupe un ou plusieur parametres.",
+                                    "Ces parametres comme par exemple \" getforcomment \" qui signifie \" obtenir pour le commentaire \" sont des chaines de caractère qui vont être ratacher aux propriétés de l'entité ( voir seconde image ).",
+                                    "Pour ratacher les paramêtres a une propriété de l'entité il suffit d'utiliser l'attribut \" #[Groups([ ])] \" et d'integer le parametre dans le tableau.",
+                                    "Ainsi l'orsque l'on vas utiliser l'API pour récupérer un commentaire, uniquement les propriétés rattacher à notre parametre seront visibles et récoltables."
+                                ],
+                                "img": [
+                                    "/documentation/API/api6.png",
+                                    "/documentation/API/api7.png"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "titre" : "Les données recoltables des autres tables",
+                        "introduction" : [
+                            "Ce qui fait la force d'API Platform et renforce le choix de cette technologie, c'est qu'il nous permet aussi de récupérer les données des relations entre tables. Par exemple pour notre entité \" Article \" qui possède plusieur relations avec d'autre entités, il est possible de récupérer les images ( qui est une entité en relation ).",
+                            "Pour cela n'est pas possible de le faire uniquement depuis l'entité \" Article \" avec la methodes développer précedement. Pour y arriver il faut :",
+                            "- Dans un premier temps : dans le fichier de l'entité \" parent \", qui pour notre exemple est \" Article \", configurer les methodes évoquées précedement. ( voir image 1 et 2 )",
+                            "- Puis dans le fichier de l'entité en relation, qui peut être \" Image \" dabord s'assurer que la table fait bien partie des ressources de l'API. Puis placer le paramètre dans l'attribut \" #[Groups([ ])] \" de la propriété que l'on souhaite récolter. ( voir image 3 )"
+                        ],
+                        "content" : [
+                            {
+                                "titre" : "Dans le fichier de l'entité Article",
+                                "text" : [
+                                    ""
+                                ],
+                                "img": [
+                                    "/documentation/API/api8.png",
+                                    "/documentation/API/api9.png"
+                                ]
+                            },
+                            {
+                                "titre" : "Dans le fichier de l'entité Image",
+                                "text" : [
+                                    ""
+                                ],
+                                "img": [
+                                    "/documentation/API/api10.png"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -46,6 +46,8 @@ import Repository from "./Composant/Page/LiveEvent/Model/Repository/Repository.j
 import Form from "./Composant/Page/LiveEvent/Model/Form/Form.jsx"
 import Templates from "./Composant/Page/LiveEvent/Vue/Templates.jsx"
 import DeploiementLE from "./Composant/Page/LiveEvent/Deploiement/Deploiement.jsx"
+import BasedeDonnees from "./Composant/Page/BDD/Presentation/BasedeDonnees.jsx"
+import Api from "./Composant/Page/Api/Api.jsx"
 
 const router = createBrowserRouter([
     {
@@ -235,6 +237,14 @@ const router = createBrowserRouter([
                     }
                 ]
             },
+            {
+                path : '/basededonnees',
+                element: <BasedeDonnees/>
+            },
+            {
+                path : '/api',
+                element: <Api/>
+            }
         ]
     }
 ])

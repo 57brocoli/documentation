@@ -28,11 +28,10 @@ function Home() {
 
   return (
     <div className='bgPage pt-10' style={{minHeight: screenSize.height}}>
-        
         <section className='p-8 text-white text-center'>
-            <h1 className='text-6xl font-semibold mt-6'>Live event</h1>
+            <h1 className='text-6xl mt-6 fontRaph'>Live event</h1>
             <div className='flex justify-center items-center mt-4'>
-                <img src={logo} alt="Logo" className=''/>
+                <img src={logo} alt="Logo"/>
             </div>
             <h2 className='mt-8 text-xl'>Bienvenu sur la documentation qui porte sur le dévéloppement des applications liées à PixelEvent</h2>
             <p className='text-lg mt-6 mb-4'>Choisissez la documentation du projet que vous souhaiterez consulter</p>
@@ -60,7 +59,7 @@ function Home() {
                 </Link>
             </motion.div>
             <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{ duration:2 }} className='border-2 rounded-md p-6 mx-4 my-9 lg:basis-1/3'>
-                <Link to='/nationsound' >
+                <Link to='/basededonnees' >
                     <div className='box-iconFloat box-mysql'>
                         <img src={mysql} alt="logo mysql" className='iconFloat'/>
                     </div>
@@ -69,7 +68,7 @@ function Home() {
                 </Link>
             </motion.div>
             <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{ duration:2 }} className='border-2 rounded-md p-6 mx-4 my-9 lg:basis-1/3'>
-                <Link to='/nationsound' >
+                <Link to='/api' >
                     <div className='box-iconFloat box-apiplatform'>
                         <img src={apiplatform} width="96" height="96" alt="logo apiplatform" className='iconFloat'/>
                     </div>

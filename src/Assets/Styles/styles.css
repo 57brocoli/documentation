@@ -1,5 +1,5 @@
 :root{
-    --dark: #011023;
+    /* Couleur du logo LiveEvent */
     --orange: #f08e00;
     --orange-fonce: #ee4700;
     --rouge: #f02704;
@@ -11,18 +11,92 @@
     --bleu-fonce : #0038c2;
     --mauve : #2a107f;
 
+    /* Couleur des logo des technologies */
     --roseSymfony : #e492ff;
     --bleureact : #53c1de;
     --orangeMysql : #f57f17;
     --vertApiplatform : #38a9b4;
+
+    /* Couleur du logo NationSound */
+    --dark: #011023;
+    --violeClair : #6c24dd;
+    --violetFoncé: #1c043c;
+    --bleu: #0000ff;
+    --vert: #5dd29b;
+    --jaune: #f1e469;
+    --orange : #f1793c;
+    --rouge : #ff0000;
+    --white: #FFFFFF
+}
+
+@font-face {
+	font-family: 'raph';
+	src: url('./font/RaphLanokFuture.ttf') format("truetype"),
+}
+
+.fontRaph{
+    font-family: 'raph';
+}
+
+.nav{
+    background-color: var(--dark);
+}
+.navhover:hover{
+    color: var(--jaune);
+}
+.navTitleHover:hover{
+    color: var(--orange);
+}
+
+
+.orange{
+    color: var(--orange);
+}
+.rouge{
+    color: var(--rouge);
+}
+.vert{
+    color: var(--vert);
+}
+.jaune{
+    color: var(--jaune);
+}
+.dark{
+    color: var(--dark);
+}
+
+
+.bgJaune{
+    background-color: var(--jaune);
+}
+.bgOrange{
+    background-color: var(--orange);
 }
 .bgPage{
     background : linear-gradient(var(--dark), var(--bleu-fonce));
     color: white;
 }
-.nav{
-    background-color: var(--dark);
+.background{
+    background-color: var(--violetFoncé);
+    width: 100%;
+    color: var(--white);
 }
+.backgroundVF{
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+
+.logo{
+    height: 300px;
+    width: 300px;
+    margin-top: 30px;
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .box-react{
     border-radius: 65% 35% 72% 28% / 30% 30% 70% 70% ;
@@ -58,4 +132,18 @@
 }
 .textApiplatform{
     color: var(--vertApiplatform);
+}
+
+
+.codeSource{
+    height: 200px;
+    width: 90%;
+}
+.codeSource1{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.codeSource2{
+    height: 300px;
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import jsonData from './Presentation.json'
 import {motion} from 'framer-motion'
-import '../../style.css'
 import { Link } from 'react-router-dom'
 import logo from '/logo1.jpg'
 import presentation from '/documentation/NS_VersionPhone/Presentation/presentationPhone.png'

@@ -1,0 +1,371 @@
+{
+    "titre" : "Base de données",
+    "section" : [
+        {
+            "titre" : "Introduction",
+            "content" : {
+                "introduction" : [
+                    "Une base de données est essentielle pour stocker et gérer des données de manière structurée et persistante. Voici quelques-unes des raisons pour lesquelles une base de données est utile dans notre site web :",
+                    "1 -  Permet de stocker divers informations comme : les utilisateurs du site web, des contenus dynamiques tels que des articles de blog, des commentaires, ou des pages statiques, etc.",
+                    "2 - Une bases de données relationnelle permet de créer des relations entre différentes entités de données. Par exemple, un article de blog peut être lié à un utilisateur qui l'a écrit.",
+                    "3 - Si elle est bien conçue, peut contribuer à optimiser les performances du site web en permettant des requêtes efficaces et en minimisant les temps de réponse.",
+                    "4 - Les bases de données offrent des fonctionnalités de sécurité telles que le cryptage des données, les rôles et les autorisations, contribuant ainsi à protéger les données sensibles. La securité est avant tous une question d'actualité."
+                ]
+            }
+        },
+        {
+            "titre" : "Programme",
+            "content" : {
+                "introduction" : [
+                    "Ce groupement est dédié à l'ensemble des programmes des événements que la société LiveEvent organise. Bien entendu, pour l'instant, il n'existe qu'un seul programme."
+                    
+                ],
+                "imgRelation" : [
+                    "/documentation/BDD/programme1.png"
+                ],
+                "imgTables" : [
+                    "/documentation/BDD/programme2.png"
+                ],
+                "explications" : [
+                    {
+                        "titre" : "Présentation",
+                        "text" : [
+                            "NationSound est le seul évènement répertorié dans ce projet, seul son programme figure ici, en conséquent :",
+                            "- La table programme contient le programme de l'événement.",
+                            "- La table day contient les jours de l'événement.",
+                            "- La table episode contient les épisodes associés à chaque jour de l'événement. Un épisode est en réalité un événement de la journée, il prend le nom \" épisode \" pour éviter la confution avec un évènement que la société peut organisé comme NationSound.", 
+                            "- La table artiste contient les artistes qui participent à l'événement NationSound.",
+                            "- La table lieu contient les lieux de l'événement (Scenes, Bars...).",
+                            "- La table link contient liens associés aux artistes ou aux lieux. Il s'agit d'un lien vers ses reseaux sociaux ou une page de présentation. Attention à ne pas confondre avec le \" music_link \" de l'artiste qui est un lien vers une composition."
+                        ]
+                    },
+                    {
+                        "titre" : "Type de relation",
+                        "text" : [
+                            "- Programme->Day : OneToMany. Un programme peut avoir plusieurs jours associés à lui, une journée peut être associé qu'à un seul programme.",
+                            "- Day->Episode : OneToMany. Une journée peut avoir plusieurs épisodes associés à lui, un épisode peut être associé qu'à une seul journée.",
+                            "- Episode->Artiste : ManyToOne. Chaque épisode peut avoir un seul artiste principal, un artiste peut être associé à plusieurs épisode.",
+                            "- Episode->Lieu : ManyToOne. Chaque épisode peut être associé à une seule scénè, une scéne peut être associé à plusieurs épisode.",
+                            "- Artiste->Lnk / Lieu->Link : ManyToOne."
+                        ]
+                    },
+                    {
+                        "titre" : "Tables et type de données par champ",
+                        "tables" : [
+                            {
+                                "name": "programme",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique du programme.",
+                                    "- name :  varchar(50) NOT NULL / Nom du programme."
+                                ]
+                            },
+                            {
+                                "name": "day",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique du jour.",
+                                    "- programme_id : int(11) DEFAULT NULL FOREIGN KEY / Identifiant du programme auquel ce jour est associé.",
+                                    "- name : varchar(50) NOT NULL / Nom du jour.",
+                                    "- date : datetime NOT NULL COMMENT / Date du jour de l'événement."
+                                ]
+                            },
+                            {
+                                "name": "episode",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique de l'épisode.",
+                                    "- artiste_id : int(11) DEFAULT NULL FOREIGN KEY / Identifiant de l'artiste associé à cet épisode.",
+                                    "- lieu_id : int(11) DEFAULT NULL FOREIGN KEY / Identifiant du lieu où cet épisode se déroule.",
+                                    "- day_id : int(11) DEFAULT NULL FOREIGN KEY / Identifiant du jour où cet épisode a lieu.",
+                                    "- name : varchar(50) NOT NULL / Nom de l'épisode.",
+                                    "- hour : time NOT NULL / Heure de l'épisode."
+                                ]
+                            },
+                            {
+                                "name": "artiste",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique de l'artiste",
+                                    "- name : varchar(50) NOT NULL / Nom de l'artiste.",
+                                    "- description : longtext NOT NULL / Description de l'artiste.",
+                                    "- music_link : varchar(255) DEFAULT NULL / Lien vers une musique de l'artiste (Youtube..).",
+                                    "- featured_image : varchar(255) DEFAULT NULL / nom de l'image de l'artiste."
+                                ]
+                            },
+                            {
+                                "name": "lieu",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique du lieu.",
+                                    "- name : varchar(50) NOT NULL / Nom du lieu.",
+                                    "- description : longtext DEFAULT NULL / Description du lieu.",
+                                    "- gpspt_lat : varchar(255) NOT NULL / Latitude GPS du lieu.",
+                                    "- gpspt_lng : varchar(255) NOT NULL / Longitude GPS du lieu.",
+                                    "- featured_image : varchar(255) DEFAULT NULL / Lien vers l'image du lieu.",
+                                    "- category : varchar(50) DEFAULT NULL / Catégorie du lieu (bar, scène, poste de secours, toilette, hôtel)."
+                                ]
+                            },
+                            {
+                                "name": "link",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique du lien.",
+                                    "- artiste_id : int(11) DEFAULT NULL FOREIGN KEY / Identifiant de l'artiste associé au lien (peut être NULL).",
+                                    "- link : varchar(50) NOT NULL / URL du lien.",
+                                    "- lieu_id : int(11) DEFAULT NULL FOREIGN KEY / Identifiant du lieu associé au lien (peut être NULL)."
+                                ]
+                            }
+                            
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Articles",
+            "content" : {
+                "introduction" : [
+                    "Ce groupement est dédié aux articles et toutes les tables en lien avec un article. Il s'agit de la même base de données pour les articles de LiveEvent et pour ceux de NationSound."
+                    
+                ],
+                "imgRelation" : [
+                    "/documentation/BDD/article1.png"
+                ],
+                "imgTables" : [
+                    "/documentation/BDD/article2.png"
+                ],
+                "explications" : [
+                    {
+                        "titre" : "Présentation",
+                        "text" : [
+                            "L'entité article contient tout les articles et est liées à plusieurs autres entités :",
+                            "- La table user contient les utilisateurs. Parmis les utilisateurs, certain sont des administrateurs, et d'autres des clients. Le lien avec la table article est la suivante : Administrateur rédige un article. Le lien avec la table comment : un client rédige un commentaire.",
+                            "- La table comments contient donc les commentaires des articles.",
+                            "- La table event contient les événements de la société LiveEvent.",
+                            "- La table category contient les categories. Il existe des catégories parents et des catégories enfants, d'ou la liaison de la table avec elle même.",
+                            "- La table image contient les images secondaires pour les articles. A ne pas confondre avec la propriété \" featured_image \" des tables article et event qui est une image en avant."
+                            
+                            
+                        ]
+                    },
+                    {
+                        "titre" : "Type de relation",
+                        "text" : [
+                            "- article->user : ManyToOne. Un article peut être associé qu'à un seul administrateur. Un administrateur peut avoir ( redigé ) plusieurs articles associés à lui. ",
+                            "- user->comment : OneToMany. Une utilisateur peut avoir plusieurs commentaires associés à lui, un commentaire peut être associé qu'à un utilisateur.",
+                            "- article->category : ManyToOne. Chaque article est associé à une catégorie. Une categories peut être associé à plusieurs articles.",
+                            "- category->category : ManyToOne. Un categorie enfant est associé à une catégorie parent. Une category parent peut être associé à plusieurs catgories enfants.",
+                            "- article->image : OneToMany. Un article peut être associé à une ou plusieurs images. Une image peut être associé qu'à un seul article.",
+                            "- article->event : ManyToOne. Un article peut être associé qu'à un seul événement. Un événement peut être associé à plusieurs articles.",
+                            "- article->comment : OneToMany. Un article peut être associé à plusieurs commentaires. Un commentaire peut être associé qu'à un seul articles."
+                        ]
+                    },
+                    {
+                        "titre" : "Tables et type de données par champ",
+                        "tables" : [
+                            {
+                                "name": "article",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique du programme.",
+                                    "- author_id : int(11) DEFAULT NULL FOREIGN KEY / Identifiant de l'auteur.",
+                                    "- categories_id : int(11) NOT NULL FOREIGN KEY / Identifiant de la catégorie.",
+                                    "- title varchar(255) NOT NULL / Titre de l'article.",
+                                    "- introduction : TEXT NOT NULL / Introduction de l'article.",
+                                    "- content : TEXT NOT NULL / Contenu de l'article.",
+                                    "- created_at : DATETIME_IMUTABLE NOT NULL DEFAULT current_timestamp() / Date de création de l'article.",
+                                    "- slug : varchar(255) NOT NULL / Slug de l'article.",
+                                    "- featured_image : VARCHAR(255) DEFAULT NULL / Nom de l'image de l'article.",
+                                    "- video : VARCHAR(255) DEFAULT NULL / Video de l'article.",
+                                    "- related_event_id` int(11) DEFAULT NULL / Identifiant de l'événement en relation."
+                                ]
+                            },
+                            {
+                                "name": "user",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique de l'utilisateur.",
+                                    "- email : VARCHAR(180) NOT NULL / Email de l'utilisateur.",
+                                    "- roles : TEXT NOT NULL / Role de l'utilisateur (Administrateur, utilisateur, ...).",
+                                    "- password : VARCHAR(255) NOT NULL / Mot de passe de l'utilisateur qui doit être hasher avant d'être stocker.",
+                                    "- lastname : VARCHAR(100) NOT NULL / Nom de l'utilisateur.",
+                                    "- firstname : VARCHAR(100) NOT NULL / Prenom de l'utilisateur.",
+                                    "- address : VARCHAR(255) NOT NULL / Adresse de l'utilisateur.",
+                                    "- zipcode : VARCHAR(5) NOT NULL / Code postal.",
+                                    "- city : VARCHAR(150) NOT NULL / Adresse de l'utilisateur.",
+                                    "- created_at : DATETIME_IMUTABLE NOT NULL DEFAULT current_timestamp() / Date de création de l'utilisateur.",
+                                    "- is_verified : BOLEAN NOT NULL / Certification de validation du compte par email.",
+                                    "- reset_token : VARCHAR(100) DEFAULT NULL / Token de réinitialisation du mot de passe.",
+                                    "- is_subscriber : BOLEAN NOT NULL / Certification d'abonnement à la newslettres."
+
+                                ]
+                            },
+                            {
+                                "name": "event",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique de l'événement.",
+                                    "- name : VARCHAR(50) NOT NULL / Nom de l'événement.",
+                                    "- introduction : TEXT NOT NULL / Introduction de l'événement.",
+                                    "- content : TEXT NOT NULL / Contenu de l'evenement.",
+                                    "- date : DATETIME_IMUTABLE NOT NULL / Date de l'événement.",
+                                    "- slug : VARCHAR(255) NOT NULL / Slug de l'événement.",
+                                    "- created_at : DATETIME_IMUTABLE NOT NULL DEFAULT current_timestamp() / Date de création de l'évenement.",
+                                    "- featured_image : VARCHAR(255) DEFAULT NULL / Nom de l'image de l'événement.",
+                                    "- video : VARCHAR(255) DEFAULT NULL / Video de l'événement.",
+                                    "- city_id` int(11) NOT NULL FOREIGN KEY / Identifiant de la ville."
+                                ]
+                            },
+                            {
+                                "name": "category",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique de la categorie",
+                                    "- parent_id : int(11) DEFAULT NULL FOREIGN KEY / Identifiant de la categorie parent",
+                                    "- name : VARCHAR(100) NOT NULL / Nom de la categorie.",
+                                    "- slug : VARCHAR(255) NOT NULL / Slug de la categorie."
+                                ]
+                            },
+                            {
+                                "name": "image",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique de l'image.",
+                                    "- article_id : int(11) NOT NULL FOREIGN KEY / Identifiant de l'article.",
+                                    "- name : VARCHAR(255) NOT NULL / Nom de l'image."
+                                ]
+                            },
+                            {
+                                "name": "comment",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique du commentaire.",
+                                    "- author_id : int(11) DEFAULT NULL FOREIGN KEY / Identifiant de l'auteur.",
+                                    "- related_article_id : int(11) NOT NULL FOREIGN KEY / Identifiant de l'article.",
+                                    "- content : TEXT NOT NULL / Contenut du commentaire.",
+                                    "- created_at : DATETIME_IMUTABLE NOT NULL DEFAULT current_timestamp() / Date de creation du commentaire.",
+                                    "- author_mobile : varchar(50) DEFAULT NULL / Identifiant de l'auteur s'il s'agit d'un utilisateur mobile."
+                                ]
+                            }
+                            
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "Pages",
+            "content" : {
+                "introduction" : [
+                    "Ce groupement est dédié à aux page de NationSound. Elle sont administrables dans la partie administrateur NationSound du site LiveEvent."
+                    
+                ],
+                "imgRelation" : [
+                    "/documentation/BDD/page1.png"
+                ],
+                "imgTables" : [
+                    "/documentation/BDD/page2.png"
+                ],
+                "explications" : [
+                    {
+                        "titre" : "Présentation",
+                        "text" : [
+                            "Une view est une page (Accueil, Programme, Billetterie, Actualite, Sponsors et A propos). Elle posède un header (Une image et un text), des sections qui lui sont dédié (Cahier des charges), et des sections que l'on peut rajouter.",
+                            "- La table view contient les pages.",
+                            "- La table figure contient les images, aussi bien des sections que du header de chaque pages.",
+                            "- La table page_section contient les sections des pages."
+                        ]
+                    },
+                    {
+                        "titre" : "Type de relation",
+                        "text" : [
+                            "- view->figure : OneToOne. Une view peut être associé qu'à un seul figure. Une figure peut avoir une view associée à elle.",
+                            "- view->page_section : OneToMany. Une view peut avoir plusieurs page_section associées à lui, une page_section peut être associé qu'à une seul view.",
+                            "- page_section->figure : OneToMany. Chaque page_section peut être associée à une ou plusieurs figures. Une figure peut être associé qu'à une seul figure."
+                        ]
+                    },
+                    {
+                        "titre" : "Tables et type de données par champ",
+                        "tables" : [
+                            {
+                                "name": "view",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique de la view.",
+                                    "- header_image_id : int(11) DEFAULT NULL FOREIGN KEY / Identifiant de la figure.",
+                                    "- name : VARCHAR(50) NOT NULL / Titre de la view.",
+                                    "- header_text : TEXT DEFAULT NULL / Text du header de la view.",
+                                    "- slug : VARCHAR(255) NOT NULL / slug de la view."
+                                ]
+                            },
+                            {
+                                "name": "page_section",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique de la page_section.",
+                                    "- view_id : int(11) DEFAULT NULL FOREIGN KEY / Identifiant de la view.",
+                                    "- title : VARCHAR(255) NOT NULL / titre de la page_section.",
+                                    "- content : TEXT NOT NULL / Contenu de la page_section.",
+                                    "- display : varchar(50) NOT NULL / Style pour la mise en page de la page_section."
+                                ]
+                            },
+                            {
+                                "name": "figure",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant unique de la figure.",
+                                    "- name : VARCHAR(255) NOT NULL / Nom de la figure.",
+                                    "- page_section_id : int(11) DEFAULT NULL FOREIGN KEY / Identifiant de la page_section."
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "titre" : "MobileUsers",
+            "content" : {
+                "introduction" : [
+                    "Ce groupement est dédié à aux Utilisateur de l'application mobile aussi que les commentaires des articles."
+                    
+                ],
+                "imgRelation" : [
+                    "/documentation/BDD/mobile1.png"
+                ],
+                "imgTables" : [
+                    "/documentation/BDD/mobile2.png"
+                ],
+                "explications" : [
+                    {
+                        "titre" : "Présentation",
+                        "text" : [
+                            "- La table mobile_user contient les utilisateurs de l'application mobile ' NationSound '.",
+                            "- La table comment contient les commentaires sur tous les articles, y compris ceux qui ne sont pas affiliés à l'évènement ' NationSound '."
+                        ]
+                    },
+                    {
+                        "titre" : "Type de relation",
+                        "text" : [
+                            "- mobile_user->comment : OneToMany. Le nom d'un mobile_user peut être associée à plusieurs comments. Un comment peut être associée au nom d'un mobile_user."
+                        ]
+                    },
+                    {
+                        "titre" : "Tables et type de données par champ",
+                        "tables" : [
+                            {
+                                "name": "mobile_user",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant de l'utilisateur.",
+                                    "- name : VARCHAR(255) NOT NULL / Nom de l'utilisateur.",
+                                    "- email : VARCHAR(255) NOT NULL / Email de l'utilisateur.",
+                                    "- password : VARCHAR(255) NOT NULL / Mot de passe de l'utilisateur qui est hasher avant d'être stocker.",
+                                    "- created_at : DATETIME_IMUTABLE NOT NULL DEFAULT current_timestamp() / Date de création de l'utilisateur.",
+                                    " - phone : int(11) DEFAULT NULL / Numeros de telephone de l'utilisateur."
+                                ]
+                            },
+                            {
+                                "name": "comment",
+                                "colonnes" : [
+                                    "- id : int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT / Identifiant du commentaire.",
+                                    "- author_id : int(11) DEFAULT NULL FOREIGN KEY / Identifiant de l'auteur ( l'utilisateur du site 'Live Event' ).",
+                                    "- related_article_id : int(11) NOT NULL FOREIGN KEY / Identifiant de l'article.",
+                                    "- content : TEXT NOT NULL / Le commentaire.",
+                                    "- created_at : DATETIME_IMUTABLE NOT NULL DEFAULT current_timestamp() / Date de création du commentaire.",
+                                    " - author_mobile : VARCHAR(50) DEFAULT NULL / Identifaiant de l'auteur ( l'utilisateur mobile )."
+                                ]
+                            }
+                            
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
