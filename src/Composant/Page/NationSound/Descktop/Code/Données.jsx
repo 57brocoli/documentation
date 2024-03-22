@@ -30,7 +30,7 @@ function Données() {
                     <h2 className='text-2xl font-bold mb-10 orange'>{données.titre}</h2>
                     {données.content.introduction.map((intro,index)=>{
                         return(
-                            <p key={index} className='text-lg '>{intro}</p>
+                            <p key={index} className='text-lg font-semibold'>{intro}</p>
                         )
                     })}
 

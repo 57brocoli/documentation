@@ -151,121 +151,196 @@
                         ]
                     }
                 ],
-                "fonction":[
+                "fonction": [
                     {
                         "nom": "Inscription",
-                        "lieux" : "SignUp",
-                        "img" : [
-                            "/documentation/NS_VersionPhone/Code/fonc1.png"
-                        ],
-                        "explication" : [
-                            "Cette fonction permet à la fois d'inscrire l'utilisateur dans la base de donnée de firebase, et d'enregistré ses données dans la base de donnée de liveevent.",
-                            "Elle opère de suivant ces étapes : ",
-                            "1er partie :",
-                            "- La fonction execute plusieurs conditions pour verifier que l'utilisateur a bien remplit tous les champs. Si ce n'est pas le cas la fonction s'arrête et envoie une alert à l'ecran.",
-                            "2nd partie :",
-                            "- Grace au systeme de firebase, l'objet \" auth( ) \" et la methode \" .createUserWithEmailAndPassword( ) \" crée un nouveau utilisateur avec email et password.",
-                            "- Si tout est ok, l'utilisateur est redirigé vers la page Home.",
-                            "- Si l'adresse mail est deja connue de la base de donnée de firebase, ou si l'adresse mail est invalide ou si le mot de passe n'est pas compatible aux règles de sécurité, la fonction n'enregistre pas l'utilisateur et renvoie une alert à l'ecran.",
-                            "3eme partie :",
-                            "- bcrypt prend le mot de passe de l'utilisateur pour le scripter.",
-                            "- La fonction execute un fetch avec la methode \" POST \" pour envoyer les données de l'utilisateur dans la base de donnée de pixelevent."
+                        "lieux" : "SignUp.js",
+                        "introduction" : "Ces fonctions permettent à la fois de vérifié la validité du formulaire, d'inscrire l'utilisateur dans la base de donnée de firebase, et d'enregistré leurs données dans la base de donnée de liveevent. Pour cela nous avons deux fonctions :",
+                        "content":[
+                            {
+                                "titre" : "1er fonction : verify( )",
+                                "introduction" : "Cette fonction est lancé lorsque l'utilisateur clique sur \" S'inscrire \". Elle permet de valider le formulaire coté front-end.",
+                                "img" : [
+                                    "/documentation/NS_VersionPhone/Code/fonc1.1.png"
+                                ],
+                                "explication" : [
+                                    "Elle opère de suivant ces étapes : ",
+                                    "- La fonction execute plusieurs conditions pour verifier que l'utilisateur a bien remplit tous les champs. Si ce n'est pas le cas la fonction s'arrête et envoie une alert à l'ecran.",
+                                    "- Si le formulaire est correctement remplit alors le captcha est lancé."
+                                ]
+                            },
+                            {
+                                "titre" : "2nd fonction : onSingUp( )",
+                                "introduction" : "Cette fonction est lancé lorsque l'utilisateur valide le captcha. Elle permet une vérification des donées coté back-end. Si tous est valide d'inscrire l'utilisateur dans la base de donnée de firebase, et d'enregistré ses données dans la base de donnée de liveevent.",
+                                "img" : [
+                                    "/documentation/NS_VersionPhone/Code/fonc1.2.png"
+                                ],
+                                "explication" : [
+                                    "- Grace au systeme de firebase, l'objet \" auth( ) \" et la methode \" .createUserWithEmailAndPassword( ) \" crée un nouveau utilisateur avec email et password.",
+                                    "- Si tout est ok, l'utilisateur est redirigé vers la page Home.",
+                                    "- Si l'adresse mail est deja connue de la base de donnée de firebase, ou si l'adresse mail est invalide ou si le mot de passe n'est pas compatible aux règles de sécurité, la fonction n'enregistre pas l'utilisateur et renvoie une alert à l'ecran.",
+                                    "3eme partie :",
+                                    "- bcrypt prend le mot de passe de l'utilisateur pour le scripter.",
+                                    "- La fonction execute un fetch avec la methode \" POST \" pour envoyer les données de l'utilisateur dans la base de donnée de pixelevent."
+                                ]
+                            }
                         ]
+                        
                     },
                     {
                         "nom": "Authentification",
                         "lieux" : "Login.js",
-                        "img" : [
-                            "/documentation/NS_VersionPhone/Code/fonc2.png"
-                        ],
-                        "explication" : [
-                            "Cette fonction permet à l'utilisateur de se connecter avec un compte existant.",
-                            "Grace au systeme de firebase, l'objet' \" auth( ) \" permet à la fonction d'opère suivant ces étapes :",
-                            "- La methode \" .signInWithEmailAndPassword( ) \" prend en parametre l'email et password pour authentifié l'utilisateur.",
-                            "- Si les parametre sont valide, un identifiant est crée pour le nouveau utilisateur et est attribué à la propriété \" uid \" de l'objet \" auth \". L'utilisateur est auhentifié et redirigé vers la page Home",
-                            "- Si l'email ou si le password sont incorects, une alert est envoyer à l'ecran."
+                        "introduction" : "Cette fonction permet à la fois de vérifier la validité du formulaire et à l'utilisateur de se connecter avec un compte existant. Pour cela nous avons trois fonctions :",
+                        "content":[
+                            {
+                                "titre" : "1er fonction : verify( )",
+                                "introduction" : "Cette fonction est lancé lorsque l'utilisateur clique sur \" Se connecter \". Elle permet de valider le formulaire coté front-end.",
+                                "img" : [
+                                    "/documentation/NS_VersionPhone/Code/fonc2.1.png"
+                                ],
+                                "explication" : [
+                                    "Elle opère de suivant ces étapes : ",
+                                    "- La fonction execute plusieurs conditions pour verifier que l'utilisateur a bien remplit tous les champs. Si ce n'est pas le cas la fonction s'arrête et envoie une alert à l'ecran.",
+                                    "Trois verification :",
+                                    "- Si l'adresse est bien presente",
+                                    "- Si c'est bien une adresse mail grace au regex",
+                                    "- Si elle appartient bien à un utilisateur (dans la seconde fonction)",
+                                    "Une fois le formulaire correctement remplit alors elle lance le captcha."
+                                ]
+                            },
+                            {
+                                "titre" : "2nd fonction : OnLoginPress( )",
+                                "introduction" : "Cette fonction est lancé automatiquement aprés que l'utilisateur est validé le captcha. Elle permet de vérifié si l'utilisateur est bien existant dans la base de données, et que les données sont bien valide. Il s'agit d'une vérification coté back-end.",
+                                "img" : [
+                                    "/documentation/NS_VersionPhone/Code/fonc2.2.png"
+                                ],
+                                "explication" : [
+                                    "Grace au systeme de firebase, l'objet' \" auth( ) \" permet à la fonction d'opèrer suivant ces étapes :",
+                                    "- La methode \" .signInWithEmailAndPassword( ) \" prend en parametre l'email et password pour authentifié l'utilisateur.",
+                                    "- Si les parametres sont valides, un identifiant est crée pour le nouveau utilisateur et est attribué à la propriété \" uid \" de l'objet \" auth \". L'utilisateur est auhentifié et redirigé vers la page d'accueil.",
+                                    "- Si l'email ou si le password sont incorects, une alert est envoyer à l'ecran."
+                                ]
+                            }
                         ]
+                        
                     },
                     {
                         "nom": "Utilisateur déja connecté",
                         "lieux" : "Login.js",
-                        "img" : [
-                            "/documentation/NS_VersionPhone/Code/fonc3.png"
-                        ],
-                        "explication" : [
-                            "Cette fonction est authomatiquement executé à chaque fois que l'application est ouvert.",
-                            "Elle permet de verifié si un utilisateur est déja connecté. Ainsi elle évite à l'utilisateur sur son smatphone de devoir se connecter à chaque fois qu'il ouvre l'application.",
-                            "Cette fonction, comme les precedente fonction utilise l'objet \" auth( ) \".",
-                            "Elle vas avec un condition verifié si la propriété \" currentUser \" :",
-                            "- Si contient les données de l'utilisateur, alors l'utilisateur est directement dirigé vers la page Home",
-                            "- Si vide, la fonction s'arrête, l'utilisateur reste sur cette page."
+                        "introduction" : "Cette fonction est authomatiquement executé à chaque fois que l'application est ouvert.",
+                        "content":[
+                            {
+                                "titre" : "_isUserAuthenticated( )",
+                                "introduction" : "Il s'agit d'un fonction fourni par le package de firebase qui permet de rester connecter même quand l'application est fermer, ce qui évite à chaque fois de se reconnecter lorque l'application s'ouvre.",
+                                "img" : [
+                                    "/documentation/NS_VersionPhone/Code/fonc3.png"
+                                ],
+                                "explication" : [
+                                    "Cette fonction, comme les precedente fonction utilise l'objet \" auth( ) \".",
+                                    "Elle vas avec un condition verifié si la propriété \" currentUser \" :",
+                                    "- Si contient les données de l'utilisateur, alors l'utilisateur est directement dirigé vers la page Home",
+                                    "- Si vide, la fonction s'arrête, l'utilisateur reste sur cette page."
+                                ]
+                            }
                         ]
+                        
                     },
                     {
                         "nom": "Deconnexion",
                         "lieux" : "NavBar.js , Profil.js",
-                        "img" : [
-                            "/documentation/NS_VersionPhone/Code/fonc9.png"
-                        ],
-                        "explication" : [
-                            "Fonction pour que l'utilisateur se deconnecte. Elle est assez simple, avec l'object \" auth( ) \" de firebase, la methode \" .signOut( ) \", effectue la deconnexion. Puis la fonction redirige l'utilisateur vers la page \" LogIn \"."
+                        "introduction" : "Cette fonction permet à l'utilisateur de se déconnecter de l'application.",
+                        "content":[
+                            {
+                                "titre" : "onSingOut( )",
+                                "introduction" : "Il s'agit d'un fonction fourni par le package de firebase.",
+                                "img" : [
+                                    "/documentation/NS_VersionPhone/Code/fonc9.png"
+                                ],
+                                "explication" : [
+                                    "Fonction pour que l'utilisateur se deconnecte. Elle est assez simple, avec l'object \" auth( ) \" de firebase, la methode \" .signOut( ) \", effectue la deconnexion. Puis la fonction redirige l'utilisateur vers la page \" LogIn \"."
+                                ]
+                            }
                         ]
+                        
                     },
                     {
                         "nom": "Envoie de requête",
                         "lieux" : "RequestForm.js",
-                        "img" : [
-                            "/documentation/NS_VersionPhone/Code/fonc4.png"
-                        ],
-                        "explication" : [
-                            "Cette fonction est utile pour les utilisateurs qui souhaitent envoyer un mail directement à la société LiveEvent.",
-                            "Elle n'est pas unique, en vue de sa complexité elle est divisée en plusieurs sous fonctions qui jouent chaqu'un un role bien distinct.",
-                            "La 1er fonction englobe et execute les sous fonctions. c'est celle qui est appellée lorsque l'utilisateur appuie sur \" Envoyer \"."
-                        ],
-                        "img2": [
-                            "/documentation/NS_VersionPhone/Code/fonc5.png"
-                        ],
-                        "explication2" : [
-                            "Cette sous fonction est exécutée en premier. Elle a pour fonction de vérifier si les champs sont vides. Si c'est le cas, un text apparait à l'ecran. Pour autant cette sous fonction ne vas pas arréter la fonction mère, elle analyse uniquement si les champs sont vide et agit en conséquent.",
-                            "Avec des simples conditions, chaques champs sont vérifiées. Pour exemple le champ \" firstname \" :",
-                            "- Si le champ est remplit, sont verificateur \" checkFirstname \" prend comme valeur \" true \" et la fonction continue au prochain champ.",
-                            "- Si le champ est vide, sont verificateur \" checkFirstname \" prend comme valeur \" false \", la fonction vas s'arrêter à la seconde sous fonction car elle ne répondrat pas au condition pour qu'elle sois exécuté. De plus, si \" checkFirstname \" est à \" false \", dans le rendu un text avertira l'utilisateur que le champ est vide."
-                            
-                        ],
-                        "img3": [
-                            "/documentation/NS_VersionPhone/Code/fonc6.png"
-                        ],
-                        "explication3" : [
-                            "Cette sous fonction est exécuté en second. Elle a pour fonction de vérifier si les champs sont remplit et que l'adresse mail est bien valide. Si c'est le cas, cette sous fonction vas lancer une autre sous fonction \" send( ) \" qui serat detailler plus bas. Si ce n'est pas le cas, deux possibilités :",
-                            "- Si un champ est vide la fonction n'est pas du tout exécuté car elle ne remplit pas les conditions d'initialisation qui est que tous les champs doivent est remplits.",
-                            "- Si l'adresse mail n'est pas validé par l'expression regulière, notre sous fonction n'execute pas la sous fonction \" send( )\" mais renvoie un msg à l'ecran pour avertir que l'adresse mail est invalide."
-                        ],
-                        "img4": [
-                            "/documentation/NS_VersionPhone/Code/fonc7.png"
-                        ],
-                        "explication4" : [
-                            "Cette sous fonction est exécutée une fois que toute les conditions sont valides (champs du formulaire remplit et adresse mail valide).",
-                            "Elle realise les choses suivantes :",
-                            "- Exécuté un fetch pour se connecter à l'api et transmettre avec la methode \" POST \" le mail à la base de donnée de liveevent. Il est impératif que tous les champs soient remplits, sans quoi la transmition du mail ne pourat se faire, d'où l'importance des sous fonctions précedentes et des conditions à remplir pour que notre fonction \" send ( ) \" sois executée.",
-                            "- Une fois le mail envoyé, la fonction vas nettoyer le formulaire. Tous les champs seront vidés et réinitialisé.",
-                            "- un message de succes apparait à l'ecran avertissant l'utilisateur que son mail à bien été envoyer."
+                        "introduction" : "Cette fonction est utile pour les utilisateurs qui souhaitent envoyer un mail directement à la société LiveEvent. En vue de sa complexité elle est divisée en plusieurs sous fonctions qui jouent chaqu'un un role bien distinct.",
+                        "content":[
+                            {
+                                "titre" : "sendRequete( )",
+                                "introduction" : "",
+                                "img" : [
+                                    "/documentation/NS_VersionPhone/Code/fonc4.png"
+                                ],
+                                "explication" : [
+                                    "La 1er fonction englobe et execute les sous fonctions. c'est celle qui est appellée lorsque l'utilisateur appuie sur \" Envoyer \"."
+                                ]
+                            },
+                            {
+                                "titre" : "formIsNotEmpty( )",
+                                "introduction" : "",
+                                "img" : [
+                                    "/documentation/NS_VersionPhone/Code/fonc5.png"
+                                ],
+                                "explication" : [
+                                    "Cette sous fonction est exécutée en premier. Elle a pour fonction de vérifier si les champs sont vides. Si c'est le cas, un text apparait à l'ecran. Pour autant cette sous fonction ne vas pas arréter la fonction mère, elle analyse uniquement si les champs sont vide et agit en conséquent.",
+                                    "Avec des simples conditions, chaques champs sont vérifiées. Pour exemple le champ \" firstname \" :",
+                                    "- Si le champ est remplit, sont verificateur \" checkFirstname \" prend comme valeur \" true \" et la fonction continue au prochain champ.",
+                                    "- Si le champ est vide, sont verificateur \" checkFirstname \" prend comme valeur \" false \", la fonction vas s'arrêter à la seconde sous fonction car elle ne répondrat pas au condition pour qu'elle sois exécuté. De plus, si \" checkFirstname \" est à \" false \", dans le rendu un text avertira l'utilisateur que le champ est vide."
+                                ]
+                            },
+                            {
+                                "titre" : "formIsValide( )",
+                                "introduction" : "",
+                                "img" : [
+                                    "/documentation/NS_VersionPhone/Code/fonc6.png"
+                                ],
+                                "explication" : [
+                                    "Cette sous fonction est exécuté en second. Elle a pour fonction de vérifier si les champs sont remplit et que l'adresse mail est bien valide. Si ce n'est pas le cas, deux possibilités :",
+                                    "- Si un champ est vide la fonction n'est pas du tout exécuté car elle ne remplit pas les conditions d'initialisation qui est que tous les champs doivent est remplits.",
+                                    "- Si l'adresse mail n'est pas validé par l'expression regulière, notre sous fonction renvoie un msg à l'ecran pour avertir que l'adresse mail est invalide.",
+                                    "Si le formulaire est valide cette sous fonction vas lancer le captcha."
+                                ]
+                            },
+                            {
+                                "titre" : "send( )",
+                                "introduction" : "",
+                                "img" : [
+                                    "/documentation/NS_VersionPhone/Code/fonc7.png"
+                                ],
+                                "explication" : [
+                                    "Cette sous fonction est exécutée une fois que toute les conditions sont valides (champs du formulaire remplit et adresse mail valide) et que le captcha soit validé.",
+                                    "Elle realise les choses suivantes :",
+                                    "- Exécuté un fetch pour se connecter à l'api et transmettre avec la methode \" POST \" le mail à la base de donnée de liveevent. Il est impératif que tous les champs soient remplits, sans quoi la transmition du mail ne pourat se faire, d'où l'importance des sous fonctions précedentes et des conditions à remplir pour que notre fonction \" send ( ) \" sois executée.",
+                                    "- Une fois le mail envoyé, la fonction vas nettoyer le formulaire. Tous les champs seront vidés et réinitialisé.",
+                                    "- un message de succes apparait à l'ecran avertissant l'utilisateur que son mail à bien été envoyer."
+                                ]
+                            }
                         ]
+                        
                     },
                     {
                         "nom": "Publication de commentaire",
                         "lieux" : "ArticleDetail.js",
-                        "img" : [
-                            "/documentation/NS_VersionPhone/Code/fonc8.png"
-                        ],
-                        "explication" : [
-                            "Cette fonction permet de concrétisée les interactions entre utilisateur et le contenu, et entre plusieurs utilisateurs. Ainsi l'utilisateur peut partager son avis sur un contenu à travers un commentaire. Pour le moment le commentaire ne peut être que du text. Contrairement à la fonction d'envoie de requête, ici les conditions d'envoie sont moin strictes et se font uniquement dans le rendu.",
-                            "La fonction opère de cette facon :",
-                            "- Etaplit une connection avec l'api avec un fetch en \" POST \", et envoie le commentaire dans la base de donnée de Liveevent.",
-                            "- Netoie le formulaire en vidant le champ.",
-                            "- Relance un appel à l'api pour recupéré la nouvelle liste des commentaires pour mettre à jour la liste des commentaire stocker dans \" comments \". Ainsi le rendu est automatiquement actualisé et fait apparaitre le nouveau commentaire."
+                        "introduction" : "Cette fonction permet de concrétisée les interactions entre utilisateur et le contenu, et entre plusieurs utilisateurs. Ainsi l'utilisateur peut partager son avis sur un contenu à travers un commentaire.",
+                        "content":[
+                            {
+                                "titre" : "sendRequete( )",
+                                "introduction" : "Le commentaire ne peut être que du text. Contrairement à la fonction d'envoie de requête, ici les conditions d'envoie sont moin strictes et se font uniquement dans le rendu.",
+                                "img" : [
+                                    "/documentation/NS_VersionPhone/Code/fonc8.png"
+                                ],
+                                "explication" : [
+                                    "La fonction opère de cette facon :",
+                                    "- Etaplit une connection avec l'api avec un fetch en \" POST \", et envoie le commentaire dans la base de donnée de Liveevent.",
+                                    "- Netoie le formulaire en vidant le champ.",
+                                    "- Relance un appel à l'api pour recupéré la nouvelle liste des commentaires pour mettre à jour la liste des commentaire stocker dans \" comments \". Ainsi le rendu est automatiquement actualisé et fait apparaitre le nouveau commentaire."
+                                ]
+                            }
                         ]
                     }
-                    
                 ]
             }
         }

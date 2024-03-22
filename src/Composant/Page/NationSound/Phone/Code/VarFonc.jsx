@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import jsonData from './codeScript.json'
 import { AnimatePresence, motion } from 'framer-motion'
 import Variable from './SousComposants/Variable'
-import Fonction from './SousComposants/Fonction'
+import Fonctions from './SousComposants/Fonctions'
 
 function VarFonc() {
 
@@ -28,7 +28,7 @@ function VarFonc() {
                     <h2 className='text-2xl font-bold mb-10 orange'>{dataExtract[0].titre}</h2>
                     {dataExtract[0].content.introduction.map((intro,index)=>{
                         return(
-                            <p key={index} className='text-lg '>{intro}</p>
+                            <p key={index} className='text-lg font-semibold'>{intro}</p>
                         )
                     })}
                     <hr className='my-7'/>
@@ -43,9 +43,6 @@ function VarFonc() {
                         })}
                     </section>
 
-                    <h2 className='text-xl font-bold'>Cas d'utilisation :</h2>
-
-
                     <AnimatePresence mode="wait">
                         <motion.div
                         key={filtreActive ? filtreActive : "empty"}
@@ -55,7 +52,7 @@ function VarFonc() {
                         transition={{ duration: 0.2 }}
                         >
                         {filtreActive === "Variable" && <Variable data={variable}/>}
-                        {filtreActive === "Fonction" && <Fonction data={fonction}/>}
+                        {filtreActive === "Fonction" && <Fonctions data={fonction}/>}
                         </motion.div>
                     </AnimatePresence>
                     

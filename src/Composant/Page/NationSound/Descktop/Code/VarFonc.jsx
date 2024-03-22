@@ -28,7 +28,7 @@ function VarFonc() {
                     <h2 className='text-2xl font-bold mb-10 orange'>{dataExtract[0].titre}</h2>
                     {dataExtract[0].content.introduction.map((intro,index)=>{
                         return(
-                            <p key={index} className='text-lg '>{intro}</p>
+                            <p key={index} className='text-lg font-semibold'>{intro}</p>
                         )
                     })}
                     <hr className='my-7'/>

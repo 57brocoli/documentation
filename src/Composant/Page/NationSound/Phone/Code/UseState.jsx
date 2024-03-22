@@ -17,7 +17,7 @@ function UseState() {
                     <h2 className='text-2xl font-bold mb-10 orange'>{data.section[0].titre}</h2>
                     {data.section[0].content.introduction.map((intro,index)=>{
                         return(
-                            <p key={index} className='text-lg '>{intro}</p>
+                            <p key={index} className='text-lg font-semibold'>{intro}</p>
                         )
                     })}
                     <p>Import :</p>
@@ -30,7 +30,7 @@ function UseState() {
                         {data.section &&
                             data.section[0].content.utilisation.map((cas, index)=>{
                                 return(
-                                    <div key={index} className='mt-4 mb-8'>
+                                    <div key={index} className='mt-4 mb-8 font-semibold'>
                                         <h3 className='text-xl font-bold my-2 jaune'>{cas.nom}</h3>
                                         <div className='mx-4'>
                                             <h3 className='my-3'>Lieux : {cas.lieux}</h3>

@@ -1,13 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 function Variable({data}) {
     return (
-        <article>
+        <article className='font-semibold'>
+            <h3 className='text-xl font-bold mb-4'>Cas d'utilisation :</h3>
             {data &&
                 <>
                     <div  className='mt-4 mb-8'>
-                        <h3 className='text-xl font-bold my-2 jaune'>{data[0].nom}</h3>
+                        <h3 className='text-xl font-bold my-2 orange'>{data[0].nom}</h3>
                         <div className='mx-4'>
 
                             <section className='py-2'>
@@ -30,7 +30,7 @@ function Variable({data}) {
                     </div>
 
                     <div  className='mt-4 mb-8'>
-                        <h3 className='text-xl font-bold my-2 jaune'>{data[1].nom}</h3>
+                        <h3 className='text-xl font-bold my-2 orange'>{data[1].nom}</h3>
                         <div className='mx-4'>
                             <section className='py-2'>
                             <h3 className='my-3'>Lieux : {data[1].lieux}</h3>

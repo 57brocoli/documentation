@@ -28,7 +28,6 @@ function Deploiement() {
                                                 )
                                             })}
                                         </div>
-                                        {/* <hr className='my-4' /> */}
                                     </article>
                                 )
                             })

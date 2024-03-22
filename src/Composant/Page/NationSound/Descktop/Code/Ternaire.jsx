@@ -24,7 +24,7 @@ function Ternaire() {
                         <h2 className='text-2xl font-bold mb-10 orange'>{ternaire.titre}</h2>
                         {ternaire.content.introduction.map((intro,index)=>{
                             return(
-                                <p key={index} className='text-lg '>{intro}</p>
+                                <p key={index} className='text-lg font-semibold'>{intro}</p>
                             )
                         })}
 
